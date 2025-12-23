@@ -1,65 +1,110 @@
-import Image from "next/image";
+"use client"
+import React, { useEffect, useState } from 'react';
+import Hero from '@/Components/Hero';
+import TrustedBy from '@/Components/TrustedBy';
+import ServicesGrid from '@/Components/ServicesGrid';
+import KeyServices from '@/Components/KeyServices';
+import WhyChooseUs from '@/Components/WhyChooseUs';
+import Projects from '@/Components/Projects';
+import Testimonials from '@/Components/Testimonials';
+import TechStack from '@/Components/TechStack';
+import Team from '@/Components/Team';
+import Industries from '@/Components/Industries';
+import Process from '@/Components/Process';
+import Contact from '@/Components/Contact';
+import CallToActionChips from '@/Components/CallToActionChips';
+import Footer from '@/Components/Footer';
+import ChatWidget from '@/Components/ChatWidget';
+import Header from '@/Components/Header';
 
-export default function Home() {
+const App: React.FC = () => {
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 50);
+    };
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
   return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
+    <div className="relative min-h-screen selection:bg-cyan-200 selection:text-navy-900 overflow-x-hidden bg-white">
+      {/* Global Background Accents (Ultra-Minimum Opacity) */}
+      <div className="fixed inset-0 pointer-events-none z-0 overflow-hidden">
+        <div className="absolute top-[10%] left-[-10%] w-[800px] h-[800px] bg-[#00F5D4]/1 blur-[160px] rounded-full"></div>
+        <div className="absolute top-[40%] right-[-15%] w-[900px] h-[900px] bg-[#00B6FF]/2 blur-[180px] rounded-full"></div>
+        <div className="absolute bottom-[20%] left-[-20%] w-[1000px] h-[1000px] bg-[#00F5D4]/1 blur-[200px] rounded-full"></div>
+        <div className="absolute bottom-[-10%] right-[10%] w-[700px] h-[700px] bg-[#00B6FF]/1 blur-[150px] rounded-full"></div>
+      </div>
+
+      
+      <main className="relative z-10">
+        <section id="hero">
+          <Hero />
+        </section>
+
+        <section id="trusted">
+          <TrustedBy />
+        </section>
+
+        <section id="services-summary" className="py-32 bg-transparent relative">
+          <ServicesGrid />
+        </section>
+
+        {/* Premium Gradient Blur Separator - Opacity reduced by 50% */}
+        <div className="relative h-48 -mt-24 -mb-24 z-10 pointer-events-none">
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-[400px] bg-gradient-to-r from-[#00F5D4]/5 via-[#00B6FF]/10 to-[#00F5D4]/5 blur-[140px] rounded-full"></div>
+          <div className="absolute top-1/2 left-1/4 -translate-x-1/2 -translate-y-1/2 w-[300px] h-[300px] bg-[#00F5D4]/8 blur-[100px] rounded-full animate-pulse"></div>
+          <div className="absolute top-1/2 left-3/4 -translate-x-1/2 -translate-y-1/2 w-[300px] h-[300px] bg-[#00B6FF]/8 blur-[100px] rounded-full animate-pulse" style={{ animationDelay: '1s' }}></div>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
+
+        <section id="key-services" className="py-32 bg-slate-50/5 relative">
+          <KeyServices />
+        </section>
+
+        <section id="why-us" className="py-32 bg-transparent">
+          <WhyChooseUs />
+        </section>
+
+        <section id="team" className="py-32 bg-slate-50/20 relative">
+          {/* Section specific accent - Reduced opacity */}
+          <div className="absolute top-1/2 left-0 w-[600px] h-[600px] bg-[#00F5D4]/3 blur-[120px] rounded-full -translate-y-1/2 -translate-x-1/2 pointer-events-none"></div>
+          <Team />
+        </section>
+
+        <section id="projects" className="py-32 bg-transparent">
+          <Projects />
+        </section>
+
+        <section id="testimonials" className="py-32 bg-slate-50/5 relative">
+          <Testimonials />
+        </section>
+
+        <section id="tech-stack" className="py-32 bg-slate-50/10 relative">
+          <TechStack />
+        </section>
+
+        <section id="industries" className="py-24 bg-transparent">
+          <Industries />
+        </section>
+
+        <section id="process" className="py-32 bg-slate-50/15 relative">
+          <Process />
+        </section>
+
+        <section id="contact" className="py-32 bg-transparent">
+          <Contact />
+        </section>
+
+        <section id="cta-chips">
+          <CallToActionChips />
+        </section>
       </main>
+
+      <ChatWidget />
     </div>
   );
-}
+};
+
+export default App;
