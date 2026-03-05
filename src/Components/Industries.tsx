@@ -11,9 +11,9 @@ const industries = [
 
 const Industries: React.FC = () => {
   return (
-    <div className="w-full max-w-[1440px] mx-auto px-8 md:px-16 lg:px-24">
+    <div className="w-full max-w-[1440px] mx-auto px-6 md:px-10 lg:px-16">
       {/* Container with decreased height and theme deep blue background (#012B48) */}
-      <div className="bg-[#012B48] rounded-[48px] min-h-[320px] lg:min-h-[380px] relative overflow-hidden flex flex-col justify-center p-8 lg:p-12 group">
+      <div className="bg-[#012B48] rounded-[48px] min-h-[240px] lg:min-h-[280px] relative overflow-hidden flex flex-col justify-center p-6 lg:p-8 group">
         
         {/* Swirling Ribbon / Flow Background (Matching Reference) */}
         <div className="absolute inset-0 pointer-events-none select-none overflow-hidden">
@@ -56,11 +56,11 @@ const Industries: React.FC = () => {
         {/* Content Section - More compact spacing */}
         <div className="relative z-10 space-y-6 max-w-2xl">
           <div className="space-y-3">
-            <div className="inline-flex items-center text-white/40 text-[9px] font-black uppercase tracking-[0.5em]">
+            <div className="inline-flex items-center text-white/40 text-[6px] font-black uppercase tracking-[0.5em]">
               Industries & Solutions
             </div>
             
-            <h2 className="text-4xl lg:text-5xl font-extrabold text-white tracking-tighter leading-[1] max-w-xl">
+            <h2 className="text-3xl lg:text-4xl font-extrabold text-white tracking-tighter leading-[1] max-w-xl">
               Expertise Across <br />
               <span className="italic opacity-90 text-[#00F5D4]">Key Industries</span>
             </h2>
@@ -76,17 +76,17 @@ const Industries: React.FC = () => {
             {industries.map((ind, i) => (
               <div 
                 key={i} 
-                className="flex items-center gap-2 bg-white/5 border border-white/10 px-4 py-2 rounded-full hover:bg-white/10 hover:border-white/20 transition-all cursor-default backdrop-blur-md"
+                className="flex items-center gap-2 bg-white/5 border border-white/10 px-3 py-1.5 rounded-full hover:bg-white/10 hover:border-white/20 transition-all cursor-default backdrop-blur-md"
               >
                 <div className="text-[#00F5D4]">{ind.icon}</div>
-                <span className="text-white/80 font-bold text-[9px] uppercase tracking-widest">{ind.title}</span>
+                <span className="text-white/80 font-bold text-[6px] uppercase tracking-widest">{ind.title}</span>
               </div>
             ))}
           </div>
 
           {/* Action Button - Compact */}
           <div className="pt-2">
-            <button className="px-8 py-3.5 bg-white text-[#012B48] rounded-2xl font-black text-[11px] uppercase tracking-widest transition-all hover:bg-[#00F5D4] hover:scale-105 shadow-2xl">
+            <button className="px-6 py-2.5 bg-white text-[#012B48] rounded-2xl font-black text-[11px] uppercase tracking-widest transition-all hover:bg-[#00F5D4] hover:scale-105 shadow-2xl">
               Start Exploring
             </button>
           </div>

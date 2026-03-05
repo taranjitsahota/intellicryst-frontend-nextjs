@@ -53,18 +53,18 @@ const Team: React.FC = () => {
   const prevMember = () => setActiveIndex((prev) => (prev - 1 + teamMembers.length) % teamMembers.length);
 
   return (
-    <div className="max-w-[1600px] mx-auto px-6 md:px-12 relative py-20 overflow-hidden">
+    <div className="max-w-[1600px] mx-auto px-6 md:px-12 relative py-16 overflow-hidden">
       <div className="gaussian-blur-accent w-[800px] h-[800px] top-1/2 left-[-10%] opacity-[0.03]"></div>
 
-      <div className="flex flex-col lg:flex-row gap-12 lg:gap-20 items-center">
+      <div className="flex flex-col lg:flex-row gap-6 lg:gap-14 items-center">
         {/* Left Side: Content & Search */}
         <div className="lg:w-1/3 space-y-12">
           <div className="space-y-6">
             <h4 className="text-[#012B48] font-black text-xs uppercase tracking-[0.4em]">The Human Core</h4>
-            <h2 className="text-6xl lg:text-7xl xl:text-8xl font-black text-[#012B48] leading-[0.9] tracking-tighter">
+            <h2 className="text-4xl lg:text-5xl xl:text-6xl font-black text-[#012B48] leading-[0.9] tracking-tighter">
               Watch.<br />Build.<br /><span className="gradient-text">Deploy.</span>
             </h2>
-            <p className="text-lg lg:text-xl text-[#5A6C7C] font-semibold leading-relaxed max-w-sm">
+            <p className="text-base lg:text-lg text-[#5A6C7C] font-semibold leading-relaxed max-w-sm">
               Meet the elite architects and engineers driving your digital transformation.
             </p>
           </div>
@@ -73,13 +73,13 @@ const Team: React.FC = () => {
           <div className="flex gap-4">
             <button 
               onClick={prevMember}
-              className="w-14 h-14 rounded-full border border-slate-200 flex items-center justify-center text-[#012B48] hover:bg-[#00F5D4] hover:border-[#00F5D4] transition-all group"
+              className="w-11 h-11 rounded-full border border-slate-200 flex items-center justify-center text-[#012B48] hover:bg-[#00F5D4] hover:border-[#00F5D4] transition-all group"
             >
               <ChevronLeft size={24} className="group-hover:-translate-x-1 transition-transform" />
             </button>
             <button 
               onClick={nextMember}
-              className="w-14 h-14 rounded-full border border-slate-200 flex items-center justify-center text-[#012B48] hover:bg-[#00F5D4] hover:border-[#00F5D4] transition-all group"
+              className="w-11 h-11 rounded-full border border-slate-200 flex items-center justify-center text-[#012B48] hover:bg-[#00F5D4] hover:border-[#00F5D4] transition-all group"
             >
               <ChevronRight size={24} className="group-hover:translate-x-1 transition-transform" />
             </button>
@@ -87,7 +87,7 @@ const Team: React.FC = () => {
         </div>
 
         {/* Right Side: Expandable Bar Layout (Reference Design) */}
-        <div className="lg:w-2/3 w-full h-[600px] flex gap-4 lg:gap-6 items-stretch">
+        <div className="lg:w-2/3 w-full h-[460px] flex gap-4 lg:gap-6 items-stretch">
           {teamMembers.map((member, idx) => {
             const isExpanded = activeIndex === idx;
             return (
@@ -125,11 +125,11 @@ const Team: React.FC = () => {
 
                 {/* Expanded View: Full Details */}
                 <div 
-                  className={`absolute inset-0 p-10 flex flex-col justify-end transition-all duration-700 delay-100 ${
+                  className={`absolute inset-0 p-6 flex flex-col justify-end transition-all duration-700 delay-100 ${
                     isExpanded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10 pointer-events-none'
                   }`}
                 >
-                  <div className="glass border border-white/20 p-8 rounded-[32px] backdrop-blur-xl relative overflow-hidden">
+                  <div className="glass border border-white/20 p-5 rounded-2xl backdrop-blur-xl relative overflow-hidden">
                     <div className="absolute top-0 right-0 p-4 opacity-20 text-[#00F5D4]">
                       {member.icon}
                     </div>
@@ -137,7 +137,7 @@ const Team: React.FC = () => {
                     <div className="flex items-end justify-between gap-6">
                       <div className="space-y-2">
                         <p className="text-[#00F5D4] font-black text-[10px] uppercase tracking-[0.3em] mb-2">{member.role}</p>
-                        <h3 className="text-3xl font-black text-white tracking-tighter">{member.name}</h3>
+                        <h3 className="text-2xl font-black text-white tracking-tighter">{member.name}</h3>
                       </div>
                       
                       <div className="text-right">

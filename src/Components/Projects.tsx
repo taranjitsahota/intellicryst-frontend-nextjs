@@ -42,10 +42,10 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, position, onClick })
         filter: blur,
         transition: 'all 0.8s cubic-bezier(0.34, 1.56, 0.64, 1)'
       }}
-      className={`absolute top-0 left-0 w-full max-w-[480px] bg-white rounded-[40px] border border-slate-50 overflow-hidden cursor-pointer group ${shadowClass}`}
+      className={`absolute top-0 left-0 w-full max-w-[420px] bg-white rounded-[40px] border border-slate-50 overflow-hidden cursor-pointer group ${shadowClass}`}
     >
       {/* Card Header */}
-      <div className={`h-52 w-full relative flex items-center justify-center ${project.headerColor}`}>
+      <div className={`h-40 w-full relative flex items-center justify-center ${project.headerColor}`}>
         <div 
           className="transform group-hover:scale-110 transition-transform duration-1000"
           style={{ color: project.themeColor, opacity: 0.8 }}
@@ -68,10 +68,10 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, position, onClick })
       </div>
 
       {/* Content Area */}
-      <div className="p-10 space-y-8">
+      <div className="p-6 space-y-8">
         <div className="space-y-1">
           <div className="flex items-center flex-wrap gap-2">
-            <h3 className="text-2xl font-black text-[#012B48] tracking-tight">{project.name}</h3>
+            <h3 className="text-xl font-black text-[#012B48] tracking-tight">{project.name}</h3>
             <div className="flex items-center gap-1.5">
               <div className="w-5 h-5 bg-blue-500 rounded-full flex items-center justify-center text-white text-[10px]">✓</div>
               <span className="bg-amber-100 text-amber-700 text-[9px] font-black px-2 py-0.5 rounded-md uppercase tracking-widest">Pro</span>
@@ -170,14 +170,14 @@ const Projects: React.FC = () => {
         style={{ backgroundColor: projectsData[activeIndex].themeColor }}
       ></div>
 
-      <div className="max-w-[1440px] mx-auto px-8 md:px-16 lg:px-24 py-32 relative z-10">
+      <div className="max-w-[1440px] mx-auto px-8 md:px-16 lg:px-24 py-16 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
           
           {/* Content Left */}
           <div className="space-y-10 animate-in slide-in-from-left duration-1000">
             <div className="space-y-6">
               <h4 className="text-[#012B48] font-black text-xs uppercase tracking-[0.4em]">Featured Case Studies</h4>
-              <h2 className="text-6xl lg:text-8xl font-black text-[#012B48] tracking-tighter leading-[0.9]">
+              <h2 className="text-4xl lg:text-5xl font-black text-[#012B48] tracking-tighter leading-[0.9]">
                 Building the <br />
                 <span className="gradient-text">future of systems.</span>
               </h2>
@@ -187,21 +187,21 @@ const Projects: React.FC = () => {
               ></div>
             </div>
             
-            <p className="text-xl lg:text-2xl text-[#5A6C7C] font-semibold leading-relaxed max-w-lg">
+            <p className="text-base lg:text-lg text-[#5A6C7C] font-semibold leading-relaxed max-w-lg">
               Our portfolio spans critical infrastructure in agriculture and mobility, 
               focusing on high-availability and zero-trust security architecture.
             </p>
 
             <div className="flex flex-col sm:flex-row items-center gap-6 pt-6">
-              <button className="px-12 py-6 bg-[#012B48] text-white rounded-2xl font-black text-lg flex items-center gap-4 hover:scale-105 transition-all shadow-2xl shadow-navy/30">
+              <button className="px-8 py-4 text-sm bg-[#012B48] text-white rounded-2xl font-black flex items-center gap-4 hover:scale-105 transition-all shadow-2xl shadow-navy/30">
                 Explore All <ExternalLink size={24} />
               </button>
               
               <div className="flex items-center gap-5">
-                <button onClick={prevProject} className="w-16 h-16 rounded-full border-2 border-slate-100 flex items-center justify-center text-[#012B48] hover:bg-slate-50 transition-all group bg-white shadow-sm">
+                <button onClick={prevProject} className="w-12 h-12 rounded-full border-2 border-slate-100 flex items-center justify-center text-[#012B48] hover:bg-slate-50 transition-all group bg-white shadow-sm">
                   <ChevronLeft size={32} className="group-hover:-translate-x-1 transition-transform" />
                 </button>
-                <button onClick={nextProject} className="w-16 h-16 rounded-full border-2 border-slate-100 flex items-center justify-center text-[#012B48] hover:bg-slate-50 transition-all group bg-white shadow-sm">
+                <button onClick={nextProject} className="w-12 h-12 rounded-full border-2 border-slate-100 flex items-center justify-center text-[#012B48] hover:bg-slate-50 transition-all group bg-white shadow-sm">
                   <ChevronRight size={32} className="group-hover:translate-x-1 transition-transform" />
                 </button>
               </div>
@@ -209,8 +209,8 @@ const Projects: React.FC = () => {
           </div>
 
           {/* Cards Right - Positioned with breathing space on the right */}
-          <div className="relative h-[800px] w-full flex items-center justify-center lg:justify-end lg:pr-24">
-            <div className="relative w-full max-w-[480px] h-full">
+          <div className="relative h-[520px] w-full flex items-center justify-center lg:justify-end lg:pr-24">
+            <div className="relative w-full max-w-[420px] h-full">
               {projectsData.map((proj, i) => {
                 let position = (i - activeIndex + projectsData.length) % projectsData.length;
                 return (

@@ -45,11 +45,11 @@ const WhyChooseUs: React.FC = () => {
   ];
 
   return (
-    <div className="max-w-[1440px] mx-auto px-8 md:px-16 lg:px-24 py-24 relative overflow-hidden">
+    <div className="max-w-[1440px] mx-auto px-8 md:px-16 lg:px-24 py-16 relative overflow-hidden">
       {/* Background Gaussian Blur */}
       <div className="gaussian-blur-accent w-[600px] h-[600px] top-1/2 left-[-10%] opacity-[0.05]"></div>
 
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 lg:gap-32 items-center">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
         
         {/* Left Side: Image with Overlay */}
         <div className="relative animate-in slide-in-from-left duration-1000">
@@ -57,13 +57,13 @@ const WhyChooseUs: React.FC = () => {
             <img 
               src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&q=80&w=1200" 
               alt="Intellicryst Engineering" 
-              className="w-full h-[550px] lg:h-[700px] object-cover hover:scale-105 transition-transform duration-700"
+              className="w-full h-[420px] lg:h-[520px] object-cover hover:scale-105 transition-transform duration-700"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-[#012B48]/40 to-transparent"></div>
           </div>
 
           {/* Performance Overview Overlay */}
-          <div className="absolute top-10 left-10 md:-left-12 glass border border-white/40 p-8 md:p-10 rounded-[40px] shadow-[0_32px_128px_-24px_rgba(1,43,72,0.2)] w-[300px] md:w-[360px] backdrop-blur-3xl animate-in fade-in zoom-in duration-1000 delay-500">
+          <div className="absolute top-10 left-10 md:-left-12 glass border border-white/40 p-6 md:p-7 rounded-2xl shadow-[0_32px_128px_-24px_rgba(1,43,72,0.2)] w-[300px] md:w-[360px] backdrop-blur-3xl animate-in fade-in zoom-in duration-1000 delay-500">
             <div className="flex items-center justify-between mb-8">
               <h5 className="text-[11px] font-black uppercase tracking-[0.2em] text-[#012B48]">System Performance</h5>
               <Activity size={18} className="text-[#00F5D4]" />
@@ -97,11 +97,11 @@ const WhyChooseUs: React.FC = () => {
         <div className="space-y-16 animate-in slide-in-from-right duration-1000">
           <div className="space-y-8">
             <h4 className="text-[#012B48] font-black text-xs uppercase tracking-[0.4em]">Work With The Best</h4>
-            <h2 className="text-5xl lg:text-7xl font-black text-[#012B48] tracking-tighter leading-[0.95]">
+            <h2 className="text-4xl lg:text-5xl font-black text-[#012B48] tracking-tighter leading-[0.95]">
               Why Clients Choose <br />
               <span className="gradient-text">Intellicryst Tech.</span>
             </h2>
-            <p className="text-xl lg:text-2xl text-[#5A6C7C] font-semibold leading-relaxed max-w-xl">
+            <p className="text-base lg:text-lg text-[#5A6C7C] font-semibold leading-relaxed max-w-xl">
               At Intellicryst, we focus on delivering tailored engineering solutions. 
               With advanced cloud infrastructure and security-first development.
             </p>
@@ -126,7 +126,7 @@ const WhyChooseUs: React.FC = () => {
           <div className="grid grid-cols-3 gap-10 pt-12 border-t border-slate-100">
             {stats.map((stat, i) => (
               <div key={i} className="space-y-3">
-                <div className="text-4xl lg:text-6xl font-black text-[#012B48] tracking-tighter">
+                <div className="text-3xl lg:text-4xl font-black text-[#012B48] tracking-tighter">
                   {stat.value}
                 </div>
                 <div className="text-[11px] font-black uppercase tracking-widest text-[#5A6C7C] leading-tight">

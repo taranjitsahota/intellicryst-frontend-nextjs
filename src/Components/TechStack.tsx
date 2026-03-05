@@ -97,14 +97,14 @@ const OrbitNode: React.FC<{
         }`}
       >
         <div
-          className={`w-10 h-10 md:w-16 md:h-16 backdrop-blur-md rounded-full border shadow-[0_8px_32px_rgba(0,0,0,0.05)] flex items-center justify-center transition-all duration-300 cursor-pointer ${colorClass} ${
+          className={`w-7 h-7 md:w-10 md:h-10 backdrop-blur-md rounded-full border shadow-[0_8px_32px_rgba(0,0,0,0.05)] flex items-center justify-center transition-all duration-300 cursor-pointer ${colorClass} ${
             isActive ? "ring-4 ring-[#00F5D4]/20 shadow-xl" : ""
           }`}
         >
           {item.icon}
         </div>
         <div
-          className={`absolute -bottom-12 left-1/2 -translate-x-1/2 transition-all duration-300 bg-[#012B48] text-white text-[10px] font-black uppercase tracking-widest px-3 py-1.5 rounded-lg whitespace-nowrap pointer-events-none shadow-xl ${
+          className={`absolute -bottom-10 left-1/2 -translate-x-1/2 transition-all duration-300 bg-[#012B48] text-white text-[10px] font-black uppercase tracking-widest px-3 py-1.5 rounded-lg whitespace-nowrap pointer-events-none shadow-xl ${
             isActive
               ? "opacity-100 translate-y-0 scale-100"
               : "opacity-0 translate-y-2 scale-90"
@@ -139,9 +139,9 @@ const DecorativeDot: React.FC<{
 
 const TechStack: React.FC = () => {
   const [radii, setRadii] = useState({
-    1: 280,
-    2: 420,
-    3: 580,
+    1: 140,
+    2: 220,
+    3: 300,
   });
 
   useEffect(() => {
@@ -149,9 +149,9 @@ const TechStack: React.FC = () => {
       const isMobile = window.innerWidth < 768;
 
       setRadii({
-        1: isMobile ? 140 : 280,
-        2: isMobile ? 220 : 420,
-        3: isMobile ? 300 : 580,
+        1: isMobile ? 70 : 140,
+        2: isMobile ? 120 : 220,
+        3: isMobile ? 170 : 300,
       });
     };
 
@@ -166,7 +166,7 @@ const TechStack: React.FC = () => {
   useEffect(() => {
     const interval = setInterval(() => {
       setActiveIndex((prev) => (prev + 1) % techItems.length);
-    }, 1000);
+    }, 2000);
     return () => clearInterval(interval);
   }, []);
 
@@ -175,7 +175,7 @@ const TechStack: React.FC = () => {
   };
 
   return (
-    <div className="relative w-full min-h-[700px] md:min-h-[900px] flex items-center justify-center overflow-hidden py-32 bg-white">
+    <div className="relative w-full min-h-[380px] md:min-h-[420px] flex items-center justify-center overflow-hidden py-8 bg-white">
       <div className="absolute top-0 left-0 w-full h-full opacity-[0.03] pointer-events-none">
         <svg
           width="100%"
@@ -200,11 +200,11 @@ const TechStack: React.FC = () => {
         </svg>
       </div>
 
-      <div className="relative w-full max-w-[1400px] aspect-square flex items-center justify-center px-6 md:px-12">
+      <div className="relative w-full max-w-[700px] aspect-square flex items-center justify-center px-6 md:px-12">
         {/* Orbit Lines */}
-        <div className="absolute w-[280px] h-[280px] md:w-[560px] md:h-[560px] border border-slate-200 rounded-full"></div>
-        <div className="absolute w-[440px] h-[440px] md:w-[840px] md:h-[840px] border border-slate-200/60 rounded-full"></div>
-        <div className="absolute w-[600px] h-[600px] md:w-[1160px] md:h-[1160px] border border-slate-200/30 rounded-full"></div>
+        <div className="absolute w-[140px] h-[140px] md:w-[280px] md:h-[280px] border border-slate-200 rounded-full"></div>
+        <div className="absolute w-[220px] h-[220px] md:w-[440px] md:h-[440px] border border-slate-200/60 rounded-full"></div>
+        <div className="absolute w-[300px] h-[300px] md:w-[600px] md:h-[600px] border border-slate-200/30 rounded-full"></div>
 
         {/* Decorative dots on orbitals */}
         {decorativeDots.map((dot, i) => (
@@ -216,11 +216,11 @@ const TechStack: React.FC = () => {
         ))}
 
         {/* Center circular box */}
-        <div className="text-center z-30 w-[320px] h-[320px] md:w-[500px] md:h-[500px] flex flex-col items-center justify-center animate-in fade-in zoom-in duration-1000 bg-white/60 backdrop-blur-md p-10 md:p-16 rounded-full border border-white/80 shadow-[0_32px_64px_-16px_rgba(0,0,0,0.05)]">
+        <div className="text-center z-30 w-[200px] h-[200px] md:w-[300px] md:h-[300px] flex flex-col items-center justify-center animate-in fade-in zoom-in duration-1000 bg-white/60 backdrop-blur-md p-4 md:p-6 rounded-full border border-white/80 shadow-[0_32px_64px_-16px_rgba(0,0,0,0.05)]">
           <p className="text-[#012B48] font-black text-[10px] uppercase tracking-[0.5em] mb-4 opacity-50">
             Execution Engine
           </p>
-          <h2 className="text-3xl md:text-5xl font-black text-[#012B48] leading-[1.1] tracking-tighter mb-6 max-w-xs md:max-w-md">
+          <h2 className="text-2xl md:text-4xl font-black text-[#012B48] leading-[1.1] tracking-tighter mb-6 max-w-xs md:max-w-md">
             The engine for <br />
             <span className="gradient-text italic">modern systems.</span>
           </h2>

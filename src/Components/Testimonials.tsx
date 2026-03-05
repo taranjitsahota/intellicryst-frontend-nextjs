@@ -69,7 +69,7 @@ const testimonials: Testimonial[] = [
 
   useEffect(() => {
     const dots: { x: number; y: number; color: 'gray' | 'cyan'; size: number }[] = [];
-    const gridSize = 2.4;
+    const gridSize = 3.2  ;
 
     const isInsideWorldMap = (x: number, y: number) => {
       if (x > 8 && x < 35 && y > 15 && y < 45) return true;
@@ -106,7 +106,7 @@ const testimonials: Testimonial[] = [
 
   const getCircleSize = (size: string) => {
     switch (size) {
-      case 'lg': return 'w-12 h-12 md:w-16 md:h-16 lg:w-20 lg:h-20';
+      case 'lg': return 'w-10 h-10 md:w-16 md:h-16 lg:w-20 lg:h-20';
       case 'md': return 'w-8 h-8 md:w-10 md:h-10 lg:w-12 lg:h-12';
       case 'sm': return 'w-6 h-6 md:w-7 md:h-7 lg:w-8 lg:h-8';
       default: return 'w-10 h-10';
@@ -114,18 +114,18 @@ const testimonials: Testimonial[] = [
   };
 
   return (
-    <div className="relative w-full max-w-[1440px] mx-auto px-4 md:px-8 py-32 overflow-hidden bg-white">
+    <div className="relative w-full max-w-[1440px] mx-auto px-4 md:px-8 py-16 overflow-hidden bg-white">
       <div className="text-center mb-16 space-y-4">
         <h4 className="text-[#012B48] font-black text-xs uppercase tracking-[0.4em]">Global Recognition</h4>
-        <h2 className="text-5xl lg:text-7xl font-black text-[#012B48] tracking-tighter leading-[0.95]">
+        <h2 className="text-4xl lg:text-5xl font-black text-[#012B48] tracking-tighter leading-[0.95]">
           Built for <span className="gradient-text">the world.</span>
         </h2>
-        <p className="text-[#5A6C7C] font-semibold text-lg lg:text-xl max-w-2xl mx-auto opacity-70">
+        <p className="text-[#5A6C7C] font-semibold text-base lg:text-lg max-w-2xl mx-auto opacity-70">
           Our systems empower businesses across continents, delivering high-performance digital solutions that scale globally.
         </p>
       </div>
 
-      <div className="relative w-full aspect-[21/10] md:aspect-[16/8] lg:aspect-[21/9] min-h-[500px] lg:min-h-[700px]">
+      <div className="relative w-full aspect-[21/10] md:aspect-[16/8] lg:aspect-[21/9] min-h-[420px] lg:min-h-[520px]">
         {/* Dense Decorative Map Dots */}
         {worldDots.map((dot, idx) => (
           <div 
@@ -191,9 +191,9 @@ const testimonials: Testimonial[] = [
               {/* Popup Card */}
               {activeId === t.id && (
                 <div 
-                  className={`absolute top-[120%] ${t.x > 75 ? 'right-0 translate-x-0' : t.x < 25 ? 'left-0 translate-x-0' : 'left-1/2 -translate-x-1/2'} w-[300px] md:w-[360px] bg-white rounded-[32px] shadow-[0_48px_128px_-24px_rgba(1,43,72,0.18)] border border-slate-50 p-8 z-[110] animate-in zoom-in-95 fade-in duration-300`}
+                  className={`absolute top-[120%] ${t.x > 75 ? 'right-0 translate-x-0' : t.x < 25 ? 'left-0 translate-x-0' : 'left-1/2 -translate-x-1/2'} w-[260px] md:w-[300px] bg-white rounded-2xl shadow-[0_48px_128px_-24px_rgba(1,43,72,0.18)] border border-slate-50 p-6 z-[110] animate-in zoom-in-95 fade-in duration-300`}
                 >
-                  <div className="absolute -top-12 left-1/2 -translate-x-1/2 w-24 h-24 rounded-full border-[6px] border-white bg-white shadow-xl overflow-hidden">
+                  <div className="absolute -top-12 left-1/2 -translate-x-1/2 w-20 h-20 rounded-full border-[6px] border-white bg-white shadow-xl overflow-hidden">
                     <img src={t.avatar} alt={t.name} className="w-full h-full object-cover" />
                   </div>
 
@@ -235,18 +235,18 @@ const testimonials: Testimonial[] = [
       </div>
 
       {/* Floating Statistics Chips */}
-      <div className="flex flex-wrap items-center justify-center gap-12 mt-16 animate-in slide-in-from-bottom duration-1000">
+      <div className="flex flex-wrap items-center justify-center gap-8 mt-16 animate-in slide-in-from-bottom duration-1000">
         {[
           { label: 'Countries', value: '42+', icon: <Globe size={16} /> },
           { label: 'Uptime', value: '99.99%', icon: <Zap size={16} /> },
           { label: 'Satisfaction', value: '4.9/5', icon: <Star size={16} /> }
         ].map((stat, i) => (
           <div key={i} className="flex items-center gap-4 group">
-            <div className="w-12 h-12 rounded-2xl bg-slate-50 border border-slate-100 flex items-center justify-center text-[#00F5D4] group-hover:bg-[#00F5D4] group-hover:text-white transition-all shadow-sm">
+            <div className="w-10 h-10 rounded-2xl bg-slate-50 border border-slate-100 flex items-center justify-center text-[#00F5D4] group-hover:bg-[#00F5D4] group-hover:text-white transition-all shadow-sm">
               {stat.icon}
             </div>
             <div>
-              <p className="text-2xl font-black text-[#012B48] tracking-tighter">{stat.value}</p>
+              <p className="text-xl font-black text-[#012B48] tracking-tighter">{stat.value}</p>
               <p className="text-[10px] font-black text-[#5A6C7C] uppercase tracking-widest opacity-60">{stat.label}</p>
             </div>
           </div>

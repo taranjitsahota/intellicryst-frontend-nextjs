@@ -91,15 +91,15 @@ const Hero: React.FC = () => {
       
       <ParticleWaveBackground />
 
-      <div className="max-w-[1440px] mx-auto px-8 md:px-16 lg:px-24 relative z-10 text-center space-y-16 py-20 pt-32">
+      <div className="max-w-[1440px] mx-auto px-8 md:px-16 lg:px-24 relative z-10 text-center space-y-6 py-8 pt-20">
         
         <div className="inline-flex items-center gap-3 px-6 py-2 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-white font-black text-[10px] uppercase tracking-[0.4em] animate-in fade-in slide-in-from-top-4 duration-1000">
           <Cpu size={14} className="text-[#00F5D4]" />
           Engineered for Performance
         </div>
 
-        <div className="space-y-10 max-w-7xl mx-auto flex flex-col items-center">
-          <h1 className="hero-headline text-4xl md:text-6xl xl:text-8xl font-black text-white leading-[1.2] md:leading-[1.1] tracking-normal flex flex-col items-center">
+        <div className="space-y-6 max-w-7xl mx-auto flex flex-col items-center">
+          <h1 className="hero-headline text-3xl md:text-5xl xl:text-6xl font-black text-white leading-[1.2] md:leading-[1.1] tracking-normal flex flex-col items-center">
             <AnimatedText 
               text="We design, build, deploy," 
               highlightWords={['design', 'build', 'deploy']}
@@ -110,16 +110,16 @@ const Hero: React.FC = () => {
               baseDelay={0.8} 
             />
           </h1>
-          <p className="text-xl md:text-2xl text-white/50 font-bold max-w-4xl mx-auto leading-relaxed tracking-wide animate-in fade-in slide-in-from-bottom-6 duration-1000 delay-1000">
+          <p className="text-base md:text-lg text-white/50 font-bold max-w-4xl mx-auto leading-relaxed tracking-wide animate-in fade-in slide-in-from-bottom-6 duration-1000 delay-1000">
             Web development · Mobile apps · Cloud (AWS & Azure) · Network & application security
           </p>
         </div>
 
-        <div className="flex flex-col sm:flex-row items-center justify-center gap-8 animate-in fade-in slide-in-from-bottom-10 duration-1000 delay-[1.2s]">
-          <button className="group px-16 py-8 rounded-full bg-white text-[#05080F] font-black text-lg flex items-center gap-4 transition-all hover:bg-[#00F5D4] hover:scale-105 shadow-[0_0_80px_rgba(255,255,255,0.15)]">
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-5 animate-in fade-in slide-in-from-bottom-10 duration-1000 delay-[1.2s]">
+          <button className="group px-8 py-4 text-sm rounded-full bg-white text-[#05080F] font-black flex items-center gap-4 transition-all hover:bg-[#00F5D4] hover:scale-105 shadow-[0_0_80px_rgba(255,255,255,0.15)]">
             Talk to Us <ArrowRight size={24} className="group-hover:translate-x-1 transition-transform" />
           </button>
-          <button className="px-16 py-8 rounded-full border-2 border-white/10 text-white/60 font-black text-lg transition-all hover:text-white hover:border-white/40 hover:bg-white/5">
+          <button className="px-8 py-4 text-sm rounded-full border-2 border-white/10 text-white/60 font-black transition-all hover:text-white hover:border-white/40 hover:bg-white/5">
             See What We Build
           </button>
         </div>

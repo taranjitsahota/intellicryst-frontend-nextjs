@@ -28,12 +28,17 @@ const Header: React.FC<{  }> = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-
   const navItems = [
-    { label: 'Services', href: '#key-services' },
-    { label: 'Industries', href: '#industries' },
+    { label: 'Home', href: '#' },
+    { label: 'Services', href: '#services-summary' },
+    { label: 'Key Services', href: '#key-services' },
+    { label: 'Why Us', href: '#why-us' },
+    { label: 'Team', href: '#team' },
     { label: 'Projects', href: '#projects' },
-    { label: 'About', href: '#why-us' },
+    { label: 'Testimonials', href: '#testimonials' },
+    { label: 'Tech Stack', href: '#tech-stack' },
+    { label: 'Industries', href: '#industries' },
+    { label: 'Process', href: '#process' },
     { label: 'Contact', href: '#contact' },
   ];
 

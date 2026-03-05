@@ -12,12 +12,12 @@ import {
 } from 'lucide-react';
 
 const steps = [
-  { title: "Consult", desc: "Understanding your vision and defining roadmap.", icon: <Search size={22} /> },
-  { title: "Design", desc: "Creating high-fidelity prototypes and flows.", icon: <Palette size={22} /> },
-  { title: "Build", desc: "Engineering with clean code and architecture.", icon: <Code2 size={22} /> },
-  { title: "Test", desc: "Rigorous QA and security vulnerability scans.", icon: <ShieldCheck size={22} /> },
-  { title: "Launch", desc: "Stable deployment with cloud monitoring.", icon: <Rocket size={22} /> },
-  { title: "Support", desc: "Ongoing maintenance and performance tuning.", icon: <LifeBuoy size={22} /> }
+  { title: "Consult", desc: "Understanding your vision and defining roadmap.", icon: <Search size={18} /> },
+  { title: "Design", desc: "Creating high-fidelity prototypes and flows.", icon: <Palette size={18} /> },
+  { title: "Build", desc: "Engineering with clean code and architecture.", icon: <Code2 size={18} /> },
+  { title: "Test", desc: "Rigorous QA and security vulnerability scans.", icon: <ShieldCheck size={18} /> },
+  { title: "Launch", desc: "Stable deployment with cloud monitoring.", icon: <Rocket size={18} /> },
+  { title: "Support", desc: "Ongoing maintenance and performance tuning.", icon: <LifeBuoy size={18} /> }
 ];
 
 const Process: React.FC = () => {
@@ -70,7 +70,7 @@ const Process: React.FC = () => {
         className="relative w-full overflow-x-auto no-scrollbar scroll-smooth"
         style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
       >
-        <div className="relative h-[520px] min-w-[1500px]">
+        <div className="relative h-[360px] min-w-[1200px]">
           
           {/* Main Fluid Gradient Path - Layered behind icons and text */}
           <div className="absolute top-1/2 left-0 w-full -translate-y-1/2 z-0 pointer-events-none px-20">
@@ -100,11 +100,11 @@ const Process: React.FC = () => {
             </svg>
           </div>
 
-          {/* Steps distributed end-to-end with sufficient horizontal breathing room (px-32) */}
-          <div className="absolute inset-0 flex justify-between items-center px-32 py-10">
+          {/* Steps distributed end-to-end with sufficient horizontal breathing room (px-20) */}
+          <div className="absolute inset-0 flex justify-between items-center px-20 py-10">
             {steps.map((step, i) => {
               const isEven = i % 2 === 0;
-              // Positioning on the 100% width track, but px-32 on the container handles the edge "cutting"
+              // Positioning on the 100% width track, but px-20 on the container handles the edge "cutting"
               const leftPos = (i / (steps.length - 1)) * 100;
               
               return (
@@ -118,14 +118,14 @@ const Process: React.FC = () => {
                   }}
                 >
                   {/* Step Number Backdrop - Shifted further left and up to be more visible */}
-                  <div className="absolute -top-16 -left-12 text-[7.5rem] lg:text-[9rem] font-black text-slate-100/80 select-none z-[-1] transition-all duration-500 group-hover:text-[#00F5D4]/10">
+                  <div className="absolute -top-16 -left-12 text-[4rem] lg:text-[5rem] font-black text-slate-100/80 select-none z-[-1] transition-all duration-500 group-hover:text-[#00F5D4]/10">
                     {i + 1}
                   </div>
 
                   {/* Icon Node Container */}
                   <div className="relative group">
                     <div className="absolute inset-0 bg-gradient-to-tr from-[#00F5D4]/20 to-[#00B6FF]/20 blur-2xl rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
-                    <div className="w-20 h-20 lg:w-24 lg:h-24 rounded-[32px] bg-white border border-slate-100 shadow-[0_12px_40px_-10px_rgba(0,0,0,0.1)] flex items-center justify-center text-[#012B48] group-hover:scale-110 group-hover:border-[#00F5D4] group-hover:-translate-y-2 transition-all duration-700 relative z-10">
+                    <div className="w-14 h-14 lg:w-16 lg:h-16 rounded-[32px] bg-white border border-slate-100 shadow-[0_12px_40px_-10px_rgba(0,0,0,0.1)] flex items-center justify-center text-[#012B48] group-hover:scale-110 group-hover:border-[#00F5D4] group-hover:-translate-y-2 transition-all duration-700 relative z-10">
                       <div className="text-[#00F5D4] transform group-hover:rotate-6 transition-transform duration-500">
                         {step.icon}
                       </div>
@@ -134,8 +134,8 @@ const Process: React.FC = () => {
 
                   {/* Text Content - Positioned with more vertical space to avoid overlap with the SVG path */}
                   <div 
-                    className={`absolute left-1/2 -translate-x-1/2 w-[220px] lg:w-[260px] text-center transition-all duration-500 z-20 ${
-                      isEven ? 'top-32' : 'bottom-32'
+                    className={`absolute left-1/2 -translate-x-1/2 w-[180px] lg:w-[200px] text-center transition-all duration-500 z-20 ${
+                      isEven ? 'top-20' : 'bottom-20'
                     }`}
                   >
                     <h3 className="text-xl font-black text-[#012B48] mb-2 tracking-tight transition-colors group-hover:text-[#00F5D4]">
