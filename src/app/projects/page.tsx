@@ -1,6 +1,6 @@
-"use client"
+"use client";
 
-import Projects from "@/Components/Projects";
+import Projects from "@/components/Projects";
 
 export default function ServicesPage() {
   return (
@@ -15,7 +15,7 @@ export default function ServicesPage() {
         </p>
       </section> */}
 
-      {/* Components */}
+      {/* components */}
       <Projects />
     </main>
   );

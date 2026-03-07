@@ -1,13 +1,14 @@
-"use client"
+"use client";
 
-import KeyServices from "@/Components/KeyServices"
-import ServicesGrid from "@/Components/ServicesGrid"
+import KeyServices from "@/components/KeyServices";
+import Process from "@/components/Process";
+import ServicesGrid from "@/components/ServicesGrid";
 
 export default function ServicesPage() {
   return (
     <main>
       {/* Page Header */}
-      {/* <section className="py-32 bg-white text-center">
+      {/* <section className="py-12 bg-white text-center">
         <h1 className="text-5xl md:text-6xl font-black text-[#012B48] mb-6">
           Our Services
         </h1>
@@ -16,9 +17,10 @@ export default function ServicesPage() {
         </p>
       </section> */}
 
-      {/* Components */}
-      <KeyServices />
+      {/* components */}
       <ServicesGrid />
+      <KeyServices />
+      <Process />
     </main>
   );
 }

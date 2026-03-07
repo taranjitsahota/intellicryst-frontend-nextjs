@@ -1,15 +1,7 @@
 
 import React from 'react';
+import { logos } from '@/data/trusted';
 
-const logos = [
-  { name: 'Skyline Dynamics', icon: 'F' },
-  { name: 'Vortex Core', icon: 'V' },
-  { name: 'Quantum Path', icon: 'Q' },
-  { name: 'NovaChain', icon: 'N' },
-  { name: 'Apex Systems', icon: 'A' },
-  { name: 'Cloud Drift', icon: 'C' },
-  { name: 'Nexus Logic', icon: 'L' },
-];
 
 const TrustedBy: React.FC = () => {
   return (
@@ -20,7 +12,7 @@ const TrustedBy: React.FC = () => {
           <div className="flex items-center justify-center gap-10 px-6">
             <div className="h-[1px] w-32 bg-slate-100"></div>
             <p className="text-[11px] font-black uppercase tracking-[0.6em] text-[#012B48]/30 whitespace-nowrap">
-              Trusted by 50+ Global Businesses
+              Trusted by Global Businesses
             </p>
             <div className="h-[1px] w-32 bg-slate-100"></div>
           </div>

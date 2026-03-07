@@ -1,6 +1,7 @@
-"use client"
+"use client";
 
-import Contact from "@/Components/Contact";
+import Contact from "@/components/Contact";
+import Process from "@/components/Process";
 
 export default function ServicesPage() {
   return (
@@ -15,7 +16,8 @@ export default function ServicesPage() {
         </p>
       </section> */}
 
-      {/* Components */}
+      {/* components */}
+      <Process />
       <Contact />
     </main>
   );

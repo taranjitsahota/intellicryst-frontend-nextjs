@@ -1,6 +1,7 @@
 
 import React, { useState } from 'react';
 import { ExternalLink, Sprout, Car, Tractor, Shield, ChevronLeft, ChevronRight, MessageSquare, Plus } from 'lucide-react';
+import Link from 'next/link';
 
 interface ProjectCardProps {
   project: {
@@ -193,9 +194,11 @@ const Projects: React.FC = () => {
             </p>
 
             <div className="flex flex-col sm:flex-row items-center gap-6 pt-6">
-              <button className="px-8 py-4 text-sm bg-[#012B48] text-white rounded-2xl font-black flex items-center gap-4 hover:scale-105 transition-all shadow-2xl shadow-navy/30">
+              <Link href="/projects" >
+              <button className="px-8 py-4 text-sm bg-[#012B48] text-white rounded-2xl font-black flex items-center gap-4 hover:scale-105 transition-all shadow-2xl shadow-navy/30 hover:cursor-pointer">
                 Explore All <ExternalLink size={24} />
               </button>
+              </Link>
               
               <div className="flex items-center gap-5">
                 <button onClick={prevProject} className="w-12 h-12 rounded-full border-2 border-slate-100 flex items-center justify-center text-[#012B48] hover:bg-slate-50 transition-all group bg-white shadow-sm">

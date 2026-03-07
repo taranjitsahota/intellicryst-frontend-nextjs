@@ -1,6 +1,6 @@
-"use client"
+"use client";
 
-import Industries from "@/Components/Industries";
+import Industries from "@/components/Industries";
 
 export default function ServicesPage() {
   return (
@@ -15,7 +15,7 @@ export default function ServicesPage() {
         </p>
       </section> */}
 
-      {/* Components */}
+      {/* components */}
       <Industries />
     </main>
   );

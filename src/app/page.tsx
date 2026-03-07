@@ -1,32 +1,30 @@
 "use client";
 import React, { useEffect, useState } from "react";
-import Hero from "@/Components/Hero";
-import TrustedBy from "@/Components/TrustedBy";
-import ServicesGrid from "@/Components/ServicesGrid";
-import KeyServices from "@/Components/KeyServices";
-import WhyChooseUs from "@/Components/WhyChooseUs";
-import Projects from "@/Components/Projects";
-import Testimonials from "@/Components/Testimonials";
-import TechStack from "@/Components/TechStack";
-import Team from "@/Components/Team";
-import Industries from "@/Components/Industries";
-import Process from "@/Components/Process";
-import Contact from "@/Components/Contact";
-import CallToActionChips from "@/Components/CallToActionChips";
-import Footer from "@/Components/layout/Footer";
-import ChatWidget from "@/Components/ChatWidget";
-import Header from "@/Components/layout/Header";
+import Hero from "@/components/Hero";
+import TrustedBy from "@/components/TrustedBy";
+import ServicesGrid from "@/components/ServicesGrid";
+import KeyServices from "@/components/KeyServices";
+import WhyChooseUs from "@/components/WhyChooseUs";
+import Projects from "@/components/Projects";
+import Testimonials from "@/components/Testimonials";
+import TechStack from "@/components/TechStack";
+import Team from "@/components/Team";
+import Industries from "@/components/Industries";
+import Process from "@/components/Process";
+import Contact from "@/components/Contact";
+import CallToActionChips from "@/components/CallToActionChips";
+import ChatWidget from "@/components/ChatWidget";
 
 const App: React.FC = () => {
-  const [scrolled, setScrolled] = useState(false);
+  // const [scrolled, setScrolled] = useState(false);
 
-  useEffect(() => {
-    const handleScroll = () => {
-      setScrolled(window.scrollY > 50);
-    };
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+  // useEffect(() => {
+  //   const handleScroll = () => {
+  //     setScrolled(window.scrollY > 50);
+  //   };
+  //   window.addEventListener("scroll", handleScroll);
+  //   return () => window.removeEventListener("scroll", handleScroll);
+  // }, []);
 
   return (
     <div className="relative min-h-screen selection:bg-cyan-200 selection:text-navy-900 overflow-x-hidden bg-white">
@@ -64,26 +62,21 @@ const App: React.FC = () => {
           ></div>
         </div>
 
-        <section id="key-services" className="py-20 bg-slate-50/5 relative">
+        {/* <section id="key-services" className="py-20 bg-slate-50/5 relative">
           <KeyServices />
-        </section>
+        </section> */}
 
         <section id="why-us" className="py-20 bg-transparent">
           <WhyChooseUs />
         </section>
 
-        <section id="team" className="py-20 bg-slate-50/20 relative">
-          {/* Section specific accent - Reduced opacity */}
+        {/* <section id="team" className="py-20 bg-slate-50/20 relative">
           <div className="absolute top-1/2 left-0 w-[600px] h-[600px] bg-[#00F5D4]/3 blur-[120px] rounded-full -translate-y-1/2 -translate-x-1/2 pointer-events-none"></div>
           <Team />
-        </section>
+        </section> */}
 
         <section id="projects" className="py-20 bg-transparent">
           <Projects />
-        </section>
-
-        <section id="testimonials" className="py-20 bg-slate-50/5 relative">
-          <Testimonials />
         </section>
 
         <section id="tech-stack" className="py-20 bg-slate-50/10 relative">
@@ -94,13 +87,17 @@ const App: React.FC = () => {
           <Industries />
         </section>
 
-        <section id="process" className="py-20 bg-slate-50/15 relative">
+        <section id="testimonials" className="py-20 bg-slate-50/5 relative">
+          <Testimonials />
+        </section>
+
+        {/* <section id="process" className="py-20 bg-slate-50/15 relative">
           <Process />
         </section>
 
         <section id="contact" className="py-20 bg-transparent">
           <Contact />
-        </section>
+        </section> */}
 
         <section id="cta-chips">
           <CallToActionChips />
