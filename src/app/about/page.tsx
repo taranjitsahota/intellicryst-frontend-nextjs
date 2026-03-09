@@ -12,7 +12,7 @@ export default function ServicesPage() {
         <h1 className="text-5xl md:text-6xl font-black text-[var(--deep-blue)] mb-6">
           Our Services
         </h1>
-        <p className="text-[#5A6C7C] max-w-2xl mx-auto text-lg">
+        <p className="text-[var(--grey-text)] max-w-2xl mx-auto text-lg">
           We design, build, and scale digital systems that power global businesses.
         </p>
       </section> */}

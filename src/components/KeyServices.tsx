@@ -34,7 +34,7 @@ const KeyServices: React.FC = () => {
           
           <div className="p-6 pb-0 relative z-10">
             <h3 className="text-xl font-black text-[var(--deep-blue)] mb-3">Security Engineering</h3>
-            <p className="text-sm text-[#5A6C7C] font-semibold leading-relaxed">
+            <p className="text-sm text-[var(--grey-text)] font-semibold leading-relaxed">
               We implement zero-trust controls at network, application, and access layers.
             </p>
           </div>
@@ -57,7 +57,7 @@ const KeyServices: React.FC = () => {
           
           <div className="p-6 pb-0 relative z-10">
             <h3 className="text-xl font-black text-[var(--deep-blue)] mb-3">Cloud Infrastructure</h3>
-            <p className="text-sm text-[#5A6C7C] font-semibold leading-relaxed">
+            <p className="text-sm text-[var(--grey-text)] font-semibold leading-relaxed">
               Resilient multi-cloud deployments across AWS, Azure, and edge platforms.
             </p>
           </div>
@@ -89,7 +89,7 @@ const KeyServices: React.FC = () => {
           
           <div className="p-6 pb-0 relative z-10">
             <h3 className="text-xl font-black text-[var(--deep-blue)] mb-3">SEO & Quality</h3>
-            <p className="text-sm text-[#5A6C7C] font-semibold leading-relaxed">
+            <p className="text-sm text-[var(--grey-text)] font-semibold leading-relaxed">
               Performance-focused structure and post-deployment validation.
             </p>
           </div>
@@ -110,7 +110,7 @@ const KeyServices: React.FC = () => {
                   { label: 'Security Scan', score: 'Passed' }
                 ].map((item, i) => (
                   <div key={i} className="flex items-center justify-between">
-                    <span className="text-[11px] font-black text-[#5A6C7C] uppercase tracking-wider">{item.label}</span>
+                    <span className="text-[11px] font-black text-[var(--grey-text)] uppercase tracking-wider">{item.label}</span>
                     <span className={`text-[11px] font-black ${typeof item.score === 'number' ? 'text-rose-500' : 'text-blue-500'}`}>
                       {item.score}
                     </span>
@@ -137,7 +137,7 @@ const KeyServices: React.FC = () => {
           <div className="p-6 lg:w-1/3 flex flex-col justify-between relative z-10">
             <div>
               <h3 className="text-xl font-black text-[var(--deep-blue)] mb-3">Full-Stack Development</h3>
-              <p className="text-sm text-[#5A6C7C] font-semibold leading-relaxed">
+              <p className="text-sm text-[var(--grey-text)] font-semibold leading-relaxed">
                 Frontend interfaces, backend services, and multi-platform mobile applications.
               </p>
             </div>
@@ -182,7 +182,7 @@ const KeyServices: React.FC = () => {
                       </div>
                       <div>
                         <p className="text-xs font-black text-[var(--deep-blue)]">{item.name}</p>
-                        <p className="text-[9px] font-bold text-[#5A6C7C] uppercase tracking-widest">{item.tag}</p>
+                        <p className="text-[9px] font-bold text-[var(--grey-text)] uppercase tracking-widest">{item.tag}</p>
                       </div>
                     </div>
                     <div className={`w-2.5 h-2.5 rounded-full ${item.color}`}></div>
@@ -200,7 +200,7 @@ const KeyServices: React.FC = () => {
           
           <div className="p-6 pb-0 relative z-10">
             <h3 className="text-xl font-black text-[var(--deep-blue)] mb-3">Agility & Performance</h3>
-            <p className="text-sm text-[#5A6C7C] font-semibold leading-relaxed">
+            <p className="text-sm text-[var(--grey-text)] font-semibold leading-relaxed">
               We deliver at the speed of execution, focusing on stability first.
             </p>
           </div>

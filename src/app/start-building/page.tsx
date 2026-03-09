@@ -26,7 +26,7 @@ const StartBuilding: React.FC = () => {
             Let's build your <span className="gradient-text">next product</span>
           </h2>
 
-          <p className="text-base lg:text-lg text-[#5A6C7C] font-semibold">
+          <p className="text-base lg:text-lg text-[var(--grey-text)] font-semibold">
             Tell us about your project and we'll help you plan the next step.
           </p>
         </div>

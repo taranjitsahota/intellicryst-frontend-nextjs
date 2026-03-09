@@ -18,7 +18,7 @@ const ParticleWaveBackground = () => (
     </div>
 
     {/* Brand Color Overlays for Depth */}
-    <div className="absolute inset-0 bg-gradient-to-b from-transparent via-[#05080F]/60 to-[#05080F]"></div>
+    <div className="absolute inset-0 bg-gradient-to-b from-transparent via-[var(--dark-grey)]/60 to-[var(--dark-grey)]"></div>
     <div className="absolute inset-0 bg-gradient-to-tr from-[var(--primary-cyan)]/5 via-transparent to-[var(--primary-blue)]/5"></div>
 
     {/* Animated Glow Accents (Minimum Opacity) */}
@@ -70,7 +70,7 @@ const AnimatedText = ({
 
 const Hero: React.FC = () => {
   return (
-    <div className="relative min-h-screen flex flex-col items-center justify-center bg-[#05080F] overflow-hidden">
+    <div className="relative min-h-screen flex flex-col items-center justify-center bg-[var(--dark-grey)] overflow-hidden">
       <style>
         {`
           @keyframes particle-slide {
@@ -122,7 +122,7 @@ const Hero: React.FC = () => {
 
         <div className="flex flex-col sm:flex-row items-center justify-center gap-5 animate-in fade-in slide-in-from-bottom-10 duration-1000 delay-[1.2s]">
           <Link href="/contact">
-            <button className="group px-8 py-4 text-sm rounded-full bg-white text-[#05080F] font-black flex items-center gap-4 transition-all hover:bg-[var(--primary-cyan)] hover:scale-105 shadow-[0_0_80px_rgba(255,255,255,0.15)] hover:cursor-pointer">
+            <button className="group px-8 py-4 text-sm rounded-full bg-white text-[var(--dark-grey)] font-black flex items-center gap-4 transition-all hover:bg-[var(--primary-cyan)] hover:scale-105 shadow-[0_0_80px_rgba(255,255,255,0.15)] hover:cursor-pointer">
               Talk to Us
               <ArrowRight
                 size={24}

@@ -120,7 +120,7 @@ const testimonials: Testimonial[] = [
         <h2 className="text-4xl lg:text-5xl font-black text-[var(--deep-blue)] tracking-tighter leading-[0.95]">
           Built for <span className="gradient-text">the world.</span>
         </h2>
-        <p className="text-[#5A6C7C] font-semibold text-base lg:text-lg max-w-2xl mx-auto opacity-70">
+        <p className="text-[var(--grey-text)] font-semibold text-base lg:text-lg max-w-2xl mx-auto opacity-70">
           Our systems empower businesses across continents, delivering high-performance digital solutions that scale globally.
         </p>
       </div>
@@ -211,7 +211,7 @@ const testimonials: Testimonial[] = [
                       </div>
                       
                       <h3 className="text-xl font-black text-[var(--deep-blue)]">{t.name}</h3>
-                      <p className="text-[10px] font-black text-[#5A6C7C] uppercase tracking-widest opacity-40">{t.location}</p>
+                      <p className="text-[10px] font-black text-[var(--grey-text)] uppercase tracking-widest opacity-40">{t.location}</p>
                     </div>
 
                     <div className="flex justify-center gap-1">
@@ -220,7 +220,7 @@ const testimonials: Testimonial[] = [
                       ))}
                     </div>
 
-                    <p className="text-sm text-[#5A6C7C] font-semibold leading-relaxed px-4">
+                    <p className="text-sm text-[var(--grey-text)] font-semibold leading-relaxed px-4">
                       "{t.text}"
                     </p>
                   </div>
@@ -247,7 +247,7 @@ const testimonials: Testimonial[] = [
             </div>
             <div>
               <p className="text-xl font-black text-[var(--deep-blue)] tracking-tighter">{stat.value}</p>
-              <p className="text-[10px] font-black text-[#5A6C7C] uppercase tracking-widest opacity-60">{stat.label}</p>
+              <p className="text-[10px] font-black text-[var(--grey-text)] uppercase tracking-widest opacity-60">{stat.label}</p>
             </div>
           </div>
         ))}

@@ -75,7 +75,7 @@ const ServicesGrid: React.FC = () => {
           Intellicryst Features, <br className="hidden md:block" /> 
           <span className="gradient-text">Engineered For Your Growth</span>
         </h2>
-        <p className="text-[#5A6C7C] font-semibold max-w-2xl mx-auto text-base lg:text-lg leading-relaxed">
+        <p className="text-[var(--grey-text)] font-semibold max-w-2xl mx-auto text-base lg:text-lg leading-relaxed">
           Enjoy seamless development, smarter cloud predictions, and personalized security 
           protocols powered by our elite engineering.
         </p>
@@ -107,7 +107,7 @@ const ServicesGrid: React.FC = () => {
                 </h3>
                 
                 <p className={`text-sm leading-relaxed font-medium ${
-                  isFirst ? 'text-white/60' : 'text-[#5A6C7C]'
+                  isFirst ? 'text-white/60' : 'text-[var(--grey-text)]'
                 }`}>
                   {s.desc}
                 </p>

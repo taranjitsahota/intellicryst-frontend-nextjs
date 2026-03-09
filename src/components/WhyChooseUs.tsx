@@ -77,7 +77,7 @@ const WhyChooseUs: React.FC = () => {
                 { label: 'Cloud Efficiency', value: 92, color: 'bg-slate-300' }
               ].map((item, i) => (
                 <div key={i} className="space-y-3">
-                  <div className="flex justify-between items-center text-[11px] font-bold text-[#5A6C7C] uppercase tracking-wider">
+                  <div className="flex justify-between items-center text-[11px] font-bold text-[var(--grey-text)] uppercase tracking-wider">
                     <span>{item.label}</span>
                     <span className="text-[var(--deep-blue)]">{item.value}%</span>
                   </div>
@@ -101,7 +101,7 @@ const WhyChooseUs: React.FC = () => {
               Why Clients Choose <br />
               <span className="gradient-text">Intellicryst Tech.</span>
             </h2>
-            <p className="text-base lg:text-lg text-[#5A6C7C] font-semibold leading-relaxed max-w-xl">
+            <p className="text-base lg:text-lg text-[var(--grey-text)] font-semibold leading-relaxed max-w-xl">
               At Intellicryst, we focus on delivering tailored engineering solutions. 
               With advanced cloud infrastructure and security-first development.
             </p>
@@ -116,7 +116,7 @@ const WhyChooseUs: React.FC = () => {
                 </div>
                 <div>
                   <h5 className="text-base font-black text-[var(--deep-blue)] mb-1">{point.title}</h5>
-                  <p className="text-xs text-[#5A6C7C] font-semibold opacity-70 leading-relaxed">{point.desc}</p>
+                  <p className="text-xs text-[var(--grey-text)] font-semibold opacity-70 leading-relaxed">{point.desc}</p>
                 </div>
               </div>
             ))}
@@ -129,7 +129,7 @@ const WhyChooseUs: React.FC = () => {
                 <div className="text-3xl lg:text-4xl font-black text-[var(--deep-blue)] tracking-tighter">
                   {stat.value}
                 </div>
-                <div className="text-[11px] font-black uppercase tracking-widest text-[#5A6C7C] leading-tight">
+                <div className="text-[11px] font-black uppercase tracking-widest text-[var(--grey-text)] leading-tight">
                   {stat.label}
                 </div>
               </div>

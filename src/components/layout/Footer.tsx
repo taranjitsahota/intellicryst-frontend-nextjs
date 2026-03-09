@@ -18,7 +18,7 @@ const LogoMark = () => (
 
 const Footer: React.FC = () => {
   return (
-    <footer className="bg-[var(--deep-blue)] text-[#EAF2FF] pt-24 pb-12 relative overflow-hidden">
+    <footer className="bg-[var(--deep-blue)] text-[var(--light-grey)] pt-24 pb-12 relative overflow-hidden">
       <div className="absolute inset-0 opacity-[0.03] pointer-events-none">
         <svg width="100%" height="100%" viewBox="0 0 1000 1000">
            <path d="M0 100H200V300H500V500H1000" stroke="#00F5D4" strokeWidth="2" fill="none" />
@@ -33,12 +33,12 @@ const Footer: React.FC = () => {
               <LogoMark />
               <span className="text-xl font-black tracking-tighter">INTELLICRYST</span>
             </div>
-            <p className="text-[#EAF2FF]/60 leading-relaxed font-semibold max-w-sm">
+            <p className="text-[var(--light-grey)]/60 leading-relaxed font-semibold max-w-sm">
               Premium digital engineering for complex systems. Your vision. Our future. Accelerated by the speed of high-performance execution.
             </p>
             <div className="flex gap-4">
               {[Twitter, Linkedin, Github].map((Icon, i) => (
-                <a key={i} href="#" className="w-12 h-12 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-[#EAF2FF]/60 hover:text-[var(--primary-cyan)] hover:border-[var(--primary-cyan)] hover:bg-white/10 transition-all">
+                <a key={i} href="#" className="w-12 h-12 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-[var(--light-grey)]/60 hover:text-[var(--primary-cyan)] hover:border-[var(--primary-cyan)] hover:bg-white/10 transition-all">
                   <Icon size={20} />
                 </a>
               ))}
@@ -56,7 +56,7 @@ const Footer: React.FC = () => {
                 "Platform QA & SEO"
               ].map(link => (
                 <li key={link}>
-                  <a href="#" className="text-[#EAF2FF]/70 hover:text-white transition-colors flex items-center font-bold group">
+                  <a href="#" className="text-[var(--light-grey)]/70 hover:text-white transition-colors flex items-center font-bold group">
                     {link} <ArrowUpRight size={14} className="opacity-0 group-hover:opacity-100 transition-all ml-1 -translate-y-1 translate-x-1" />
                   </a>
                 </li>
@@ -69,7 +69,7 @@ const Footer: React.FC = () => {
             <ul className="space-y-5">
               {["Ezykheti", "Ezyfarms", "Mobility Hub", "Secure Gateway"].map(link => (
                 <li key={link}>
-                  <a href="#" className="text-[#EAF2FF]/70 hover:text-white transition-colors flex items-center font-bold group">
+                  <a href="#" className="text-[var(--light-grey)]/70 hover:text-white transition-colors flex items-center font-bold group">
                     {link} <ArrowUpRight size={14} className="opacity-0 group-hover:opacity-100 transition-all ml-1 -translate-y-1 translate-x-1" />
                   </a>
                 </li>
@@ -82,7 +82,7 @@ const Footer: React.FC = () => {
             <ul className="space-y-5">
               {["About Intellicryst", "Contact Engineering", "Career Portal", "Privacy Policy", "Legal Terms"].map(link => (
                 <li key={link}>
-                  <a href="#" className="text-[#EAF2FF]/70 hover:text-white transition-colors flex items-center font-bold group">
+                  <a href="#" className="text-[var(--light-grey)]/70 hover:text-white transition-colors flex items-center font-bold group">
                     {link} <ArrowUpRight size={14} className="opacity-0 group-hover:opacity-100 transition-all ml-1 -translate-y-1 translate-x-1" />
                   </a>
                 </li>
@@ -91,7 +91,7 @@ const Footer: React.FC = () => {
           </div>
         </div>
 
-        <div className="pt-12 border-t border-white/5 flex flex-col md:flex-row items-center justify-between gap-8 text-[10px] text-[#EAF2FF]/30 font-black tracking-[0.4em] uppercase">
+        <div className="pt-12 border-t border-white/5 flex flex-col md:flex-row items-center justify-between gap-8 text-[10px] text-[var(--light-grey)]/30 font-black tracking-[0.4em] uppercase">
           <p>© {new Date().getFullYear()} Intellicryst Technologies. All rights reserved.</p>
           <div className="flex gap-10">
             <a href="#" className="hover:text-white transition-colors">Global Ops</a>

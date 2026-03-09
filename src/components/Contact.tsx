@@ -25,7 +25,7 @@ const Contact: React.FC = () => {
               Have a project to discuss <br /> or a{" "}
               <span className="gradient-text">system to improve?</span>
             </h2>
-            <p className="text-base lg:text-lg text-[#5A6C7C] font-semibold max-w-md leading-relaxed">
+            <p className="text-base lg:text-lg text-[var(--grey-text)] font-semibold max-w-md leading-relaxed">
               We’re available to understand your requirements and explore next
               steps.
             </p>

@@ -79,12 +79,12 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, position, onClick })
               <span className="bg-pink-100 text-pink-600 text-[9px] font-black px-2 py-0.5 rounded-md uppercase tracking-widest">Wizard</span>
             </div>
           </div>
-          <p className="text-xs font-bold text-[#5A6C7C] opacity-40">{project.handle}</p>
+          <p className="text-xs font-bold text-[var(--grey-text)] opacity-40">{project.handle}</p>
         </div>
 
         <div className="space-y-3">
           <p className="text-base font-black text-[var(--deep-blue)]">{project.title}</p>
-          <p className="text-sm text-[#5A6C7C] leading-relaxed font-medium">
+          <p className="text-sm text-[var(--grey-text)] leading-relaxed font-medium">
             {project.description}
           </p>
         </div>
@@ -188,7 +188,7 @@ const Projects: React.FC = () => {
               ></div>
             </div>
             
-            <p className="text-base lg:text-lg text-[#5A6C7C] font-semibold leading-relaxed max-w-lg">
+            <p className="text-base lg:text-lg text-[var(--grey-text)] font-semibold leading-relaxed max-w-lg">
               Our portfolio spans critical infrastructure in agriculture and mobility, 
               focusing on high-availability and zero-trust security architecture.
             </p>

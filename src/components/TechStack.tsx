@@ -224,7 +224,7 @@ const TechStack: React.FC = () => {
             The engine for <br />
             <span className="gradient-text italic">modern systems.</span>
           </h2>
-          <p className="text-[#5A6C7C] font-semibold text-sm md:text-lg leading-relaxed max-w-xs mx-auto opacity-80">
+          <p className="text-[var(--grey-text)] font-semibold text-sm md:text-lg leading-relaxed max-w-xs mx-auto opacity-80">
             Automated engineering stacks delivering peak performance across
             every environment.
           </p>

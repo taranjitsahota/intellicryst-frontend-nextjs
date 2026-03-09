@@ -138,7 +138,7 @@ const Process: React.FC = () => {
                     <h3 className="text-xl font-black text-[var(--deep-blue)] mb-2 tracking-tight transition-colors group-hover:text-[var(--primary-cyan)]">
                       {step.title}
                     </h3>
-                    <p className="text-[13px] text-[#5A6C7C] font-semibold leading-relaxed px-4 opacity-70 group-hover:opacity-100">
+                    <p className="text-[13px] text-[var(--grey-text)] font-semibold leading-relaxed px-4 opacity-70 group-hover:opacity-100">
                       {step.desc}
                     </p>
                   </div>

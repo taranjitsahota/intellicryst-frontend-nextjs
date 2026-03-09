@@ -64,7 +64,7 @@ const Team: React.FC = () => {
             <h2 className="text-4xl lg:text-5xl xl:text-6xl font-black text-[var(--deep-blue)] leading-[0.9] tracking-tighter">
               Watch.<br />Build.<br /><span className="gradient-text">Deploy.</span>
             </h2>
-            <p className="text-base lg:text-lg text-[#5A6C7C] font-semibold leading-relaxed max-w-sm">
+            <p className="text-base lg:text-lg text-[var(--grey-text)] font-semibold leading-relaxed max-w-sm">
               Meet the elite architects and engineers driving your digital transformation.
             </p>
           </div>
