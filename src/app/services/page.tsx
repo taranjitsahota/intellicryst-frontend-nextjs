@@ -20,7 +20,7 @@ export default function ServicesPage() {
       {/* components */}
       <ServicesGrid />
       <KeyServices />
-      <Process />
+      {/* <Process /> */}
     </main>
   );
 }
