@@ -15,7 +15,7 @@ const Process: React.FC = () => {
   };
 
   return (
-    <div className="max-w-[1440px] mx-auto px-8 md:px-16 lg:px-24 relative py-16 lg:py-20 bg-white">
+    <div className="max-w-[1440px] mx-auto px-8 md:px-16 lg:px-24 relative py-16 lg:py-20 bg-white overflow-hidden">
       {/* Background Gaussian Blur Accent */}
       <div className="gaussian-blur-accent w-[600px] h-[600px] -top-20 -right-20 opacity-[0.03]"></div>
 
@@ -61,7 +61,7 @@ const Process: React.FC = () => {
         className="relative w-full overflow-x-auto no-scrollbar scroll-smooth"
         style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
       >
-        <div className="relative h-[360px] min-w-[1200px]">
+        <div className="relative h-[360px] min-w-[900px] lg:min-w-[1200px]">
           {/* Main Fluid Gradient Path - Layered behind icons and text */}
           <div className="absolute top-1/2 left-0 w-full -translate-y-1/2 z-0 pointer-events-none p-40">
             <svg

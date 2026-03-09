@@ -65,7 +65,7 @@ const services = [
 
 const ServicesGrid: React.FC = () => {
   return (
-    <div className="max-w-[1440px] mx-auto p-8 md:px-16 lg:px-24 relative">
+    <div className="max-w-[1440px] mx-auto p-8 md:px-16 lg:px-24 relative overflow-hidden">
       {/* Background Gaussian Blur Accent */}
       <div className="gaussian-blur-accent w-[500px] h-[500px] top-[-10%] right-[-10%] opacity-[0.05]"></div>
 
