@@ -116,8 +116,8 @@ const testimonials: Testimonial[] = [
   return (
     <div className="relative w-full max-w-[1440px] mx-auto px-4 md:px-8 py-16 overflow-hidden bg-white">
       <div className="text-center mb-16 space-y-4">
-        <h4 className="text-[#012B48] font-black text-xs uppercase tracking-[0.4em]">Global Recognition</h4>
-        <h2 className="text-4xl lg:text-5xl font-black text-[#012B48] tracking-tighter leading-[0.95]">
+        <h4 className="text-[var(--deep-blue)] font-black text-xs uppercase tracking-[0.4em]">Global Recognition</h4>
+        <h2 className="text-4xl lg:text-5xl font-black text-[var(--deep-blue)] tracking-tighter leading-[0.95]">
           Built for <span className="gradient-text">the world.</span>
         </h2>
         <p className="text-[#5A6C7C] font-semibold text-base lg:text-lg max-w-2xl mx-auto opacity-70">
@@ -131,7 +131,7 @@ const testimonials: Testimonial[] = [
           <div 
             key={`wdot-${idx}`}
             className={`absolute rounded-full pointer-events-none transition-all duration-1000 ${
-              dot.color === 'cyan' ? 'bg-[#00F5D4] opacity-[0.85]' : 'bg-slate-300 opacity-[0.45]'
+              dot.color === 'cyan' ? 'bg-[var(--primary-cyan)] opacity-[0.85]' : 'bg-slate-300 opacity-[0.45]'
             }`}
             style={{ 
               left: `${dot.x}%`, 
@@ -178,12 +178,12 @@ const testimonials: Testimonial[] = [
             <div className={`group relative cursor-pointer ${getCircleSize(t.size)}`}>
               {/* Outer glow on active */}
               {activeId === t.id && (
-                <div className="absolute inset-0 bg-[#00F5D4]/20 blur-xl rounded-full scale-125 animate-pulse"></div>
+                <div className="absolute inset-0 bg-[var(--primary-cyan)]/20 blur-xl rounded-full scale-125 animate-pulse"></div>
               )}
               
               {/* Avatar Circle */}
               <div className={`w-full h-full rounded-full border transition-all duration-300 overflow-hidden shadow-sm ${
-                activeId === t.id ? 'border-[#00F5D4] scale-110 shadow-lg' : 'border-slate-100 grayscale-[40%] group-hover:grayscale-0 hover:border-[#00F5D4]/40'
+                activeId === t.id ? 'border-[var(--primary-cyan)] scale-110 shadow-lg' : 'border-slate-100 grayscale-[40%] group-hover:grayscale-0 hover:border-[var(--primary-cyan)]/40'
               }`}>
                 <img src={t.avatar} alt={t.name} className="w-full h-full object-cover" />
               </div>
@@ -201,22 +201,22 @@ const testimonials: Testimonial[] = [
                     <div className="space-y-1">
                       <div className="flex items-center justify-center gap-6 mb-4">
                         <div className="flex items-center gap-1.5">
-                          <User size={14} className="text-[#00F5D4]" />
-                          <span className="text-[10px] font-black text-[#012B48] uppercase tracking-widest">Client</span>
+                          <User size={14} className="text-[var(--primary-cyan)]" />
+                          <span className="text-[10px] font-black text-[var(--deep-blue)] uppercase tracking-widest">Client</span>
                         </div>
                         <div className="flex items-center gap-1.5">
                           <Heart size={14} className="text-rose-500" />
-                          <span className="text-[10px] font-black text-[#012B48] uppercase tracking-widest">Partner</span>
+                          <span className="text-[10px] font-black text-[var(--deep-blue)] uppercase tracking-widest">Partner</span>
                         </div>
                       </div>
                       
-                      <h3 className="text-xl font-black text-[#012B48]">{t.name}</h3>
+                      <h3 className="text-xl font-black text-[var(--deep-blue)]">{t.name}</h3>
                       <p className="text-[10px] font-black text-[#5A6C7C] uppercase tracking-widest opacity-40">{t.location}</p>
                     </div>
 
                     <div className="flex justify-center gap-1">
                       {[...Array(5)].map((_, i) => (
-                        <Star key={i} size={14} fill={i < t.rating ? "#00F5D4" : "none"} className={i < t.rating ? "text-[#00F5D4]" : "text-slate-200"} />
+                        <Star key={i} size={14} fill={i < t.rating ? "#00F5D4" : "none"} className={i < t.rating ? "text-[var(--primary-cyan)]" : "text-slate-200"} />
                       ))}
                     </div>
 
@@ -231,7 +231,7 @@ const testimonials: Testimonial[] = [
         ))}
 
         {/* Backdrop Decorative Elements */}
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[95%] h-[95%] border border-[#012B48]/5 rounded-[60px] lg:rounded-[100px] pointer-events-none"></div>
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[95%] h-[95%] border border-[var(--deep-blue)]/5 rounded-[60px] lg:rounded-[100px] pointer-events-none"></div>
       </div>
 
       {/* Floating Statistics Chips */}
@@ -242,11 +242,11 @@ const testimonials: Testimonial[] = [
           { label: 'Satisfaction', value: '4.9/5', icon: <Star size={16} /> }
         ].map((stat, i) => (
           <div key={i} className="flex items-center gap-4 group">
-            <div className="w-10 h-10 rounded-2xl bg-slate-50 border border-slate-100 flex items-center justify-center text-[#00F5D4] group-hover:bg-[#00F5D4] group-hover:text-white transition-all shadow-sm">
+            <div className="w-10 h-10 rounded-2xl bg-slate-50 border border-slate-100 flex items-center justify-center text-[var(--primary-cyan)] group-hover:bg-[var(--primary-cyan)] group-hover:text-white transition-all shadow-sm">
               {stat.icon}
             </div>
             <div>
-              <p className="text-xl font-black text-[#012B48] tracking-tighter">{stat.value}</p>
+              <p className="text-xl font-black text-[var(--deep-blue)] tracking-tighter">{stat.value}</p>
               <p className="text-[10px] font-black text-[#5A6C7C] uppercase tracking-widest opacity-60">{stat.label}</p>
             </div>
           </div>

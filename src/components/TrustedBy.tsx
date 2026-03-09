@@ -11,7 +11,7 @@ const TrustedBy: React.FC = () => {
           {/* Section Header */}
           <div className="flex items-center justify-center gap-10 px-6">
             <div className="h-[1px] w-32 bg-slate-100"></div>
-            <p className="text-[11px] font-black uppercase tracking-[0.6em] text-[#012B48]/30 whitespace-nowrap">
+            <p className="text-[11px] font-black uppercase tracking-[0.6em] text-[var(--deep-blue)]/30 whitespace-nowrap">
               Trusted by Global Businesses
             </p>
             <div className="h-[1px] w-32 bg-slate-100"></div>
@@ -22,16 +22,16 @@ const TrustedBy: React.FC = () => {
             <div className="flex items-center animate-marquee-reverse gap-14 py-6">
               {/* Duplicate logos to ensure seamless looping (3x for safety on wider screens) */}
               {[...logos, ...logos, ...logos].map((logo, idx) => (
-                <div key={`${logo.name}-${idx}`} className="flex items-center gap-10 text-[#012B48] group cursor-default shrink-0">
+                <div key={`${logo.name}-${idx}`} className="flex items-center gap-10 text-[var(--deep-blue)] group cursor-default shrink-0">
                   {/* Significantly Bigger Logo Circle */}
-                  <div className="w-16 h-16 text-xl rounded-[32px] bg-slate-50 border border-slate-100 flex items-center justify-center font-black group-hover:bg-[#012B48] group-hover:text-[#00F5D4] group-hover:scale-110 group-hover:rotate-6 transition-all duration-700 shadow-[0_8px_30px_rgb(0,0,0,0.04)]">
+                  <div className="w-16 h-16 text-xl rounded-[32px] bg-slate-50 border border-slate-100 flex items-center justify-center font-black group-hover:bg-[var(--deep-blue)] group-hover:text-[var(--primary-cyan)] group-hover:scale-110 group-hover:rotate-6 transition-all duration-700 shadow-[0_8px_30px_rgb(0,0,0,0.04)]">
                     {logo.icon}
                   </div>
                   <div className="flex flex-col">
                     <span className="font-black tracking-tight text-lg md:text-xl uppercase opacity-40 group-hover:opacity-100 group-hover:translate-x-2 transition-all duration-500">
                       {logo.name}
                     </span>
-                    <div className="h-1 mt-1 w-0 bg-[#00F5D4] group-hover:w-full transition-all duration-700 rounded-full"></div>
+                    <div className="h-1 mt-1 w-0 bg-[var(--primary-cyan)] group-hover:w-full transition-all duration-700 rounded-full"></div>
                   </div>
                 </div>
               ))}

@@ -7,7 +7,7 @@ export default function ServicesPage() {
     <main>
       {/* Page Header */}
       {/* <section className="py-32 bg-white text-center">
-        <h1 className="text-5xl md:text-6xl font-black text-[#012B48] mb-6">
+        <h1 className="text-5xl md:text-6xl font-black text-[var(--deep-blue)] mb-6">
           Our Services
         </h1>
         <p className="text-[#5A6C7C] max-w-2xl mx-auto text-lg">

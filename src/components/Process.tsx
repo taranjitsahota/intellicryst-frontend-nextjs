@@ -21,10 +21,10 @@ const Process: React.FC = () => {
 
       <div className="flex flex-col md:flex-row items-end justify-between mb-12 lg:mb-16 gap-8">
         <div className="space-y-4">
-          <h4 className="text-[#012B48] font-black text-[10px] lg:text-xs uppercase tracking-[0.5em] opacity-50">
+          <h4 className="text-[var(--deep-blue)] font-black text-[10px] lg:text-xs uppercase tracking-[0.5em] opacity-50">
             Execution Roadmap
           </h4>
-          <h2 className="text-4xl lg:text-6xl font-black text-[#012B48] tracking-tighter leading-[0.95]">
+          <h2 className="text-4xl lg:text-6xl font-black text-[var(--deep-blue)] tracking-tighter leading-[0.95]">
             Our structured <br />
             <span className="gradient-text italic">process.</span>
           </h2>
@@ -34,7 +34,7 @@ const Process: React.FC = () => {
         <div className="flex gap-4 pb-2">
           <button
             onClick={() => scroll("left")}
-            className="w-14 h-14 rounded-full border-2 border-slate-100 flex items-center justify-center text-[#012B48] hover:bg-[#00F5D4] hover:border-[#00F5D4] transition-all group shadow-sm bg-white"
+            className="w-14 h-14 rounded-full border-2 border-slate-100 flex items-center justify-center text-[var(--deep-blue)] hover:bg-[var(--primary-cyan)] hover:border-[var(--primary-cyan)] transition-all group shadow-sm bg-white"
             aria-label="Scroll Left"
           >
             <ChevronLeft
@@ -44,7 +44,7 @@ const Process: React.FC = () => {
           </button>
           <button
             onClick={() => scroll("right")}
-            className="w-14 h-14 rounded-full border-2 border-slate-100 flex items-center justify-center text-[#012B48] hover:bg-[#00F5D4] hover:border-[#00F5D4] transition-all group shadow-sm bg-white"
+            className="w-14 h-14 rounded-full border-2 border-slate-100 flex items-center justify-center text-[var(--deep-blue)] hover:bg-[var(--primary-cyan)] hover:border-[var(--primary-cyan)] transition-all group shadow-sm bg-white"
             aria-label="Scroll Right"
           >
             <ChevronRight
@@ -115,15 +115,15 @@ const Process: React.FC = () => {
                   }}
                 >
                   {/* Step Number Backdrop - Shifted further left and up to be more visible */}
-                  <div className="absolute -top-16 -left-12 text-[4rem] lg:text-[5rem] font-black text-slate-100/80 select-none z-[-1] transition-all duration-500 group-hover:text-[#00F5D4]/10">
+                  <div className="absolute -top-16 -left-12 text-[4rem] lg:text-[5rem] font-black text-slate-100/80 select-none z-[-1] transition-all duration-500 group-hover:text-[var(--primary-cyan)]/10">
                     {i + 1}
                   </div>
 
                   {/* Icon Node Container */}
                   <div className="relative group">
-                    <div className="absolute inset-0 bg-gradient-to-tr from-[#00F5D4]/20 to-[#00B6FF]/20 blur-2xl rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
-                    <div className="w-14 h-14 lg:w-16 lg:h-16 rounded-[32px] bg-white border border-slate-100 shadow-[0_12px_40px_-10px_rgba(0,0,0,0.1)] flex items-center justify-center text-[#012B48] group-hover:scale-110 group-hover:border-[#00F5D4] group-hover:-translate-y-2 transition-all duration-700 relative z-10">
-                      <div className="text-[#00F5D4] transform group-hover:rotate-6 transition-transform duration-500">
+                    <div className="absolute inset-0 bg-gradient-to-tr from-[var(--primary-cyan)]/20 to-[var(--primary-blue)]/20 blur-2xl rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
+                    <div className="w-14 h-14 lg:w-16 lg:h-16 rounded-[32px] bg-white border border-slate-100 shadow-[0_12px_40px_-10px_rgba(0,0,0,0.1)] flex items-center justify-center text-[var(--deep-blue)] group-hover:scale-110 group-hover:border-[var(--primary-cyan)] group-hover:-translate-y-2 transition-all duration-700 relative z-10">
+                      <div className="text-[var(--primary-cyan)] transform group-hover:rotate-6 transition-transform duration-500">
                         <Icon size={18} />
                       </div>
                     </div>
@@ -135,7 +135,7 @@ const Process: React.FC = () => {
                       isEven ? "top-20" : "bottom-20"
                     }`}
                   >
-                    <h3 className="text-xl font-black text-[#012B48] mb-2 tracking-tight transition-colors group-hover:text-[#00F5D4]">
+                    <h3 className="text-xl font-black text-[var(--deep-blue)] mb-2 tracking-tight transition-colors group-hover:text-[var(--primary-cyan)]">
                       {step.title}
                     </h3>
                     <p className="text-[13px] text-[#5A6C7C] font-semibold leading-relaxed px-4 opacity-70 group-hover:opacity-100">

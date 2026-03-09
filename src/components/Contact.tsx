@@ -11,17 +11,17 @@ const Contact: React.FC = () => {
   return (
     <div className="max-w-[1440px] mx-auto px-8 md:px-16 lg:px-24 relative overflow-hidden">
       {/* Massive Spread Gradient Backgrounds - Substantially Reduced Opacity */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[900px] h-[900px] bg-gradient-to-br from-[#00F5D4]/3 to-[#00B6FF]/5 blur-[180px] rounded-full pointer-events-none opacity-40"></div>
-      <div className="absolute top-0 right-0 w-[400px] h-[400px] bg-[#00F5D4]/2 blur-[120px] rounded-full pointer-events-none"></div>
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[900px] h-[900px] bg-gradient-to-br from-[var(--primary-cyan)]/3 to-[var(--primary-blue)]/5 blur-[180px] rounded-full pointer-events-none opacity-40"></div>
+      <div className="absolute top-0 right-0 w-[400px] h-[400px] bg-[var(--primary-cyan)]/2 blur-[120px] rounded-full pointer-events-none"></div>
 
       <div className="flex flex-col lg:flex-row gap-10 lg:gap-14 items-center relative z-10 py-12">
         {/* Left Content Side */}
         <div className="flex-1 space-y-8">
           <div className="space-y-6">
-            <h4 className="text-[#012B48] font-black text-xs uppercase tracking-[0.4em] opacity-60">
+            <h4 className="text-[var(--deep-blue)] font-black text-xs uppercase tracking-[0.4em] opacity-60">
               Let's Talk
             </h4>
-            <h2 className="text-5xl lg:text-7xl font-black text-[#012B48] leading-[1] tracking-tighter">
+            <h2 className="text-5xl lg:text-7xl font-black text-[var(--deep-blue)] leading-[1] tracking-tighter">
               Have a project to discuss <br /> or a{" "}
               <span className="gradient-text">system to improve?</span>
             </h2>
@@ -33,14 +33,14 @@ const Contact: React.FC = () => {
 
           <div className="space-y-8">
             <div className="flex items-center gap-6 group cursor-pointer">
-              <div className="w-11 h-11 rounded-2xl bg-white shadow-sm border border-slate-100 flex items-center justify-center text-[#012B48] group-hover:bg-[#00F5D4] group-hover:scale-110 group-hover:shadow-lg group-hover:shadow-cyan-400/20 transition-all duration-500">
+              <div className="w-11 h-11 rounded-2xl bg-white shadow-sm border border-slate-100 flex items-center justify-center text-[var(--deep-blue)] group-hover:bg-[var(--primary-cyan)] group-hover:scale-110 group-hover:shadow-lg group-hover:shadow-cyan-400/20 transition-all duration-500">
                 <Mail size={18} />
               </div>
               <div>
                 <p className="text-[10px] font-black text-slate-400 uppercase tracking-widest mb-1">
                   Email Us
                 </p>
-                <p className="text-[#012B48] font-black text-lg group-hover:text-[#00F5D4] transition-colors">
+                <p className="text-[var(--deep-blue)] font-black text-lg group-hover:text-[var(--primary-cyan)] transition-colors">
                   <a href="mailto: intellicryst@gmail">
                     intellicryst@gmail.com
                   </a>
@@ -49,28 +49,28 @@ const Contact: React.FC = () => {
             </div>
 
             <div className="flex items-center gap-6 group cursor-pointer">
-              <div className="w-11 h-11 rounded-2xl bg-white shadow-sm border border-slate-100 flex items-center justify-center text-[#012B48] group-hover:bg-[#00F5D4] group-hover:scale-110 group-hover:shadow-lg group-hover:shadow-cyan-400/20 transition-all duration-500">
+              <div className="w-11 h-11 rounded-2xl bg-white shadow-sm border border-slate-100 flex items-center justify-center text-[var(--deep-blue)] group-hover:bg-[var(--primary-cyan)] group-hover:scale-110 group-hover:shadow-lg group-hover:shadow-cyan-400/20 transition-all duration-500">
                 <Phone size={22} />
               </div>
               <div>
                 <p className="text-[10px] font-black text-slate-400 uppercase tracking-widest mb-1">
                   Call Us
                 </p>
-                <p className="text-[#012B48] font-black text-lg group-hover:text-[#00F5D4] transition-colors">
+                <p className="text-[var(--deep-blue)] font-black text-lg group-hover:text-[var(--primary-cyan)] transition-colors">
                   <a href="tel: +1 (555) 000-TECH">+1 (555) 000-TECH</a>
                 </p>
               </div>
             </div>
 
             <div className="flex items-center gap-6 group cursor-pointer">
-              <div className="w-11 h-11 rounded-2xl bg-white shadow-sm border border-slate-100 flex items-center justify-center text-[#012B48] group-hover:bg-[#00F5D4] group-hover:scale-110 group-hover:shadow-lg group-hover:shadow-cyan-400/20 transition-all duration-500">
+              <div className="w-11 h-11 rounded-2xl bg-white shadow-sm border border-slate-100 flex items-center justify-center text-[var(--deep-blue)] group-hover:bg-[var(--primary-cyan)] group-hover:scale-110 group-hover:shadow-lg group-hover:shadow-cyan-400/20 transition-all duration-500">
                 <MapPin size={22} />
               </div>
               <div>
                 <p className="text-[10px] font-black text-slate-400 uppercase tracking-widest mb-1">
                   Visit Us
                 </p>
-                <p className="text-[#012B48] font-black text-lg group-hover:text-[#00F5D4] transition-colors">
+                <p className="text-[var(--deep-blue)] font-black text-lg group-hover:text-[var(--primary-cyan)] transition-colors">
                   Belapur, Navi Mumbai
                 </p>
               </div>
@@ -81,7 +81,7 @@ const Contact: React.FC = () => {
         {/* Right Glass Form Side */}
         <div className="flex-1 w-full relative">
           {/* Internal Glow for form reflection effect - Reduced opacity */}
-          <div className="absolute -inset-4 bg-gradient-to-tr from-[#00F5D4]/10 to-[#00B6FF]/10 blur-[60px] rounded-[60px] pointer-events-none"></div>
+          <div className="absolute -inset-4 bg-gradient-to-tr from-[var(--primary-cyan)]/10 to-[var(--primary-blue)]/10 blur-[60px] rounded-[60px] pointer-events-none"></div>
 
           <div className="relative z-10 bg-white/40 backdrop-blur-3xl border border-white/80 rounded-[48px] p-6 lg:p-8 shadow-[0_32px_128px_-24px_rgba(1,43,72,0.1)]">
             <FormWrapper>
@@ -132,7 +132,7 @@ const Contact: React.FC = () => {
                     <button
                       type="submit"
                       disabled={loading}
-                      className="flex-1 bg-[#012B48] text-white py-3.5 rounded-2xl font-black text-sm uppercase tracking-[0.2em] hover:bg-[#00F5D4] hover:text-[#012B48] transition-all flex items-center justify-center gap-3 group shadow-2xl shadow-navy/30 hover:cursor-pointer"
+                      className="flex-1 bg-[var(--deep-blue)] text-white py-3.5 rounded-2xl font-black text-sm uppercase tracking-[0.2em] hover:bg-[var(--primary-cyan)] hover:text-[var(--deep-blue)] transition-all flex items-center justify-center gap-3 group shadow-2xl shadow-navy/30 hover:cursor-pointer"
                     >
                       {loading ? (
                         <>
@@ -150,11 +150,11 @@ const Contact: React.FC = () => {
                     <a
                       href="https://wa.me/918104535322?text=Hi%20there,%20I%20am%20interested%20in%20your%20services."
                       target="_blank"
-                      className="px-10 py-3.5 border-2 border-[#012B48] text-[#012B48] rounded-2xl font-black text-sm uppercase tracking-[0.2em] hover:bg-white/80 transition-all hover:cursor-pointer"
+                      className="px-10 py-3.5 border-2 border-[var(--deep-blue)] text-[var(--deep-blue)] rounded-2xl font-black text-sm uppercase tracking-[0.2em] hover:bg-white/80 transition-all hover:cursor-pointer"
                     >
                       Talk to us
                     </a>
-                    {/* <button className="px-10 py-3.5 border-2 border-[#012B48] text-[#012B48] rounded-2xl font-black text-sm uppercase tracking-[0.2em] hover:bg-white/80 transition-all hover:cursor-pointer">
+                    {/* <button className="px-10 py-3.5 border-2 border-[var(--deep-blue)] text-[var(--deep-blue)] rounded-2xl font-black text-sm uppercase tracking-[0.2em] hover:bg-white/80 transition-all hover:cursor-pointer">
                   Talk To Us
                 </button> */}
                   </div>
@@ -162,13 +162,13 @@ const Contact: React.FC = () => {
               )}
             </FormWrapper>
             {/* {submitted && (
-              <div className="mt-6 flex items-center gap-3 p-5 rounded-2xl bg-white border border-[#00F5D4]/40 shadow-lg animate-fade-in">
-                <div className="w-10 h-10 rounded-full bg-[#00F5D4] flex items-center justify-center text-white font-bold">
+              <div className="mt-6 flex items-center gap-3 p-5 rounded-2xl bg-white border border-[var(--primary-cyan)]/40 shadow-lg animate-fade-in">
+                <div className="w-10 h-10 rounded-full bg-[var(--primary-cyan)] flex items-center justify-center text-white font-bold">
                   ✓
                 </div>
 
                 <div>
-                  <p className="font-bold text-[#012B48]">Message Sent</p>
+                  <p className="font-bold text-[var(--deep-blue)]">Message Sent</p>
                   <p className="text-sm text-slate-500">
                     We'll get back to you shortly.
                   </p>

@@ -78,8 +78,8 @@ const Header: React.FC<{}> = () => {
     { label: "Contact", href: "/contact" },
   ];
 
-  const textColorClass = isHomePage ? scrolled ? "text-[#012B48]" : "text-white" : "text-[#012B48]";
-  const logoTextClass = isHomePage ? scrolled ? "text-[#012B48]" : "text-white" : "text-[#012B48]";
+  const textColorClass = isHomePage ? scrolled ? "text-[var(--deep-blue)]" : "text-white" : "text-[var(--deep-blue)]";
+  const logoTextClass = isHomePage ? scrolled ? "text-[var(--deep-blue)]" : "text-white" : "text-[var(--deep-blue)]";
 
   return (
     <header
@@ -114,13 +114,13 @@ const Header: React.FC<{}> = () => {
                 key={item.label}
                 href={item.href}
                 className={`font-bold text-md transition-colors relative group
-                ${active ? "text-[#00F5D4]" : textColorClass}
-                hover:text-[#00F5D4]`}
+                ${active ? "text-[var(--primary-cyan)]" : textColorClass}
+                hover:text-[var(--primary-cyan)]`}
               >
                 {item.label}
 
                 <span
-                  className={`absolute -bottom-1 left-0 h-0.5 bg-[#00F5D4] transition-all duration-300
+                  className={`absolute -bottom-1 left-0 h-0.5 bg-[var(--primary-cyan)] transition-all duration-300
                   ${active ? "w-full" : "w-0 group-hover:w-full"}`}
                 />
               </Link>
@@ -132,13 +132,13 @@ const Header: React.FC<{}> = () => {
         <div className="hidden lg:flex items-center gap-6">
           <Link
             href="/start-building"
-            className={`text-sm font-bold ${textColorClass} hover:text-[#00F5D4] transition-colors flex items-center gap-1`}
+            className={`text-sm font-bold ${textColorClass} hover:text-[var(--primary-cyan)] transition-colors flex items-center gap-1`}
           >
             Start Building <ExternalLink size={14} />
           </Link>
           <Link
             href="/contact"
-            className="cursor-pointer bg-gradient-to-r from-[#00F5D4] to-[#00B6FF] text-[#012B48] px-7 py-3 rounded-xl text-sm font-black hover:scale-110 transition-all shadow-xl shadow-cyan-400/20 border border-white/20"
+            className="cursor-pointer bg-gradient-to-r from-[var(--primary-cyan)] to-[var(--primary-blue)] text-[var(--deep-blue)] px-7 py-3 rounded-xl text-sm font-black hover:scale-110 transition-all shadow-xl shadow-cyan-400/20 border border-white/20"
           >
             Talk to Us
           </Link>
@@ -160,7 +160,7 @@ const Header: React.FC<{}> = () => {
             <a
               key={item.label}
               href={item.href}
-              className="text-lg font-bold text-[#012B48] py-2 hover:text-[#00F5D4]"
+              className="text-lg font-bold text-[var(--deep-blue)] py-2 hover:text-[var(--primary-cyan)]"
               onClick={() => setIsOpen(false)}
             >
               {item.label}
@@ -169,7 +169,7 @@ const Header: React.FC<{}> = () => {
           <div className="pt-4 flex flex-col gap-4">
             <Link
               href="/contact"
-              className="cursor-pointer text-center w-full bg-[#012B48] text-white py-4 rounded-xl font-black hover:bg-[#02395f] transition"
+              className="cursor-pointer text-center w-full bg-[var(--deep-blue)] text-white py-4 rounded-xl font-black hover:bg-[#02395f] transition"
               onClick={() => setIsOpen(false)}
             >
               Talk to Us

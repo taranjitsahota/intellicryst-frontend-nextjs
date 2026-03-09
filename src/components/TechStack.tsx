@@ -36,18 +36,18 @@ const techItems = [
 ];
 
 const decorativeDots = [
-  { orbit: 1, angle: 45, color: "bg-[#00F5D4]" },
-  { orbit: 1, angle: 135, color: "bg-[#00B6FF]" },
-  { orbit: 1, angle: 225, color: "bg-[#00F5D4]" },
-  { orbit: 1, angle: 315, color: "bg-[#00B6FF]" },
-  { orbit: 2, angle: 0, color: "bg-[#00B6FF]" },
-  { orbit: 2, angle: 60, color: "bg-[#00F5D4]" },
-  { orbit: 2, angle: 180, color: "bg-[#00B6FF]" },
-  { orbit: 2, angle: 270, color: "bg-[#00F5D4]" },
-  { orbit: 3, angle: 15, color: "bg-[#00F5D4]" },
-  { orbit: 3, angle: 100, color: "bg-[#00B6FF]" },
-  { orbit: 3, angle: 150, color: "bg-[#00F5D4]" },
-  { orbit: 3, angle: 250, color: "bg-[#00B6FF]" },
+  { orbit: 1, angle: 45, color: "bg-[var(--primary-cyan)]" },
+  { orbit: 1, angle: 135, color: "bg-[var(--primary-blue)]" },
+  { orbit: 1, angle: 225, color: "bg-[var(--primary-cyan)]" },
+  { orbit: 1, angle: 315, color: "bg-[var(--primary-blue)]" },
+  { orbit: 2, angle: 0, color: "bg-[var(--primary-blue)]" },
+  { orbit: 2, angle: 60, color: "bg-[var(--primary-cyan)]" },
+  { orbit: 2, angle: 180, color: "bg-[var(--primary-blue)]" },
+  { orbit: 2, angle: 270, color: "bg-[var(--primary-cyan)]" },
+  { orbit: 3, angle: 15, color: "bg-[var(--primary-cyan)]" },
+  { orbit: 3, angle: 100, color: "bg-[var(--primary-blue)]" },
+  { orbit: 3, angle: 150, color: "bg-[var(--primary-cyan)]" },
+  { orbit: 3, angle: 250, color: "bg-[var(--primary-blue)]" },
 ];
 
 const pastelColors = [
@@ -98,13 +98,13 @@ const OrbitNode: React.FC<{
       >
         <div
           className={`w-7 h-7 md:w-10 md:h-10 backdrop-blur-md rounded-full border shadow-[0_8px_32px_rgba(0,0,0,0.05)] flex items-center justify-center transition-all duration-300 cursor-pointer ${colorClass} ${
-            isActive ? "ring-4 ring-[#00F5D4]/20 shadow-xl" : ""
+            isActive ? "ring-4 ring-[var(--primary-cyan)]/20 shadow-xl" : ""
           }`}
         >
           {item.icon}
         </div>
         <div
-          className={`absolute -bottom-10 left-1/2 -translate-x-1/2 transition-all duration-300 bg-[#012B48] text-white text-[10px] font-black uppercase tracking-widest px-3 py-1.5 rounded-lg whitespace-nowrap pointer-events-none shadow-xl ${
+          className={`absolute -bottom-10 left-1/2 -translate-x-1/2 transition-all duration-300 bg-[var(--deep-blue)] text-white text-[10px] font-black uppercase tracking-widest px-3 py-1.5 rounded-lg whitespace-nowrap pointer-events-none shadow-xl ${
             isActive
               ? "opacity-100 translate-y-0 scale-100"
               : "opacity-0 translate-y-2 scale-90"
@@ -217,10 +217,10 @@ const TechStack: React.FC = () => {
 
         {/* Center circular box */}
         <div className="text-center z-30 w-[200px] h-[200px] md:w-[300px] md:h-[300px] flex flex-col items-center justify-center animate-in fade-in zoom-in duration-1000 bg-white/60 backdrop-blur-md p-4 md:p-6 rounded-full border border-white/80 shadow-[0_32px_64px_-16px_rgba(0,0,0,0.05)]">
-          <p className="text-[#012B48] font-black text-[10px] uppercase tracking-[0.5em] mb-4 opacity-50">
+          <p className="text-[var(--deep-blue)] font-black text-[10px] uppercase tracking-[0.5em] mb-4 opacity-50">
             Execution Engine
           </p>
-          <h2 className="text-2xl md:text-4xl font-black text-[#012B48] leading-[1.1] tracking-tighter mb-6 max-w-xs md:max-w-md">
+          <h2 className="text-2xl md:text-4xl font-black text-[var(--deep-blue)] leading-[1.1] tracking-tighter mb-6 max-w-xs md:max-w-md">
             The engine for <br />
             <span className="gradient-text italic">modern systems.</span>
           </h2>
@@ -229,7 +229,7 @@ const TechStack: React.FC = () => {
             every environment.
           </p>
           <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4">
-            <button className="bg-[#012B48] text-white px-8 py-3.5 rounded-full font-black text-[10px] uppercase tracking-widest hover:bg-[#00F5D4] hover:text-[#012B48] transition-all shadow-xl shadow-navy/20">
+            <button className="bg-[var(--deep-blue)] text-white px-8 py-3.5 rounded-full font-black text-[10px] uppercase tracking-widest hover:bg-[var(--primary-cyan)] hover:text-[var(--deep-blue)] transition-all shadow-xl shadow-navy/20">
               Methodology
             </button>
           </div>

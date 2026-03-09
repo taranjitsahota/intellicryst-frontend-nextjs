@@ -54,7 +54,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, position, onClick })
           {project.icon}
         </div>
         <div className="absolute top-6 right-6 opacity-30">
-          <Shield size={20} className="text-[#012B48]" />
+          <Shield size={20} className="text-[var(--deep-blue)]" />
         </div>
       </div>
 
@@ -64,7 +64,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, position, onClick })
           <img src={project.avatar} alt={project.name} className="w-full h-full object-cover" />
         </div>
         <div className="pb-4">
-          <div className="w-4 h-4 rounded-full bg-[#00F5D4] border-4 border-white shadow-[0_0_20px_#00F5D4] animate-pulse"></div>
+          <div className="w-4 h-4 rounded-full bg-[var(--primary-cyan)] border-4 border-white shadow-[0_0_20px_#00F5D4] animate-pulse"></div>
         </div>
       </div>
 
@@ -72,7 +72,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, position, onClick })
       <div className="p-6 space-y-8">
         <div className="space-y-1">
           <div className="flex items-center flex-wrap gap-2">
-            <h3 className="text-xl font-black text-[#012B48] tracking-tight">{project.name}</h3>
+            <h3 className="text-xl font-black text-[var(--deep-blue)] tracking-tight">{project.name}</h3>
             <div className="flex items-center gap-1.5">
               <div className="w-5 h-5 bg-blue-500 rounded-full flex items-center justify-center text-white text-[10px]">✓</div>
               <span className="bg-amber-100 text-amber-700 text-[9px] font-black px-2 py-0.5 rounded-md uppercase tracking-widest">Pro</span>
@@ -83,17 +83,17 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, position, onClick })
         </div>
 
         <div className="space-y-3">
-          <p className="text-base font-black text-[#012B48]">{project.title}</p>
+          <p className="text-base font-black text-[var(--deep-blue)]">{project.title}</p>
           <p className="text-sm text-[#5A6C7C] leading-relaxed font-medium">
             {project.description}
           </p>
         </div>
 
         <div className="space-y-4">
-          <p className="text-[11px] font-black uppercase tracking-[0.2em] text-[#012B48]/30">Tech Stack</p>
+          <p className="text-[11px] font-black uppercase tracking-[0.2em] text-[var(--deep-blue)]/30">Tech Stack</p>
           <div className="flex flex-wrap gap-2">
             {project.tags.map(tag => (
-              <span key={tag} className="bg-slate-50 text-[#012B48] text-[10px] font-black px-4 py-2 rounded-xl border border-slate-100 group-hover:bg-[#00F5D4]/10 group-hover:border-[#00F5D4]/20 transition-all">
+              <span key={tag} className="bg-slate-50 text-[var(--deep-blue)] text-[10px] font-black px-4 py-2 rounded-xl border border-slate-100 group-hover:bg-[var(--primary-cyan)]/10 group-hover:border-[var(--primary-cyan)]/20 transition-all">
                 {tag}
               </span>
             ))}
@@ -101,10 +101,10 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, position, onClick })
         </div>
 
         <div className="flex gap-4 pt-4">
-          <button className="flex-1 bg-white border-2 border-slate-100 text-[#012B48] py-4 rounded-2xl font-black text-xs uppercase tracking-[0.2em] hover:bg-slate-50 transition-all flex items-center justify-center gap-2">
+          <button className="flex-1 bg-white border-2 border-slate-100 text-[var(--deep-blue)] py-4 rounded-2xl font-black text-xs uppercase tracking-[0.2em] hover:bg-slate-50 transition-all flex items-center justify-center gap-2">
             Messages
           </button>
-          <button className="flex-1 bg-[#012B48] text-white py-4 rounded-2xl font-black text-xs uppercase tracking-[0.2em] hover:bg-[#00F5D4] hover:text-[#012B48] transition-all shadow-xl shadow-navy/20 flex items-center justify-center gap-2">
+          <button className="flex-1 bg-[var(--deep-blue)] text-white py-4 rounded-2xl font-black text-xs uppercase tracking-[0.2em] hover:bg-[var(--primary-cyan)] hover:text-[var(--deep-blue)] transition-all shadow-xl shadow-navy/20 flex items-center justify-center gap-2">
             Connect
           </button>
         </div>
@@ -177,8 +177,8 @@ const Projects: React.FC = () => {
           {/* Content Left */}
           <div className="space-y-10 animate-in slide-in-from-left duration-1000">
             <div className="space-y-6">
-              <h4 className="text-[#012B48] font-black text-xs uppercase tracking-[0.4em]">Featured Case Studies</h4>
-              <h2 className="text-4xl lg:text-5xl font-black text-[#012B48] tracking-tighter leading-[0.9]">
+              <h4 className="text-[var(--deep-blue)] font-black text-xs uppercase tracking-[0.4em]">Featured Case Studies</h4>
+              <h2 className="text-4xl lg:text-5xl font-black text-[var(--deep-blue)] tracking-tighter leading-[0.9]">
                 Building the <br />
                 <span className="gradient-text">future of systems.</span>
               </h2>
@@ -195,16 +195,16 @@ const Projects: React.FC = () => {
 
             <div className="flex flex-col sm:flex-row items-center gap-6 pt-6">
               <Link href="/projects" >
-              <button className="px-8 py-4 text-sm bg-[#012B48] text-white rounded-2xl font-black flex items-center gap-4 hover:scale-105 transition-all shadow-2xl shadow-navy/30 hover:cursor-pointer">
+              <button className="px-8 py-4 text-sm bg-[var(--deep-blue)] text-white rounded-2xl font-black flex items-center gap-4 hover:scale-105 transition-all shadow-2xl shadow-navy/30 hover:cursor-pointer">
                 Explore All <ExternalLink size={24} />
               </button>
               </Link>
               
               <div className="flex items-center gap-5">
-                <button onClick={prevProject} className="w-12 h-12 rounded-full border-2 border-slate-100 flex items-center justify-center text-[#012B48] hover:bg-slate-50 transition-all group bg-white shadow-sm">
+                <button onClick={prevProject} className="w-12 h-12 rounded-full border-2 border-slate-100 flex items-center justify-center text-[var(--deep-blue)] hover:bg-slate-50 transition-all group bg-white shadow-sm">
                   <ChevronLeft size={32} className="group-hover:-translate-x-1 transition-transform" />
                 </button>
-                <button onClick={nextProject} className="w-12 h-12 rounded-full border-2 border-slate-100 flex items-center justify-center text-[#012B48] hover:bg-slate-50 transition-all group bg-white shadow-sm">
+                <button onClick={nextProject} className="w-12 h-12 rounded-full border-2 border-slate-100 flex items-center justify-center text-[var(--deep-blue)] hover:bg-slate-50 transition-all group bg-white shadow-sm">
                   <ChevronRight size={32} className="group-hover:translate-x-1 transition-transform" />
                 </button>
               </div>

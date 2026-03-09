@@ -17,7 +17,7 @@ const FormField: React.FC<Props> = ({
 }) => {
   return (
     <div className="space-y-3">
-      <label className="text-[10px] font-black text-[#012B48] uppercase tracking-widest ml-1">
+      <label className="text-[10px] font-black text-[var(--deep-blue)] uppercase tracking-widest ml-1">
         {label}
       </label>
 
@@ -26,7 +26,7 @@ const FormField: React.FC<Props> = ({
         name={name}
         placeholder={placeholder}
         required={required}
-        className="w-full px-5 py-3 rounded-2xl bg-white/60 border border-white focus:border-[#00F5D4] focus:bg-white transition-all outline-none font-semibold text-[#012B48] shadow-sm placeholder:text-slate-300"
+        className="w-full px-5 py-3 rounded-2xl bg-white/60 border border-white focus:border-[var(--primary-cyan)] focus:bg-white transition-all outline-none font-semibold text-[var(--deep-blue)] shadow-sm placeholder:text-slate-300"
       />
     </div>
   );

@@ -60,8 +60,8 @@ const Team: React.FC = () => {
         {/* Left Side: Content & Search */}
         <div className="lg:w-1/3 space-y-12">
           <div className="space-y-6">
-            <h4 className="text-[#012B48] font-black text-xs uppercase tracking-[0.4em]">The Human Core</h4>
-            <h2 className="text-4xl lg:text-5xl xl:text-6xl font-black text-[#012B48] leading-[0.9] tracking-tighter">
+            <h4 className="text-[var(--deep-blue)] font-black text-xs uppercase tracking-[0.4em]">The Human Core</h4>
+            <h2 className="text-4xl lg:text-5xl xl:text-6xl font-black text-[var(--deep-blue)] leading-[0.9] tracking-tighter">
               Watch.<br />Build.<br /><span className="gradient-text">Deploy.</span>
             </h2>
             <p className="text-base lg:text-lg text-[#5A6C7C] font-semibold leading-relaxed max-w-sm">
@@ -73,13 +73,13 @@ const Team: React.FC = () => {
           <div className="flex gap-4">
             <button 
               onClick={prevMember}
-              className="w-11 h-11 rounded-full border border-slate-200 flex items-center justify-center text-[#012B48] hover:bg-[#00F5D4] hover:border-[#00F5D4] transition-all group"
+              className="w-11 h-11 rounded-full border border-slate-200 flex items-center justify-center text-[var(--deep-blue)] hover:bg-[var(--primary-cyan)] hover:border-[var(--primary-cyan)] transition-all group"
             >
               <ChevronLeft size={24} className="group-hover:-translate-x-1 transition-transform" />
             </button>
             <button 
               onClick={nextMember}
-              className="w-11 h-11 rounded-full border border-slate-200 flex items-center justify-center text-[#012B48] hover:bg-[#00F5D4] hover:border-[#00F5D4] transition-all group"
+              className="w-11 h-11 rounded-full border border-slate-200 flex items-center justify-center text-[var(--deep-blue)] hover:bg-[var(--primary-cyan)] hover:border-[var(--primary-cyan)] transition-all group"
             >
               <ChevronRight size={24} className="group-hover:translate-x-1 transition-transform" />
             </button>
@@ -108,7 +108,7 @@ const Team: React.FC = () => {
                 />
 
                 {/* Vertical Gradient Overlay */}
-                <div className="absolute inset-0 bg-gradient-to-t from-[#012B48] via-[#012B48]/20 to-transparent opacity-80"></div>
+                <div className="absolute inset-0 bg-gradient-to-t from-[var(--deep-blue)] via-[var(--deep-blue)]/20 to-transparent opacity-80"></div>
 
                 {/* Squeezed View: Vertical Designation (Readable Edition) */}
                 <div 
@@ -130,13 +130,13 @@ const Team: React.FC = () => {
                   }`}
                 >
                   <div className="glass border border-white/20 p-5 rounded-2xl backdrop-blur-xl relative overflow-hidden">
-                    <div className="absolute top-0 right-0 p-4 opacity-20 text-[#00F5D4]">
+                    <div className="absolute top-0 right-0 p-4 opacity-20 text-[var(--primary-cyan)]">
                       {member.icon}
                     </div>
                     
                     <div className="flex items-end justify-between gap-6">
                       <div className="space-y-2">
-                        <p className="text-[#00F5D4] font-black text-[10px] uppercase tracking-[0.3em] mb-2">{member.role}</p>
+                        <p className="text-[var(--primary-cyan)] font-black text-[10px] uppercase tracking-[0.3em] mb-2">{member.role}</p>
                         <h3 className="text-2xl font-black text-white tracking-tighter">{member.name}</h3>
                       </div>
                       
@@ -147,8 +147,8 @@ const Team: React.FC = () => {
                     </div>
 
                     <div className="mt-6 flex items-center gap-4">
-                       <div className="h-1 w-20 bg-gradient-to-r from-[#00F5D4] to-transparent rounded-full"></div>
-                       <button className="text-[10px] font-black text-white uppercase tracking-[0.2em] hover:text-[#00F5D4] transition-colors">
+                       <div className="h-1 w-20 bg-gradient-to-r from-[var(--primary-cyan)] to-transparent rounded-full"></div>
+                       <button className="text-[10px] font-black text-white uppercase tracking-[0.2em] hover:text-[var(--primary-cyan)] transition-colors">
                          View engineering docs
                        </button>
                     </div>

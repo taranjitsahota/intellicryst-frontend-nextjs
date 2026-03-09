@@ -30,10 +30,10 @@ const App: React.FC = () => {
     <div className="relative min-h-screen selection:bg-cyan-200 selection:text-navy-900 overflow-x-hidden bg-white">
       {/* Global Background Accents (Ultra-Minimum Opacity) */}
       <div className="fixed inset-0 pointer-events-none z-0 overflow-hidden">
-        <div className="absolute top-[10%] left-[-10%] w-[800px] h-[800px] bg-[#00F5D4]/1 blur-[160px] rounded-full"></div>
-        <div className="absolute top-[40%] right-[-15%] w-[900px] h-[900px] bg-[#00B6FF]/2 blur-[180px] rounded-full"></div>
-        <div className="absolute bottom-[20%] left-[-20%] w-[1000px] h-[1000px] bg-[#00F5D4]/1 blur-[200px] rounded-full"></div>
-        <div className="absolute bottom-[-10%] right-[10%] w-[700px] h-[700px] bg-[#00B6FF]/1 blur-[150px] rounded-full"></div>
+        <div className="absolute top-[10%] left-[-10%] w-[800px] h-[800px] bg-[var(--primary-cyan)]/1 blur-[160px] rounded-full"></div>
+        <div className="absolute top-[40%] right-[-15%] w-[900px] h-[900px] bg-[var(--primary-blue)]/2 blur-[180px] rounded-full"></div>
+        <div className="absolute bottom-[20%] left-[-20%] w-[1000px] h-[1000px] bg-[var(--primary-cyan)]/1 blur-[200px] rounded-full"></div>
+        <div className="absolute bottom-[-10%] right-[10%] w-[700px] h-[700px] bg-[var(--primary-blue)]/1 blur-[150px] rounded-full"></div>
       </div>
 
       <main className="relative z-10">
@@ -54,10 +54,10 @@ const App: React.FC = () => {
 
         {/* Premium Gradient Blur Separator - Opacity reduced by 50% */}
         <div className="relative h-48 -mt-24 -mb-24 z-10 pointer-events-none">
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-[400px] bg-gradient-to-r from-[#00F5D4]/5 via-[#00B6FF]/10 to-[#00F5D4]/5 blur-[140px] rounded-full"></div>
-          <div className="absolute top-1/2 left-1/4 -translate-x-1/2 -translate-y-1/2 w-[300px] h-[300px] bg-[#00F5D4]/8 blur-[100px] rounded-full animate-pulse"></div>
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-[400px] bg-gradient-to-r from-[var(--primary-cyan)]/5 via-[var(--primary-blue)]/10 to-[var(--primary-cyan)]/5 blur-[140px] rounded-full"></div>
+          <div className="absolute top-1/2 left-1/4 -translate-x-1/2 -translate-y-1/2 w-[300px] h-[300px] bg-[var(--primary-cyan)]/8 blur-[100px] rounded-full animate-pulse"></div>
           <div
-            className="absolute top-1/2 left-3/4 -translate-x-1/2 -translate-y-1/2 w-[300px] h-[300px] bg-[#00B6FF]/8 blur-[100px] rounded-full animate-pulse"
+            className="absolute top-1/2 left-3/4 -translate-x-1/2 -translate-y-1/2 w-[300px] h-[300px] bg-[var(--primary-blue)]/8 blur-[100px] rounded-full animate-pulse"
             style={{ animationDelay: "1s" }}
           ></div>
         </div>
@@ -71,7 +71,7 @@ const App: React.FC = () => {
         </section>
 
         {/* <section id="team" className="py-20 bg-slate-50/20 relative">
-          <div className="absolute top-1/2 left-0 w-[600px] h-[600px] bg-[#00F5D4]/3 blur-[120px] rounded-full -translate-y-1/2 -translate-x-1/2 pointer-events-none"></div>
+          <div className="absolute top-1/2 left-0 w-[600px] h-[600px] bg-[var(--primary-cyan)]/3 blur-[120px] rounded-full -translate-y-1/2 -translate-x-1/2 pointer-events-none"></div>
           <Team />
         </section> */}
 

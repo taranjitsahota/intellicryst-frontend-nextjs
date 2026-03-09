@@ -56,13 +56,13 @@ const FormWrapper: React.FC<Props> = ({ children }) => {
       </form>
 
       {submitted && (
-        <div className="mt-6 flex items-center gap-3 p-5 rounded-2xl bg-white border border-[#00F5D4]/40 shadow-lg animate-fade-in">
-          <div className="w-10 h-10 rounded-full bg-[#00F5D4] flex items-center justify-center text-white font-bold">
+        <div className="mt-6 flex items-center gap-3 p-5 rounded-2xl bg-white border border-[var(--primary-cyan)]/40 shadow-lg animate-fade-in">
+          <div className="w-10 h-10 rounded-full bg-[var(--primary-cyan)] flex items-center justify-center text-white font-bold">
             ✓
           </div>
 
           <div>
-            <p className="font-bold text-[#012B48]">Message Sent</p>
+            <p className="font-bold text-[var(--deep-blue)]">Message Sent</p>
             <p className="text-sm text-slate-500">
               We'll get back to you shortly.
             </p>
