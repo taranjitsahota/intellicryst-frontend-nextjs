@@ -17,7 +17,7 @@ const FormTextarea: React.FC<Props> = ({ label, name, placeholder }) => {
         name={name}
         rows={4}
         placeholder={placeholder}
-        className="w-full px-5 py-3 rounded-2xl bg-white/60 border border-white focus:border-[var(--primary-cyan)] focus:bg-white transition-all outline-none font-semibold text-[var(--deep-blue)] shadow-sm placeholder:text-slate-300 resize-none"
+        className="w-full px-5 py-3 rounded-2xl bg-white/60 border border-white focus:border-[var(--primary-color)] focus:bg-white transition-all outline-none font-semibold text-[var(--deep-blue)] shadow-sm placeholder:text-slate-300 resize-none"
       />
     </div>
   );

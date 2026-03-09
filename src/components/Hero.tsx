@@ -19,10 +19,10 @@ const ParticleWaveBackground = () => (
 
     {/* Brand Color Overlays for Depth */}
     <div className="absolute inset-0 bg-gradient-to-b from-transparent via-[var(--dark-grey)]/60 to-[var(--dark-grey)]"></div>
-    <div className="absolute inset-0 bg-gradient-to-tr from-[var(--primary-cyan)]/5 via-transparent to-[var(--primary-blue)]/5"></div>
+    <div className="absolute inset-0 bg-gradient-to-tr from-[var(--primary-color)]/5 via-transparent to-[var(--primary-blue)]/5"></div>
 
     {/* Animated Glow Accents (Minimum Opacity) */}
-    <div className="absolute top-[-20%] left-[-10%] w-[70%] h-[70%] bg-[var(--primary-cyan)] blur-[180px] opacity-[0.08] rounded-full animate-float-slow"></div>
+    <div className="absolute top-[-20%] left-[-10%] w-[70%] h-[70%] bg-[var(--primary-color)] blur-[180px] opacity-[0.08] rounded-full animate-float-slow"></div>
     <div
       className="absolute bottom-[-20%] right-[-10%] w-[60%] h-[60%] bg-[var(--primary-blue)] blur-[200px] opacity-[0.06] rounded-full animate-float-slow"
       style={{ animationDelay: "-5s" }}
@@ -98,7 +98,7 @@ const Hero: React.FC = () => {
 
       <div className="max-w-[1440px] mx-auto px-8 md:px-16 lg:px-24 relative z-10 text-center space-y-6 py-8 pt-20">
         <div className="inline-flex items-center gap-3 px-6 py-2 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-white font-black text-[10px] uppercase tracking-[0.4em] animate-in fade-in slide-in-from-top-4 duration-1000">
-          <Cpu size={14} className="text-[var(--primary-cyan)]" />
+          <Cpu size={14} className="text-[var(--primary-color)]" />
           Engineered for Performance
         </div>
 
@@ -122,7 +122,7 @@ const Hero: React.FC = () => {
 
         <div className="flex flex-col sm:flex-row items-center justify-center gap-5 animate-in fade-in slide-in-from-bottom-10 duration-1000 delay-[1.2s]">
           <Link href="/contact">
-            <button className="group px-8 py-4 text-sm rounded-full bg-white text-[var(--dark-grey)] font-black flex items-center gap-4 transition-all hover:bg-[var(--primary-cyan)] hover:scale-105 shadow-[0_0_80px_rgba(255,255,255,0.15)] hover:cursor-pointer">
+            <button className="group px-8 py-4 text-sm rounded-full bg-white text-[var(--dark-grey)] font-black flex items-center gap-4 transition-all hover:bg-[var(--primary-color)] hover:scale-105 shadow-[0_0_80px_rgba(255,255,255,0.15)] hover:cursor-pointer">
               Talk to Us
               <ArrowRight
                 size={24}

@@ -73,13 +73,13 @@ const Team: React.FC = () => {
           <div className="flex gap-4">
             <button 
               onClick={prevMember}
-              className="w-11 h-11 rounded-full border border-slate-200 flex items-center justify-center text-[var(--deep-blue)] hover:bg-[var(--primary-cyan)] hover:border-[var(--primary-cyan)] transition-all group"
+              className="w-11 h-11 rounded-full border border-slate-200 flex items-center justify-center text-[var(--deep-blue)] hover:bg-[var(--primary-color)] hover:border-[var(--primary-color)] transition-all group"
             >
               <ChevronLeft size={24} className="group-hover:-translate-x-1 transition-transform" />
             </button>
             <button 
               onClick={nextMember}
-              className="w-11 h-11 rounded-full border border-slate-200 flex items-center justify-center text-[var(--deep-blue)] hover:bg-[var(--primary-cyan)] hover:border-[var(--primary-cyan)] transition-all group"
+              className="w-11 h-11 rounded-full border border-slate-200 flex items-center justify-center text-[var(--deep-blue)] hover:bg-[var(--primary-color)] hover:border-[var(--primary-color)] transition-all group"
             >
               <ChevronRight size={24} className="group-hover:translate-x-1 transition-transform" />
             </button>
@@ -130,13 +130,13 @@ const Team: React.FC = () => {
                   }`}
                 >
                   <div className="glass border border-white/20 p-5 rounded-2xl backdrop-blur-xl relative overflow-hidden">
-                    <div className="absolute top-0 right-0 p-4 opacity-20 text-[var(--primary-cyan)]">
+                    <div className="absolute top-0 right-0 p-4 opacity-20 text-[var(--primary-color)]">
                       {member.icon}
                     </div>
                     
                     <div className="flex items-end justify-between gap-6">
                       <div className="space-y-2">
-                        <p className="text-[var(--primary-cyan)] font-black text-[10px] uppercase tracking-[0.3em] mb-2">{member.role}</p>
+                        <p className="text-[var(--primary-color)] font-black text-[10px] uppercase tracking-[0.3em] mb-2">{member.role}</p>
                         <h3 className="text-2xl font-black text-white tracking-tighter">{member.name}</h3>
                       </div>
                       
@@ -147,8 +147,8 @@ const Team: React.FC = () => {
                     </div>
 
                     <div className="mt-6 flex items-center gap-4">
-                       <div className="h-1 w-20 bg-gradient-to-r from-[var(--primary-cyan)] to-transparent rounded-full"></div>
-                       <button className="text-[10px] font-black text-white uppercase tracking-[0.2em] hover:text-[var(--primary-cyan)] transition-colors">
+                       <div className="h-1 w-20 bg-gradient-to-r from-[var(--primary-color)] to-transparent rounded-full"></div>
+                       <button className="text-[10px] font-black text-white uppercase tracking-[0.2em] hover:text-[var(--primary-color)] transition-colors">
                          View engineering docs
                        </button>
                     </div>

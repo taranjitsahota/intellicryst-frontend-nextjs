@@ -38,7 +38,7 @@ const Footer: React.FC = () => {
             </p>
             <div className="flex gap-4">
               {[Twitter, Linkedin, Github].map((Icon, i) => (
-                <a key={i} href="#" className="w-12 h-12 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-[var(--light-grey)]/60 hover:text-[var(--primary-cyan)] hover:border-[var(--primary-cyan)] hover:bg-white/10 transition-all">
+                <a key={i} href="#" className="w-12 h-12 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-[var(--light-grey)]/60 hover:text-[var(--primary-color)] hover:border-[var(--primary-color)] hover:bg-white/10 transition-all">
                   <Icon size={20} />
                 </a>
               ))}
@@ -46,7 +46,7 @@ const Footer: React.FC = () => {
           </div>
 
           <div>
-            <h4 className="font-black text-[10px] uppercase tracking-[0.3em] text-[var(--primary-cyan)] mb-10">Capabilities</h4>
+            <h4 className="font-black text-[10px] uppercase tracking-[0.3em] text-[var(--primary-color)] mb-10">Capabilities</h4>
             <ul className="space-y-5">
               {[
                 "Web & Mobile Systems", 
@@ -65,7 +65,7 @@ const Footer: React.FC = () => {
           </div>
 
           <div>
-            <h4 className="font-black text-[10px] uppercase tracking-[0.3em] text-[var(--primary-cyan)] mb-10">Case Studies</h4>
+            <h4 className="font-black text-[10px] uppercase tracking-[0.3em] text-[var(--primary-color)] mb-10">Case Studies</h4>
             <ul className="space-y-5">
               {["Ezykheti", "Ezyfarms", "Mobility Hub", "Secure Gateway"].map(link => (
                 <li key={link}>
@@ -78,7 +78,7 @@ const Footer: React.FC = () => {
           </div>
 
           <div>
-            <h4 className="font-black text-[10px] uppercase tracking-[0.3em] text-[var(--primary-cyan)] mb-10">Nexus</h4>
+            <h4 className="font-black text-[10px] uppercase tracking-[0.3em] text-[var(--primary-color)] mb-10">Nexus</h4>
             <ul className="space-y-5">
               {["About Intellicryst", "Contact Engineering", "Career Portal", "Privacy Policy", "Legal Terms"].map(link => (
                 <li key={link}>

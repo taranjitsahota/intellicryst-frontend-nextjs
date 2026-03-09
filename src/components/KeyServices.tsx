@@ -29,7 +29,7 @@ const KeyServices: React.FC = () => {
         
         {/* Card 1: Security Engineering - Emerald/Cyan Pastel */}
         <div className="md:col-span-3 lg:col-span-4 bg-white rounded-2xl border border-slate-100 shadow-sm overflow-hidden flex flex-col group hover:shadow-2xl transition-all duration-500 relative">
-          <div className="absolute top-0 right-0 w-80 h-80 bg-[var(--primary-cyan)] blur-[100px] rounded-full -mr-28 -mt-28 opacity-10 pointer-events-none group-hover:opacity-30 transition-opacity duration-700"></div>
+          <div className="absolute top-0 right-0 w-80 h-80 bg-[var(--primary-color)] blur-[100px] rounded-full -mr-28 -mt-28 opacity-10 pointer-events-none group-hover:opacity-30 transition-opacity duration-700"></div>
           <div className="absolute bottom-0 left-0 w-40 h-40 bg-emerald-300 blur-[60px] rounded-full -ml-10 -mb-10 opacity-10 pointer-events-none group-hover:opacity-20 transition-opacity duration-700"></div>
           
           <div className="p-6 pb-0 relative z-10">
@@ -41,9 +41,9 @@ const KeyServices: React.FC = () => {
           <div className="flex-1 relative flex items-center justify-center min-h-[180px] z-10">
             <div className="relative w-44 h-44">
               <div className="absolute inset-0 bg-gradient-to-br from-[var(--deep-blue)] to-[var(--primary-blue)] rounded-3xl transform rotate-12 group-hover:rotate-0 transition-transform duration-700 shadow-2xl flex items-center justify-center">
-                <Lock size={72} className="text-[var(--primary-cyan)] opacity-80" />
+                <Lock size={72} className="text-[var(--primary-color)] opacity-80" />
               </div>
-              <div className="absolute -bottom-4 -right-4 w-14 h-14 bg-[var(--primary-cyan)] rounded-2xl flex items-center justify-center shadow-lg transform group-hover:translate-x-2 group-hover:translate-y-2 transition-transform">
+              <div className="absolute -bottom-4 -right-4 w-14 h-14 bg-[var(--primary-color)] rounded-2xl flex items-center justify-center shadow-lg transform group-hover:translate-x-2 group-hover:translate-y-2 transition-transform">
                 <ShieldCheck size={28} className="text-[var(--deep-blue)]" />
               </div>
             </div>
@@ -143,11 +143,11 @@ const KeyServices: React.FC = () => {
             </div>
             <div className="mt-10 space-y-3">
               <div className="flex items-center gap-3">
-                <CheckCircle2 size={18} className="text-[var(--primary-cyan)]" />
+                <CheckCircle2 size={18} className="text-[var(--primary-color)]" />
                 <span className="text-[11px] font-black text-[var(--deep-blue)] uppercase tracking-wider">Web Apps</span>
               </div>
               <div className="flex items-center gap-3">
-                <CheckCircle2 size={18} className="text-[var(--primary-cyan)]" />
+                <CheckCircle2 size={18} className="text-[var(--primary-color)]" />
                 <span className="text-[11px] font-black text-[var(--deep-blue)] uppercase tracking-wider">iOS & Android</span>
               </div>
             </div>
@@ -170,7 +170,7 @@ const KeyServices: React.FC = () => {
               </div>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 {[
-                  { name: 'Core Engine', tag: 'React', color: 'bg-[var(--primary-cyan)]' },
+                  { name: 'Core Engine', tag: 'React', color: 'bg-[var(--primary-color)]' },
                   { name: 'Backend', tag: 'Node.js', color: 'bg-[var(--primary-blue)]' },
                   { name: 'Architecture', tag: 'Terraform', color: 'bg-[var(--deep-blue)]' },
                   { name: 'Quality', tag: 'Testing', color: 'bg-violet-500' }
@@ -215,7 +215,7 @@ const KeyServices: React.FC = () => {
                   <div className="h-2 w-3/4 bg-white/20 rounded-full"></div>
                 </div>
                 <div className="mt-2 flex items-center justify-between">
-                  <div className="w-5 h-5 bg-[var(--primary-cyan)] rounded-full animate-ping"></div>
+                  <div className="w-5 h-5 bg-[var(--primary-color)] rounded-full animate-ping"></div>
                   <Zap size={20} className="text-white/40" />
                 </div>
               </div>

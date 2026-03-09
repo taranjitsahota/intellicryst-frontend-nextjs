@@ -15,7 +15,7 @@ const FormSelect: React.FC<Props> = ({ label, name, options }) => {
 
       <select
         name={name}
-        className="w-full px-5 py-3 rounded-2xl bg-white/60 border border-white focus:border-[var(--primary-cyan)] focus:bg-white transition-all outline-none font-semibold text-[var(--deep-blue)] shadow-sm"
+        className="w-full px-5 py-3 rounded-2xl bg-white/60 border border-white focus:border-[var(--primary-color)] focus:bg-white transition-all outline-none font-semibold text-[var(--deep-blue)] shadow-sm"
       >
         <option value="">Select {label}</option>
 

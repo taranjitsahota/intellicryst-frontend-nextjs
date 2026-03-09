@@ -36,17 +36,17 @@ const techItems = [
 ];
 
 const decorativeDots = [
-  { orbit: 1, angle: 45, color: "bg-[var(--primary-cyan)]" },
+  { orbit: 1, angle: 45, color: "bg-[var(--primary-color)]" },
   { orbit: 1, angle: 135, color: "bg-[var(--primary-blue)]" },
-  { orbit: 1, angle: 225, color: "bg-[var(--primary-cyan)]" },
+  { orbit: 1, angle: 225, color: "bg-[var(--primary-color)]" },
   { orbit: 1, angle: 315, color: "bg-[var(--primary-blue)]" },
   { orbit: 2, angle: 0, color: "bg-[var(--primary-blue)]" },
-  { orbit: 2, angle: 60, color: "bg-[var(--primary-cyan)]" },
+  { orbit: 2, angle: 60, color: "bg-[var(--primary-color)]" },
   { orbit: 2, angle: 180, color: "bg-[var(--primary-blue)]" },
-  { orbit: 2, angle: 270, color: "bg-[var(--primary-cyan)]" },
-  { orbit: 3, angle: 15, color: "bg-[var(--primary-cyan)]" },
+  { orbit: 2, angle: 270, color: "bg-[var(--primary-color)]" },
+  { orbit: 3, angle: 15, color: "bg-[var(--primary-color)]" },
   { orbit: 3, angle: 100, color: "bg-[var(--primary-blue)]" },
-  { orbit: 3, angle: 150, color: "bg-[var(--primary-cyan)]" },
+  { orbit: 3, angle: 150, color: "bg-[var(--primary-color)]" },
   { orbit: 3, angle: 250, color: "bg-[var(--primary-blue)]" },
 ];
 
@@ -98,7 +98,7 @@ const OrbitNode: React.FC<{
       >
         <div
           className={`w-7 h-7 md:w-10 md:h-10 backdrop-blur-md rounded-full border shadow-[0_8px_32px_rgba(0,0,0,0.05)] flex items-center justify-center transition-all duration-300 cursor-pointer ${colorClass} ${
-            isActive ? "ring-4 ring-[var(--primary-cyan)]/20 shadow-xl" : ""
+            isActive ? "ring-4 ring-[var(--primary-color)]/20 shadow-xl" : ""
           }`}
         >
           {item.icon}
@@ -229,7 +229,7 @@ const TechStack: React.FC = () => {
             every environment.
           </p>
           <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4">
-            <button className="bg-[var(--deep-blue)] text-white px-8 py-3.5 rounded-full font-black text-[10px] uppercase tracking-widest hover:bg-[var(--primary-cyan)] hover:text-[var(--deep-blue)] transition-all shadow-xl shadow-navy/20">
+            <button className="bg-[var(--deep-blue)] text-white px-8 py-3.5 rounded-full font-black text-[10px] uppercase tracking-widest hover:bg-[var(--primary-color)] hover:text-[var(--deep-blue)] transition-all shadow-xl shadow-navy/20">
               Methodology
             </button>
           </div>

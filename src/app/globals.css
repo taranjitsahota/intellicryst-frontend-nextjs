@@ -2,14 +2,14 @@
 
 :root {
   font-family: var(--font-inter), system-ui, sans-serif;
-  --primary-cyan: #00f5d4;
-  --primary-blue: #00b6ff;
+  --primary-color: #59e6ff;
+  --primary-blue: #24a3d5;
   --deep-blue: #012b48;
   --navy-text: #05182c;
   --azure-glow: #1bcfe1;
-  --grey-text : #5A6C7C;
-  --light-grey : #EAF2FF;
-  --dark-grey : #05080F;
+  --grey-text: #5a6c7c;
+  --light-grey: #eaf2ff;
+  --dark-grey: #05080f;
 }
 
 body {
@@ -28,7 +28,7 @@ body {
 .gradient-text {
   background: linear-gradient(
     135deg,
-    var(--primary-cyan) 0%,
+    var(--primary-color) 0%,
     var(--primary-blue) 100%
   );
   -webkit-background-clip: text;
@@ -152,7 +152,11 @@ body {
   opacity: 0.2;
   z-index: -1;
   border-radius: 50%;
-  background: linear-gradient(135deg, var(--primary-cyan), var(--primary-blue));
+  background: linear-gradient(
+    135deg,
+    var(--primary-color),
+    var(--primary-blue)
+  );
 }
 
 /* Marquee Animation */

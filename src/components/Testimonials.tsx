@@ -131,7 +131,7 @@ const testimonials: Testimonial[] = [
           <div 
             key={`wdot-${idx}`}
             className={`absolute rounded-full pointer-events-none transition-all duration-1000 ${
-              dot.color === 'cyan' ? 'bg-[var(--primary-cyan)] opacity-[0.85]' : 'bg-slate-300 opacity-[0.45]'
+              dot.color === 'cyan' ? 'bg-[var(--primary-color)] opacity-[0.85]' : 'bg-slate-300 opacity-[0.45]'
             }`}
             style={{ 
               left: `${dot.x}%`, 
@@ -178,12 +178,12 @@ const testimonials: Testimonial[] = [
             <div className={`group relative cursor-pointer ${getCircleSize(t.size)}`}>
               {/* Outer glow on active */}
               {activeId === t.id && (
-                <div className="absolute inset-0 bg-[var(--primary-cyan)]/20 blur-xl rounded-full scale-125 animate-pulse"></div>
+                <div className="absolute inset-0 bg-[var(--primary-color)]/20 blur-xl rounded-full scale-125 animate-pulse"></div>
               )}
               
               {/* Avatar Circle */}
               <div className={`w-full h-full rounded-full border transition-all duration-300 overflow-hidden shadow-sm ${
-                activeId === t.id ? 'border-[var(--primary-cyan)] scale-110 shadow-lg' : 'border-slate-100 grayscale-[40%] group-hover:grayscale-0 hover:border-[var(--primary-cyan)]/40'
+                activeId === t.id ? 'border-[var(--primary-color)] scale-110 shadow-lg' : 'border-slate-100 grayscale-[40%] group-hover:grayscale-0 hover:border-[var(--primary-color)]/40'
               }`}>
                 <img src={t.avatar} alt={t.name} className="w-full h-full object-cover" />
               </div>
@@ -201,7 +201,7 @@ const testimonials: Testimonial[] = [
                     <div className="space-y-1">
                       <div className="flex items-center justify-center gap-6 mb-4">
                         <div className="flex items-center gap-1.5">
-                          <User size={14} className="text-[var(--primary-cyan)]" />
+                          <User size={14} className="text-[var(--primary-color)]" />
                           <span className="text-[10px] font-black text-[var(--deep-blue)] uppercase tracking-widest">Client</span>
                         </div>
                         <div className="flex items-center gap-1.5">
@@ -216,7 +216,7 @@ const testimonials: Testimonial[] = [
 
                     <div className="flex justify-center gap-1">
                       {[...Array(5)].map((_, i) => (
-                        <Star key={i} size={14} fill={i < t.rating ? "#00F5D4" : "none"} className={i < t.rating ? "text-[var(--primary-cyan)]" : "text-slate-200"} />
+                        <Star key={i} size={14} fill={i < t.rating ? "#00F5D4" : "none"} className={i < t.rating ? "text-[var(--primary-color)]" : "text-slate-200"} />
                       ))}
                     </div>
 
@@ -242,7 +242,7 @@ const testimonials: Testimonial[] = [
           { label: 'Satisfaction', value: '4.9/5', icon: <Star size={16} /> }
         ].map((stat, i) => (
           <div key={i} className="flex items-center gap-4 group">
-            <div className="w-10 h-10 rounded-2xl bg-slate-50 border border-slate-100 flex items-center justify-center text-[var(--primary-cyan)] group-hover:bg-[var(--primary-cyan)] group-hover:text-white transition-all shadow-sm">
+            <div className="w-10 h-10 rounded-2xl bg-slate-50 border border-slate-100 flex items-center justify-center text-[var(--primary-color)] group-hover:bg-[var(--primary-color)] group-hover:text-white transition-all shadow-sm">
               {stat.icon}
             </div>
             <div>

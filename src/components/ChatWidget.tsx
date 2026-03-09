@@ -67,13 +67,13 @@ const ChatWidget: React.FC = () => {
           {/* Header */}
           <div className="bg-[var(--deep-blue)] p-6 flex items-center justify-between">
             <div className="flex items-center gap-3">
-              <div className="w-10 h-10 bg-gradient-to-tr from-[var(--primary-cyan)] to-[var(--primary-blue)] rounded-xl flex items-center justify-center">
+              <div className="w-10 h-10 bg-gradient-to-tr from-[var(--primary-color)] to-[var(--primary-blue)] rounded-xl flex items-center justify-center">
                 <MessageCircle size={22} className="text-[var(--deep-blue)]" />
               </div>
               <div>
                 <h4 className="text-white font-black text-sm tracking-tight">Intellicryst Nexus</h4>
                 <div className="flex items-center gap-1.5">
-                  <div className={`w-1.5 h-1.5 rounded-full ${isLoading ? 'bg-amber-400' : 'bg-[var(--primary-cyan)]'} animate-pulse`}></div>
+                  <div className={`w-1.5 h-1.5 rounded-full ${isLoading ? 'bg-amber-400' : 'bg-[var(--primary-color)]'} animate-pulse`}></div>
                   <span className="text-[10px] text-white/50 font-black uppercase tracking-widest">
                     {isLoading ? 'Analyzing...' : 'Active Architect'}
                   </span>
@@ -104,13 +104,13 @@ const ChatWidget: React.FC = () => {
               <div className="flex flex-col gap-2">
                  <button 
                    onClick={() => handleSend("Explain your development methodology.")}
-                   className="w-full text-left px-5 py-3 rounded-xl bg-white border border-slate-200 text-[var(--deep-blue)] text-xs font-bold hover:border-[var(--primary-cyan)] hover:text-[var(--primary-cyan)] transition-all"
+                   className="w-full text-left px-5 py-3 rounded-xl bg-white border border-slate-200 text-[var(--deep-blue)] text-xs font-bold hover:border-[var(--primary-color)] hover:text-[var(--primary-color)] transition-all"
                  >
                     Service Capabilities
                  </button>
                  <button 
                    onClick={() => handleSend("I'd like to request a system security audit.")}
-                   className="w-full text-left px-5 py-3 rounded-xl bg-white border border-slate-200 text-[var(--deep-blue)] text-xs font-bold hover:border-[var(--primary-cyan)] hover:text-[var(--primary-cyan)] transition-all"
+                   className="w-full text-left px-5 py-3 rounded-xl bg-white border border-slate-200 text-[var(--deep-blue)] text-xs font-bold hover:border-[var(--primary-color)] hover:text-[var(--primary-color)] transition-all"
                  >
                     Project Blueprint Request
                  </button>
@@ -119,9 +119,9 @@ const ChatWidget: React.FC = () => {
 
             {isLoading && (
               <div className="flex gap-2 p-2">
-                <div className="w-1.5 h-1.5 bg-[var(--primary-cyan)] rounded-full animate-bounce [animation-delay:-0.3s]"></div>
-                <div className="w-1.5 h-1.5 bg-[var(--primary-cyan)] rounded-full animate-bounce [animation-delay:-0.15s]"></div>
-                <div className="w-1.5 h-1.5 bg-[var(--primary-cyan)] rounded-full animate-bounce"></div>
+                <div className="w-1.5 h-1.5 bg-[var(--primary-color)] rounded-full animate-bounce [animation-delay:-0.3s]"></div>
+                <div className="w-1.5 h-1.5 bg-[var(--primary-color)] rounded-full animate-bounce [animation-delay:-0.15s]"></div>
+                <div className="w-1.5 h-1.5 bg-[var(--primary-color)] rounded-full animate-bounce"></div>
               </div>
             )}
           </div>
@@ -137,12 +137,12 @@ const ChatWidget: React.FC = () => {
               onChange={(e) => setInput(e.target.value)}
               placeholder="Type your query..." 
               disabled={isLoading}
-              className="flex-1 px-5 py-3.5 bg-slate-50 rounded-2xl text-sm font-medium focus:outline-none focus:ring-2 focus:ring-[var(--primary-cyan)]/20 transition-all disabled:opacity-50"
+              className="flex-1 px-5 py-3.5 bg-slate-50 rounded-2xl text-sm font-medium focus:outline-none focus:ring-2 focus:ring-[var(--primary-color)]/20 transition-all disabled:opacity-50"
             />
             <button 
               type="submit"
               disabled={isLoading || !input.trim()}
-              className="w-12 h-12 bg-[var(--deep-blue)] text-white rounded-2xl flex items-center justify-center hover:bg-[var(--primary-cyan)] hover:text-[var(--deep-blue)] transition-all shadow-lg disabled:opacity-50"
+              className="w-12 h-12 bg-[var(--deep-blue)] text-white rounded-2xl flex items-center justify-center hover:bg-[var(--primary-color)] hover:text-[var(--deep-blue)] transition-all shadow-lg disabled:opacity-50"
             >
               {isLoading ? <Loader2 className="animate-spin" size={18} /> : <Send size={18} />}
             </button>
@@ -152,9 +152,9 @@ const ChatWidget: React.FC = () => {
 
       <button 
         onClick={() => setIsOpen(!isOpen)}
-        className="w-16 h-16 bg-[var(--deep-blue)] rounded-[24px] flex items-center justify-center text-[var(--primary-cyan)] shadow-2xl hover:scale-110 transition-transform relative group"
+        className="w-16 h-16 bg-[var(--deep-blue)] rounded-[24px] flex items-center justify-center text-[var(--primary-color)] shadow-2xl hover:scale-110 transition-transform relative group"
       >
-        <div className="absolute inset-0 bg-[var(--primary-cyan)] rounded-[24px] scale-90 opacity-0 group-hover:opacity-20 transition-all"></div>
+        <div className="absolute inset-0 bg-[var(--primary-color)] rounded-[24px] scale-90 opacity-0 group-hover:opacity-20 transition-all"></div>
         {isOpen ? <X size={28} /> : <MessageCircle size={28} />}
       </button>
     </div>

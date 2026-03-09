@@ -64,7 +64,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, position, onClick })
           <img src={project.avatar} alt={project.name} className="w-full h-full object-cover" />
         </div>
         <div className="pb-4">
-          <div className="w-4 h-4 rounded-full bg-[var(--primary-cyan)] border-4 border-white shadow-[0_0_20px_#00F5D4] animate-pulse"></div>
+          <div className="w-4 h-4 rounded-full bg-[var(--primary-color)] border-4 border-white shadow-[0_0_20px_#00F5D4] animate-pulse"></div>
         </div>
       </div>
 
@@ -93,7 +93,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, position, onClick })
           <p className="text-[11px] font-black uppercase tracking-[0.2em] text-[var(--deep-blue)]/30">Tech Stack</p>
           <div className="flex flex-wrap gap-2">
             {project.tags.map(tag => (
-              <span key={tag} className="bg-slate-50 text-[var(--deep-blue)] text-[10px] font-black px-4 py-2 rounded-xl border border-slate-100 group-hover:bg-[var(--primary-cyan)]/10 group-hover:border-[var(--primary-cyan)]/20 transition-all">
+              <span key={tag} className="bg-slate-50 text-[var(--deep-blue)] text-[10px] font-black px-4 py-2 rounded-xl border border-slate-100 group-hover:bg-[var(--primary-color)]/10 group-hover:border-[var(--primary-color)]/20 transition-all">
                 {tag}
               </span>
             ))}
@@ -104,7 +104,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, position, onClick })
           <button className="flex-1 bg-white border-2 border-slate-100 text-[var(--deep-blue)] py-4 rounded-2xl font-black text-xs uppercase tracking-[0.2em] hover:bg-slate-50 transition-all flex items-center justify-center gap-2">
             Messages
           </button>
-          <button className="flex-1 bg-[var(--deep-blue)] text-white py-4 rounded-2xl font-black text-xs uppercase tracking-[0.2em] hover:bg-[var(--primary-cyan)] hover:text-[var(--deep-blue)] transition-all shadow-xl shadow-navy/20 flex items-center justify-center gap-2">
+          <button className="flex-1 bg-[var(--deep-blue)] text-white py-4 rounded-2xl font-black text-xs uppercase tracking-[0.2em] hover:bg-[var(--primary-color)] hover:text-[var(--deep-blue)] transition-all shadow-xl shadow-navy/20 flex items-center justify-center gap-2">
             Connect
           </button>
         </div>

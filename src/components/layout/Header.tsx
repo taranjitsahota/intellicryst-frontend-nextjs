@@ -114,13 +114,13 @@ const Header: React.FC<{}> = () => {
                 key={item.label}
                 href={item.href}
                 className={`font-bold text-md transition-colors relative group
-                ${active ? "text-[var(--primary-cyan)]" : textColorClass}
-                hover:text-[var(--primary-cyan)]`}
+                ${active ? "text-[var(--primary-color)]" : textColorClass}
+                hover:text-[var(--primary-color)]`}
               >
                 {item.label}
 
                 <span
-                  className={`absolute -bottom-1 left-0 h-0.5 bg-[var(--primary-cyan)] transition-all duration-300
+                  className={`absolute -bottom-1 left-0 h-0.5 bg-[var(--primary-color)] transition-all duration-300
                   ${active ? "w-full" : "w-0 group-hover:w-full"}`}
                 />
               </Link>
@@ -132,13 +132,13 @@ const Header: React.FC<{}> = () => {
         <div className="hidden lg:flex items-center gap-6">
           <Link
             href="/start-building"
-            className={`text-sm font-bold ${textColorClass} hover:text-[var(--primary-cyan)] transition-colors flex items-center gap-1`}
+            className={`text-sm font-bold ${textColorClass} hover:text-[var(--primary-color)] transition-colors flex items-center gap-1`}
           >
             Start Building <ExternalLink size={14} />
           </Link>
           <Link
             href="/contact"
-            className="cursor-pointer bg-gradient-to-r from-[var(--primary-cyan)] to-[var(--primary-blue)] text-[var(--deep-blue)] px-7 py-3 rounded-xl text-sm font-black hover:scale-110 transition-all shadow-xl shadow-cyan-400/20 border border-white/20"
+            className="cursor-pointer bg-gradient-to-r from-[var(--primary-color)] to-[var(--primary-blue)] text-[var(--deep-blue)] px-7 py-3 rounded-xl text-sm font-black hover:scale-110 transition-all shadow-xl shadow-cyan-400/20 border border-white/20"
           >
             Talk to Us
           </Link>
@@ -160,7 +160,7 @@ const Header: React.FC<{}> = () => {
             <a
               key={item.label}
               href={item.href}
-              className="text-lg font-bold text-[var(--deep-blue)] py-2 hover:text-[var(--primary-cyan)]"
+              className="text-lg font-bold text-[var(--deep-blue)] py-2 hover:text-[var(--primary-color)]"
               onClick={() => setIsOpen(false)}
             >
               {item.label}

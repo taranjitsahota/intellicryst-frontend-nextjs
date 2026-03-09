@@ -66,12 +66,12 @@ const WhyChooseUs: React.FC = () => {
           <div className="absolute top-10 left-10 md:-left-12 glass border border-white/40 p-6 md:p-7 rounded-2xl shadow-[0_32px_128px_-24px_rgba(1,43,72,0.2)] w-[300px] md:w-[360px] backdrop-blur-3xl animate-in fade-in zoom-in duration-1000 delay-500">
             <div className="flex items-center justify-between mb-8">
               <h5 className="text-[11px] font-black uppercase tracking-[0.2em] text-[var(--deep-blue)]">System Performance</h5>
-              <Activity size={18} className="text-[var(--primary-cyan)]" />
+              <Activity size={18} className="text-[var(--primary-color)]" />
             </div>
             
             <div className="space-y-6">
               {[
-                { label: 'Security Score', value: 98, color: 'bg-[var(--primary-cyan)]' },
+                { label: 'Security Score', value: 98, color: 'bg-[var(--primary-color)]' },
                 { label: 'Uptime Index', value: 99, color: 'bg-[var(--primary-blue)]' },
                 { label: 'Latency (ms)', value: 85, color: 'bg-[var(--deep-blue)]' },
                 { label: 'Cloud Efficiency', value: 92, color: 'bg-slate-300' }
@@ -111,7 +111,7 @@ const WhyChooseUs: React.FC = () => {
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-10 gap-y-8">
             {choosePoints.map((point, i) => (
               <div key={i} className="flex items-start gap-4 group">
-                <div className="mt-1 w-8 h-8 rounded-xl bg-[var(--primary-cyan)]/10 flex items-center justify-center text-[var(--primary-cyan)] group-hover:bg-[var(--primary-cyan)] group-hover:text-white transition-all duration-300 flex-shrink-0 shadow-sm">
+                <div className="mt-1 w-8 h-8 rounded-xl bg-[var(--primary-color)]/10 flex items-center justify-center text-[var(--primary-color)] group-hover:bg-[var(--primary-color)] group-hover:text-white transition-all duration-300 flex-shrink-0 shadow-sm">
                   {point.icon}
                 </div>
                 <div>
@@ -137,9 +137,9 @@ const WhyChooseUs: React.FC = () => {
           </div>
 
           <div className="pt-6">
-            <button className="flex items-center gap-3 text-xs font-black text-[var(--deep-blue)] hover:text-[var(--primary-cyan)] transition-colors uppercase tracking-[0.3em] group">
+            <button className="flex items-center gap-3 text-xs font-black text-[var(--deep-blue)] hover:text-[var(--primary-color)] transition-colors uppercase tracking-[0.3em] group">
               Learn our methodology
-              <div className="w-10 h-[3px] bg-[var(--deep-blue)] group-hover:bg-[var(--primary-cyan)] group-hover:w-16 transition-all"></div>
+              <div className="w-10 h-[3px] bg-[var(--deep-blue)] group-hover:bg-[var(--primary-color)] group-hover:w-16 transition-all"></div>
             </button>
           </div>
         </div>

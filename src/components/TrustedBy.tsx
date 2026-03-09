@@ -24,14 +24,14 @@ const TrustedBy: React.FC = () => {
               {[...logos, ...logos, ...logos].map((logo, idx) => (
                 <div key={`${logo.name}-${idx}`} className="flex items-center gap-10 text-[var(--deep-blue)] group cursor-default shrink-0">
                   {/* Significantly Bigger Logo Circle */}
-                  <div className="w-16 h-16 text-xl rounded-[32px] bg-slate-50 border border-slate-100 flex items-center justify-center font-black group-hover:bg-[var(--deep-blue)] group-hover:text-[var(--primary-cyan)] group-hover:scale-110 group-hover:rotate-6 transition-all duration-700 shadow-[0_8px_30px_rgb(0,0,0,0.04)]">
+                  <div className="w-16 h-16 text-xl rounded-[32px] bg-slate-50 border border-slate-100 flex items-center justify-center font-black group-hover:bg-[var(--deep-blue)] group-hover:text-[var(--primary-color)] group-hover:scale-110 group-hover:rotate-6 transition-all duration-700 shadow-[0_8px_30px_rgb(0,0,0,0.04)]">
                     {logo.icon}
                   </div>
                   <div className="flex flex-col">
                     <span className="font-black tracking-tight text-lg md:text-xl uppercase opacity-40 group-hover:opacity-100 group-hover:translate-x-2 transition-all duration-500">
                       {logo.name}
                     </span>
-                    <div className="h-1 mt-1 w-0 bg-[var(--primary-cyan)] group-hover:w-full transition-all duration-700 rounded-full"></div>
+                    <div className="h-1 mt-1 w-0 bg-[var(--primary-color)] group-hover:w-full transition-all duration-700 rounded-full"></div>
                   </div>
                 </div>
               ))}

@@ -87,7 +87,7 @@ const Industries: React.FC = () => {
 
             <h2 className="text-3xl lg:text-4xl font-extrabold text-white tracking-tighter leading-[1] max-w-xl">
               Expertise Across <br />
-              <span className="italic opacity-90 text-[var(--primary-cyan)]">
+              <span className="italic opacity-90 text-[var(--primary-color)]">
                 Key Industries
               </span>
             </h2>
@@ -108,7 +108,7 @@ const Industries: React.FC = () => {
                   key={i}
                   className="flex items-center gap-2 bg-white/5 border border-white/10 px-3 py-1.5 rounded-full hover:bg-white/10 hover:border-white/20 transition-all cursor-default backdrop-blur-md"
                 >
-                  <Icon size={16} className="text-[var(--primary-cyan)]" />
+                  <Icon size={16} className="text-[var(--primary-color)]" />
                   <span className="text-white/80 font-bold text-[6px] uppercase tracking-widest">
                     {ind.title}
                   </span>
@@ -119,7 +119,7 @@ const Industries: React.FC = () => {
 
           {/* Action Button - Compact */}
           <div className="pt-2">
-            <button className="px-6 py-2.5 bg-white text-[var(--deep-blue)] rounded-2xl font-black text-[11px] uppercase tracking-widest transition-all hover:bg-[var(--primary-cyan)] hover:scale-105 shadow-2xl">
+            <button className="px-6 py-2.5 bg-white text-[var(--deep-blue)] rounded-2xl font-black text-[11px] uppercase tracking-widest transition-all hover:bg-[var(--primary-color)] hover:scale-105 shadow-2xl">
               Start Exploring
             </button>
           </div>

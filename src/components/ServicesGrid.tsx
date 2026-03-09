@@ -95,7 +95,7 @@ const ServicesGrid: React.FC = () => {
             >
               <div>
                 <div className={`w-12 h-12 mb-5 rounded-full flex items-center justify-center transition-all duration-500 ${
-                  isFirst ? 'bg-white/10 text-[var(--primary-cyan)]' : 'bg-slate-50 text-[var(--primary-cyan)] group-hover:bg-[var(--primary-cyan)]/10'
+                  isFirst ? 'bg-white/10 text-[var(--primary-color)]' : 'bg-slate-50 text-[var(--primary-color)] group-hover:bg-[var(--primary-color)]/10'
                 } ${s.animClass}`}>
                   {s.icon}
                 </div>
@@ -117,7 +117,7 @@ const ServicesGrid: React.FC = () => {
                 <a 
                   href="#" 
                   className={`inline-flex items-center gap-2 text-xs font-black uppercase tracking-widest group/link transition-all ${
-                    isFirst ? 'text-white hover:text-[var(--primary-cyan)]' : 'text-[var(--deep-blue)] hover:text-[var(--primary-cyan)]'
+                    isFirst ? 'text-white hover:text-[var(--primary-color)]' : 'text-[var(--deep-blue)] hover:text-[var(--primary-color)]'
                   }`}
                 >
                   Learn more 
