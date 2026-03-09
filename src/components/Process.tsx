@@ -15,11 +15,11 @@ const Process: React.FC = () => {
   };
 
   return (
-    <div className="max-w-[1440px] mx-auto px-8 md:px-16 lg:px-24 relative py-16 lg:py-20 bg-white overflow-hidden">
+    <div className="max-w-[1440px] mx-auto px-4 md:px-16 lg:px-24 relative py-16 lg:py-20 bg-white overflow-hidden">
       {/* Background Gaussian Blur Accent */}
       <div className="gaussian-blur-accent w-[600px] h-[600px] -top-20 -right-20 opacity-[0.03]"></div>
 
-      <div className="flex flex-col md:flex-row items-end justify-between mb-12 lg:mb-16 gap-8">
+      <div className="flex flex-col md:flex-row items-center md:items-end justify-between mb-12 lg:mb-16 gap-8">
         <div className="space-y-4">
           <h4 className="text-[var(--deep-blue)] font-black text-[10px] lg:text-xs uppercase tracking-[0.5em] opacity-50">
             Execution Roadmap
@@ -31,7 +31,7 @@ const Process: React.FC = () => {
         </div>
 
         {/* Navigation Arrows */}
-        <div className="flex gap-4 pb-2">
+        <div className="flex gap-4 pb-2 justify-center md:justify-end w-full md:w-auto">
           <button
             onClick={() => scroll("left")}
             className="w-14 h-14 rounded-full border-2 border-slate-100 flex items-center justify-center text-[var(--deep-blue)] hover:bg-[var(--primary-color)] hover:border-[var(--primary-color)] transition-all group shadow-sm bg-white"
