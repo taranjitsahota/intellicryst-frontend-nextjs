@@ -149,7 +149,7 @@ const TechStack: React.FC = () => {
       const isMobile = window.innerWidth < 768;
 
       setRadii({
-        1: isMobile ? 70 : 140,
+        1: isMobile ? 85 : 160,
         2: isMobile ? 120 : 220,
         3: isMobile ? 170 : 300,
       });
@@ -200,7 +200,7 @@ const TechStack: React.FC = () => {
         </svg>
       </div>
 
-      <div className="relative w-full max-w-[700px] aspect-square flex items-center justify-center px-6 md:px-12">
+      <div className="relative w-full max-w-[620px] aspect-square flex items-center justify-center px-6 md:px-12 scale-90 md:scale-95">
         {/* Orbit Lines */}
         <div className="absolute w-[140px] h-[140px] md:w-[280px] md:h-[280px] border border-slate-200 rounded-full"></div>
         <div className="absolute w-[220px] h-[220px] md:w-[440px] md:h-[440px] border border-slate-200/60 rounded-full"></div>
@@ -216,20 +216,20 @@ const TechStack: React.FC = () => {
         ))}
 
         {/* Center circular box */}
-        <div className="text-center z-30 w-[200px] h-[200px] md:w-[300px] md:h-[300px] flex flex-col items-center justify-center animate-in fade-in zoom-in duration-1000 bg-white/60 backdrop-blur-md p-4 md:p-6 rounded-full border border-white/80 shadow-[0_32px_64px_-16px_rgba(0,0,0,0.05)]">
-          <p className="text-[var(--deep-blue)] font-black text-[10px] uppercase tracking-[0.5em] mb-4 opacity-50">
+        <div className="text-center z-30 w-[160px] h-[160px] md:w-[220px] md:h-[220px] flex flex-col items-center justify-center animate-in fade-in zoom-in duration-1000 bg-white/70 backdrop-blur-md p-3 md:p-4 rounded-full border border-white/80 shadow-[0_20px_40px_-12px_rgba(0,0,0,0.08)]">
+          <p className="text-[var(--deep-blue)] font-black text-[10px] uppercase tracking-[0.5em] mb-1 opacity-50">
             Execution Engine
           </p>
-          <h2 className="text-2xl md:text-4xl font-black text-[var(--deep-blue)] leading-[1.1] tracking-tighter mb-6 max-w-xs md:max-w-md">
+          <h2 className="text-lg md:text-2xl font-black text-[var(--deep-blue)] leading-tight tracking-tighter mb-2 max-w-[180px] md:max-w-[220px]">
             The engine for <br />
             <span className="gradient-text italic">modern systems.</span>
           </h2>
-          <p className="text-[var(--grey-text)] font-semibold text-sm md:text-lg leading-relaxed max-w-xs mx-auto opacity-80">
+          <p className="text-[var(--grey-text)] font-semibold text-[11px] md:text-sm leading-snug max-w-[150px] md:max-w-[180px] mx-auto opacity-80">
             Automated engineering stacks delivering peak performance across
             every environment.
           </p>
-          <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4">
-            <button className="bg-[var(--deep-blue)] text-white px-8 py-3.5 rounded-full font-black text-[10px] uppercase tracking-widest hover:bg-[var(--primary-color)] hover:text-[var(--deep-blue)] transition-all shadow-xl shadow-navy/20">
+          <div className="mt-3 flex flex-col sm:flex-row items-center justify-center gap-4">
+            <button className="bg-[var(--deep-blue)] text-white px-5 py-2 text-[9px] rounded-full font-black uppercase tracking-widest hover:bg-[var(--primary-color)] hover:text-[var(--deep-blue)] transition-all shadow-xl shadow-navy/20">
               Methodology
             </button>
           </div>

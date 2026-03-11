@@ -1,8 +1,8 @@
 "use client";
 
-import KeyServices from "@/components/KeyServices";
-import Process from "@/components/Process";
-import ServicesGrid from "@/components/ServicesGrid";
+import KeyServices from "@/components/sections/KeyServices";
+import Process from "@/components/sections/Process";
+import ServicesGrid from "@/components/sections/ServicesGrid";
 
 export default function ServicesPage() {
   return (

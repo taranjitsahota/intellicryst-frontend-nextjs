@@ -1,7 +1,7 @@
 "use client";
 
-import Contact from "@/components/Contact";
-import Process from "@/components/Process";
+import Contact from "@/components/sections/Contact";
+import Process from "@/components/sections/Process";
 
 export default function ServicesPage() {
   return (

@@ -1,6 +1,6 @@
 "use client";
 
-import Industries from "@/components/Industries";
+import Industries from "@/components/sections/Industries";
 
 export default function ServicesPage() {
   return (

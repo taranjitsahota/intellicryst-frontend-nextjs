@@ -1,8 +1,8 @@
 "use client";
 
-import Team from "@/components/Team";
-import TechStack from "@/components/TechStack";
-import WhyChooseUs from "@/components/WhyChooseUs";
+import Team from "@/components/sections/Team";
+import TechStack from "@/components/sections/TechStack";
+import WhyChooseUs from "@/components/sections/WhyChooseUs";
 
 export default function ServicesPage() {
   return (

@@ -1,19 +1,19 @@
 "use client";
 import React, { useEffect, useState } from "react";
-import Hero from "@/components/Hero";
-import TrustedBy from "@/components/TrustedBy";
-import ServicesGrid from "@/components/ServicesGrid";
-import KeyServices from "@/components/KeyServices";
-import WhyChooseUs from "@/components/WhyChooseUs";
-import Projects from "@/components/Projects";
-import Testimonials from "@/components/Testimonials";
-import TechStack from "@/components/TechStack";
-import Team from "@/components/Team";
-import Industries from "@/components/Industries";
-import Process from "@/components/Process";
-import Contact from "@/components/Contact";
-import CallToActionChips from "@/components/CallToActionChips";
-import ChatWidget from "@/components/ChatWidget";
+import Hero from "@/components/sections/Hero";
+import TrustedBy from "@/components/sections/TrustedBy";
+import ServicesGrid from "@/components/sections/ServicesGrid";
+import KeyServices from "@/components/sections/KeyServices";
+import WhyChooseUs from "@/components/sections/WhyChooseUs";
+import Projects from "@/components/sections/Projects";
+import Testimonials from "@/components/sections/Testimonials";
+import TechStack from "@/components/sections/TechStack";
+import Team from "@/components/sections/Team";
+import Industries from "@/components/sections/Industries";
+import Process from "@/components/sections/Process";
+import Contact from "@/components/sections/Contact";
+import CallToActionChips from "@/components/sections/CallToActionChips";
+import ChatWidget from "@/components/sections/ChatWidget";
 
 const App: React.FC = () => {
   // const [scrolled, setScrolled] = useState(false);
@@ -45,12 +45,12 @@ const App: React.FC = () => {
           <TrustedBy />
         </section>
 
-        <section
+        {/* <section
           id="services-summary"
           className="py-20 bg-transparent relative"
-        >
+        > */}
           <ServicesGrid />
-        </section>
+        {/* </section> */}
 
         {/* Premium Gradient Blur Separator - Opacity reduced by 50% */}
         <div className="relative h-48 -mt-24 -mb-24 z-10 pointer-events-none">
@@ -66,30 +66,30 @@ const App: React.FC = () => {
           <KeyServices />
         </section> */}
 
-        <section id="why-us" className="py-20 bg-transparent">
+        {/* <section id="why-us" className="py-20 bg-transparent"> */}
           <WhyChooseUs />
-        </section>
+        {/* </section> */}
 
         {/* <section id="team" className="py-20 bg-slate-50/20 relative">
           <div className="absolute top-1/2 left-0 w-[600px] h-[600px] bg-[var(--primary-color)]/3 blur-[120px] rounded-full -translate-y-1/2 -translate-x-1/2 pointer-events-none"></div>
           <Team />
         </section> */}
 
-        <section id="projects" className="py-20 bg-transparent">
+        {/* <section id="projects" className="py-20 bg-transparent"> */}
           <Projects />
-        </section>
+        {/* </section> */}
 
-        <section id="tech-stack" className="py-20 bg-slate-50/10 relative">
+        {/* <section id="tech-stack" className="py-20 bg-slate-50/10 relative"> */}
           <TechStack />
-        </section>
+        {/* </section> */}
 
-        <section id="industries" className="py-24 bg-transparent">
+        {/* <section id="industries" className="py-24 bg-transparent"> */}
           <Industries />
-        </section>
+        {/* </section> */}
 
-        <section id="testimonials" className="py-20 bg-slate-50/5 relative">
+        {/* <section id="testimonials" className="py-20 bg-slate-50/5 relative"> */}
           <Testimonials />
-        </section>
+        {/* </section> */}
 
         {/* <section id="process" className="py-20 bg-slate-50/15 relative">
           <Process />

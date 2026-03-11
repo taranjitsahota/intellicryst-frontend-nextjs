@@ -46,7 +46,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, position, onClick })
       className={`absolute top-0 left-0 w-full max-w-[420px] bg-white rounded-[40px] border border-slate-50 overflow-hidden cursor-pointer group ${shadowClass}`}
     >
       {/* Card Header */}
-      <div className={`h-40 w-full relative flex items-center justify-center ${project.headerColor}`}>
+      <div className={`h-32 w-full relative flex items-center justify-center ${project.headerColor}`}>
         <div 
           className="transform group-hover:scale-110 transition-transform duration-1000"
           style={{ color: project.themeColor, opacity: 0.8 }}
@@ -60,7 +60,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, position, onClick })
 
       {/* Avatar Overlap */}
       <div className="relative -mt-12 px-10 flex items-end justify-between">
-        <div className="w-24 h-24 rounded-full border-[6px] border-white bg-white shadow-xl overflow-hidden flex items-center justify-center">
+        <div className="w-20 h-20 rounded-full border-[6px] border-white bg-white shadow-xl overflow-hidden flex items-center justify-center">
           <img src={project.avatar} alt={project.name} className="w-full h-full object-cover" />
         </div>
         <div className="pb-4">
@@ -69,7 +69,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, position, onClick })
       </div>
 
       {/* Content Area */}
-      <div className="p-6 space-y-8">
+      <div className="p-6 space-y-6">
         <div className="space-y-1">
           <div className="flex items-center flex-wrap gap-2">
             <h3 className="text-xl font-black text-[var(--deep-blue)] tracking-tight">{project.name}</h3>
@@ -171,7 +171,7 @@ const Projects: React.FC = () => {
         style={{ backgroundColor: projectsData[activeIndex].themeColor }}
       ></div>
 
-      <div className="max-w-[1440px] mx-auto px-8 md:px-16 lg:px-24 py-16 relative z-10">
+      <div className="max-w-[1440px] mx-auto px-8 md:px-16 lg:px-24 py-10 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
           
           {/* Content Left */}
