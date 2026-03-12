@@ -19,7 +19,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   const allRoutes = [...routes, ...servicePages];
 
-  return routes.map((route) => ({
+  return allRoutes.map((route) => ({
     url: `${baseUrl}${route}`,
     lastModified: new Date(),
     changeFrequency: "weekly",
