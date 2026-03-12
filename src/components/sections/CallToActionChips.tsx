@@ -1,6 +1,7 @@
 
 import React from 'react';
 import { ArrowUpRight } from 'lucide-react';
+import Link  from 'next/link';
 
 const CallToActionChips: React.FC = () => {
   return (
@@ -61,7 +62,10 @@ const CallToActionChips: React.FC = () => {
         
         {/* Circular Arrow Decoration */}
         <div className="absolute right-12 top-1/2 -translate-y-1/2 w-14 h-14 bg-white/30 backdrop-blur-md rounded-full flex items-center justify-center border border-white/50 text-[var(--deep-blue)] shadow-xl group-hover:scale-125 transition-transform duration-500">
+        <Link href="/techstack" target="_blank" rel="noopener noreferrer">
+
           <ArrowUpRight size={24} strokeWidth={3} />
+        </Link>
         </div>
       </div>
     </div>

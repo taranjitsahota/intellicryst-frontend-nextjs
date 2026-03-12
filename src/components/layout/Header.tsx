@@ -76,19 +76,28 @@ const Header: React.FC<{}> = () => {
     { label: "Projects", href: "/projects" },
     { label: "About", href: "/about" },
     { label: "Contact", href: "/contact" },
+    { label: "Technology", href: "/technology" },
   ];
 
-  const textColorClass = isHomePage ? scrolled ? "text-[var(--deep-blue)]" : "text-white" : "text-[var(--deep-blue)]";
-  const logoTextClass = isHomePage ? scrolled ? "text-[var(--deep-blue)]" : "text-white" : "text-[var(--deep-blue)]";
+  const textColorClass = isHomePage
+    ? scrolled
+      ? "text-[var(--deep-blue)]"
+      : "text-white"
+    : "text-[var(--deep-blue)]";
+  const logoTextClass = isHomePage
+    ? scrolled
+      ? "text-[var(--deep-blue)]"
+      : "text-white"
+    : "text-[var(--deep-blue)]";
 
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isHomePage ?
-        scrolled
-          ? "glass py-3 shadow-md border-b border-black/20"
-          : "bg-transparent py-6"
-        : "glass py-3 shadow-md border-b border-black/20"
+        isHomePage
+          ? scrolled
+            ? "glass py-3 shadow-md border-b border-black/20"
+            : "bg-transparent py-6"
+          : "glass py-3 shadow-md border-b border-black/20"
       }`}
     >
       <div className="max-w-[1600px] mx-auto px-6 md:px-12 flex items-center justify-between">

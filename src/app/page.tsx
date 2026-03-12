@@ -49,7 +49,7 @@ const App: React.FC = () => {
           id="services-summary"
           className="py-20 bg-transparent relative"
         > */}
-          <ServicesGrid />
+        <ServicesGrid />
         {/* </section> */}
 
         {/* Premium Gradient Blur Separator - Opacity reduced by 50% */}
@@ -66,29 +66,21 @@ const App: React.FC = () => {
           <KeyServices />
         </section> */}
 
-        {/* <section id="why-us" className="py-20 bg-transparent"> */}
-          <WhyChooseUs />
-        {/* </section> */}
-
         {/* <section id="team" className="py-20 bg-slate-50/20 relative">
           <div className="absolute top-1/2 left-0 w-[600px] h-[600px] bg-[var(--primary-color)]/3 blur-[120px] rounded-full -translate-y-1/2 -translate-x-1/2 pointer-events-none"></div>
           <Team />
         </section> */}
 
         {/* <section id="projects" className="py-20 bg-transparent"> */}
-          <Projects />
+        <Projects />
         {/* </section> */}
 
         {/* <section id="tech-stack" className="py-20 bg-slate-50/10 relative"> */}
-          <TechStack />
+        <TechStack />
         {/* </section> */}
 
         {/* <section id="industries" className="py-24 bg-transparent"> */}
-          <Industries />
-        {/* </section> */}
-
-        {/* <section id="testimonials" className="py-20 bg-slate-50/5 relative"> */}
-          <Testimonials />
+        <Industries />
         {/* </section> */}
 
         {/* <section id="process" className="py-20 bg-slate-50/15 relative">
@@ -98,6 +90,14 @@ const App: React.FC = () => {
         <section id="contact" className="py-20 bg-transparent">
           <Contact />
         </section> */}
+
+        {/* <section id="why-us" className="py-20 bg-transparent"> */}
+        <WhyChooseUs />
+        {/* </section> */}
+
+        {/* <section id="testimonials" className="py-20 bg-slate-50/5 relative"> */}
+        <Testimonials />
+        {/* </section> */}
 
         <section id="cta-chips">
           <CallToActionChips />

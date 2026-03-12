@@ -11,7 +11,7 @@ export default function MainWrapper({
   const isHomePage = pathname === "/";
 
   return (
-    <main className={!isHomePage ? "pt-24 pb-16 min-h-screen" : "min-h-screen"}>
+    <main className={!isHomePage ? "pt-18 min-h-screen" : "min-h-screen"}>
       {children}
     </main>
   );
