@@ -13,6 +13,7 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://intellicryst.com"),
   title: "Intellicryst Tech | Software Development & Cloud Engineering",
   description:
     "Intellicryst builds high-performance web platforms, mobile apps, and cloud infrastructure for modern businesses.",
