@@ -44,7 +44,7 @@ import {
   SiSelenium,
 } from "react-icons/si";
 
-export const techStack = [
+export const techStacks = [
 
   {
     title: "Frontend Engineering",

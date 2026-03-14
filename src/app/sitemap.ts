@@ -1,5 +1,6 @@
 import { MetadataRoute } from "next";
 import { services } from "@/data/services";
+import { technologies } from "@/data/technologies";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = "https://intellicryst.com";
@@ -17,7 +18,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   const servicePages = services.map((service) => `/services/${service.slug}`);
 
-  const allRoutes = [...routes, ...servicePages];
+  const technologyPages = technologies.map(
+    (tech) => `/technology/${tech.slug}`,
+  );
+
+  const allRoutes = [...routes, ...servicePages, ...technologyPages];
 
   return allRoutes.map((route) => ({
     url: `${baseUrl}${route}`,
