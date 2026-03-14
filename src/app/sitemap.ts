@@ -17,6 +17,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/terms-and-conditions",
   ];
 
+  
   const servicePages = services.map((service) => `/services/${service.slug}`);
 
   const technologyPages = technologies.map(
