@@ -12,6 +12,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/industries",
     "/projects",
     "/contact",
+    "/technology",
     "/privacy-policy",
     "/terms-and-conditions",
   ];
@@ -26,7 +27,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   return allRoutes.map((route) => ({
     url: `${baseUrl}${route}`,
-    lastModified: new Date(),
+    lastModified: new Date().toISOString(),
     changeFrequency: "weekly",
     priority: route === "" ? 1 : 0.8,
   }));
