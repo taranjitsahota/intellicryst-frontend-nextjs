@@ -96,7 +96,7 @@ const Hero: React.FC = () => {
 
       <ParticleWaveBackground />
 
-      <div className="max-w-[1600px] mx-auto px-8 md:px-16 lg:px-24 relative z-10 text-center space-y-6 py-8 pt-20">
+      <div className="max-w-[1800px] mx-auto px-8 md:px-16 lg:px-24 relative z-10 text-center space-y-6 py-8 pt-20">
         <div className="inline-flex items-center gap-3 px-6 py-2 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-white font-black text-[10px] uppercase tracking-[0.4em] animate-in fade-in slide-in-from-top-4 duration-1000">
           <Cpu size={14} className="text-[var(--primary-color)]" />
           Engineered for Performance

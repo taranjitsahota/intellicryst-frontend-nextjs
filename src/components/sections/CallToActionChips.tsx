@@ -20,7 +20,7 @@ const CallToActionChips: React.FC = () => {
       {/* Content Layer (z-10 to stay above background) */}
       <div className="relative z-10">
         {/* Heading */}
-        <div className="max-w-[1600px] mx-auto px-6 md:px-12 text-center mb-12">
+        <div className="max-w-[1800px] mx-auto px-6 md:px-12 text-center mb-12">
           <h2 className="text-3xl lg:text-5xl xl:text-6xl font-black text-[var(--deep-blue)] leading-[1.1] tracking-tighter">
             Let’s Create an <span className="text-[var(--primary-color)]">Amazing</span> <br />
             Project Together!

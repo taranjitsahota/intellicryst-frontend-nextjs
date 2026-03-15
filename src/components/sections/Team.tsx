@@ -53,7 +53,7 @@ const Team: React.FC = () => {
   const prevMember = () => setActiveIndex((prev) => (prev - 1 + teamMembers.length) % teamMembers.length);
 
   return (
-    <div className="max-w-[1600px] mx-auto px-6 md:px-12 relative py-16 overflow-hidden">
+    <div className="max-w-[1800px] mx-auto px-6 md:px-12 relative py-16 overflow-hidden">
       <div className="gaussian-blur-accent w-[800px] h-[800px] top-1/2 left-[-10%] opacity-[0.03]"></div>
 
       <div className="flex flex-col lg:flex-row gap-6 lg:gap-14 items-center">

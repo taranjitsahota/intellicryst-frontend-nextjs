@@ -114,7 +114,7 @@ const testimonials: Testimonial[] = [
   };
 
   return (
-    <div className="relative w-full max-w-[1600px] mx-auto px-4 md:px-8 py-16 overflow-hidden bg-white">
+    <div className="relative w-full max-w-[1800px] mx-auto px-4 md:px-8 py-16 overflow-hidden bg-white">
       <div className="text-center mb-16 space-y-4">
         <h4 className="text-[var(--deep-blue)] font-black text-xs uppercase tracking-[0.4em]">Global Recognition</h4>
         <h2 className="text-4xl lg:text-5xl font-black text-[var(--deep-blue)] tracking-tighter leading-[0.95]">

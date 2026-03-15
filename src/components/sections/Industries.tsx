@@ -3,7 +3,7 @@ import { industries } from "@/data/industries";
 
 const Industries: React.FC = () => {
   return (
-    <div className="w-full max-w-[1600px] mx-auto px-6 md:px-10 lg:px-16 py-12 md:py-14 lg:py-16 ">
+    <div className="w-full max-w-[1800px] mx-auto px-6 md:px-10 lg:px-16 py-12 md:py-14 lg:py-16 ">
       {/* Container with decreased height and theme deep blue background (#012B48) */}
       <div className="bg-[var(--deep-blue)] rounded-[48px] min-h-[240px] lg:min-h-[280px] relative overflow-hidden flex flex-col justify-center p-6 lg:p-8 group">
         {/* Swirling Ribbon / Flow Background (Matching Reference) */}
