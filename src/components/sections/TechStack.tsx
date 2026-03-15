@@ -220,16 +220,16 @@ const TechStack: React.FC = () => {
           <p className="text-[var(--deep-blue)] font-black text-[10px] uppercase tracking-[0.5em] mb-1 opacity-50">
             Execution Engine
           </p>
-          <h2 className="text-lg md:text-2xl font-black text-[var(--deep-blue)] leading-tight tracking-tighter mb-2 max-w-[180px] md:max-w-[220px]">
+          <h2 className="text-sm md:text-2xl font-black text-[var(--deep-blue)] leading-tight tracking-tighter mb-2 max-w-[180px] md:max-w-[220px]">
             The engine for <br />
             <span className="gradient-text italic">modern systems.</span>
           </h2>
-          <p className="text-[var(--grey-text)] font-semibold text-[11px] md:text-sm leading-snug max-w-[150px] md:max-w-[180px] mx-auto opacity-80">
+          <p className="text-[var(--grey-text)] font-semibold text-[9px] md:text-sm leading-snug max-w-[150px] md:max-w-[180px] mx-auto opacity-80">
             Automated engineering stacks delivering peak performance across
             every environment.
           </p>
-          <div className="mt-3 flex flex-col sm:flex-row items-center justify-center gap-4">
-            <button className="bg-[var(--deep-blue)] text-white px-5 py-2 text-[9px] rounded-full font-black uppercase tracking-widest hover:bg-[var(--primary-color)] hover:text-[var(--deep-blue)] transition-all shadow-xl shadow-navy/20">
+          <div className="mt-1 flex flex-col sm:flex-row items-center justify-center gap-4">
+            <button className="bg-[var(--deep-blue)] text-white px-3 py-1 text-[8px] rounded-full font-black uppercase tracking-widest hover:bg-[var(--primary-color)] hover:text-[var(--deep-blue)] transition-all shadow-xl shadow-navy/20">
               Methodology
             </button>
           </div>
