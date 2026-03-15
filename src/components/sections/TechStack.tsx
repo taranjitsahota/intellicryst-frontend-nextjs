@@ -216,7 +216,7 @@ const TechStack: React.FC = () => {
         ))}
 
         {/* Center circular box */}
-        <div className="text-center z-30 w-[160px] h-[160px] md:w-[220px] md:h-[220px] flex flex-col items-center justify-center animate-in fade-in zoom-in duration-1000 bg-white/70 backdrop-blur-md p-3 md:p-4 rounded-full border border-white/80 shadow-[0_20px_40px_-12px_rgba(0,0,0,0.08)]">
+        <div className="text-center z-30 w-[150px] h-[150px] md:w-[220px] md:h-[220px] flex flex-col items-center justify-center animate-in fade-in zoom-in duration-1000 bg-white/70 backdrop-blur-md p-3 md:p-4 rounded-full border border-white/80 shadow-[0_20px_40px_-12px_rgba(0,0,0,0.08)]">
           <p className="text-[var(--deep-blue)] font-black text-[10px] uppercase tracking-[0.5em] mb-1 opacity-50">
             Execution Engine
           </p>
