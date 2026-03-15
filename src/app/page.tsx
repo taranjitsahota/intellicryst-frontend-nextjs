@@ -5,15 +5,21 @@ import TrustedBy from "@/components/sections/TrustedBy";
 import ServicesGrid from "@/components/sections/ServicesGrid";
 import KeyServices from "@/components/sections/KeyServices";
 import WhyChooseUs from "@/components/sections/WhyChooseUs";
-import Projects from "@/components/sections/Projects";
-import Testimonials from "@/components/sections/Testimonials";
-import TechStack from "@/components/sections/TechStack";
+// import Projects from "@/components/sections/Projects";
+// import Testimonials from "@/components/sections/Testimonials";
+// import TechStack from "@/components/sections/TechStack";
 import Team from "@/components/sections/Team";
-import Industries from "@/components/sections/Industries";
+// import Industries from "@/components/sections/Industries";
 import Process from "@/components/sections/Process";
 import Contact from "@/components/sections/Contact";
 import CallToActionChips from "@/components/sections/CallToActionChips";
 import ChatWidget from "@/components/sections/ChatWidget";
+import dynamic from "next/dynamic";
+
+const TechStack = dynamic(() => import("@/components/sections/TechStack"));
+const Testimonials = dynamic(() => import("@/components/sections/Testimonials"));
+const Projects = dynamic(() => import("@/components/sections/Projects"));
+const Industries = dynamic(() => import("@/components/sections/Industries"));
 
 const App: React.FC = () => {
   // const [scrolled, setScrolled] = useState(false);
