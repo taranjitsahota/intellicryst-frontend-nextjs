@@ -13,13 +13,16 @@ import Team from "@/components/sections/Team";
 import Process from "@/components/sections/Process";
 import Contact from "@/components/sections/Contact";
 import CallToActionChips from "@/components/sections/CallToActionChips";
-import ChatWidget from "@/components/sections/ChatWidget";
+// import ChatWidget from "@/components/sections/ChatWidget";
 import dynamic from "next/dynamic";
 
 const TechStack = dynamic(() => import("@/components/sections/TechStack"));
 const Testimonials = dynamic(() => import("@/components/sections/Testimonials"));
 const Projects = dynamic(() => import("@/components/sections/Projects"));
 const Industries = dynamic(() => import("@/components/sections/Industries"));
+const ChatWidget = dynamic(() => import("@/components/sections/ChatWidget"), {
+  ssr: false,
+});
 
 const App: React.FC = () => {
   // const [scrolled, setScrolled] = useState(false);
