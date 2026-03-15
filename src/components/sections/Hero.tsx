@@ -22,9 +22,9 @@ const ParticleWaveBackground = () => (
     <div className="absolute inset-0 bg-gradient-to-tr from-[var(--primary-color)]/5 via-transparent to-[var(--primary-blue)]/5"></div>
 
     {/* Animated Glow Accents (Minimum Opacity) */}
-    <div className="absolute top-[-20%] left-[-10%] w-[70%] h-[70%] bg-[var(--primary-color)] blur-[180px] opacity-[0.08] rounded-full animate-float-slow"></div>
+    <div className="absolute top-[-20%] left-[-10%] w-[70%] h-[70%] bg-[var(--primary-color)] blur-[100px] opacity-[0.08] rounded-full animate-float-slow"></div>
     <div
-      className="absolute bottom-[-20%] right-[-10%] w-[60%] h-[60%] bg-[var(--primary-blue)] blur-[200px] opacity-[0.06] rounded-full animate-float-slow"
+      className="absolute bottom-[-20%] right-[-10%] w-[60%] h-[60%] bg-[var(--primary-blue)] blur-[100px] opacity-[0.06] rounded-full animate-float-slow"
       style={{ animationDelay: "-5s" }}
     ></div>
   </div>
