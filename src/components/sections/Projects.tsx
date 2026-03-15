@@ -171,7 +171,7 @@ const Projects: React.FC = () => {
         style={{ backgroundColor: projectsData[activeIndex].themeColor }}
       ></div>
 
-      <div className="max-w-[1440px] mx-auto px-8 md:px-16 lg:px-24 py-10 relative z-10">
+      <div className="max-w-[1600px] mx-auto px-8 md:px-16 lg:px-24 py-10 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
           
           {/* Content Left */}

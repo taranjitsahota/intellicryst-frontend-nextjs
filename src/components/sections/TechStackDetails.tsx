@@ -12,7 +12,7 @@ export default function TechStackDetails() {
       <div className="absolute top-[-20%] left-[-10%] w-[600px] h-[600px] bg-[var(--primary-color)]/10 blur-[120px] rounded-full" />
       <div className="absolute bottom-[-20%] right-[-10%] w-[600px] h-[600px] bg-[var(--primary-blue)]/10 blur-[120px] rounded-full" />
 
-      <div className="relative max-w-[1440px] mx-auto px-8 md:px-16 lg:px-24">
+      <div className="relative max-w-[1600px] mx-auto px-8 md:px-16 lg:px-24">
         {/* Header */}
         <div className="text-center mb-24">
           <h4 className="text-[var(--deep-blue)] font-black text-xs uppercase tracking-[0.4em] mb-6">

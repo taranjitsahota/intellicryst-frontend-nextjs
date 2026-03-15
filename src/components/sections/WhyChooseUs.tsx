@@ -45,7 +45,7 @@ const WhyChooseUs: React.FC = () => {
   ];
 
   return (
-    <div className="max-w-[1440px] mx-auto px-8 md:px-16 lg:px-24 py-16 relative overflow-hidden">
+    <div className="max-w-[1600px] mx-auto px-8 md:px-16 lg:px-24 py-16 relative overflow-hidden">
       {/* Background Gaussian Blur */}
       <div className="gaussian-blur-accent w-[600px] h-[600px] top-1/2 left-[-10%] opacity-[0.05]"></div>
 

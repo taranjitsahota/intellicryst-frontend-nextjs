@@ -9,7 +9,7 @@ import FormTextarea from "@/components/forms/FormTextarea";
 
 const Contact: React.FC = () => {
   return (
-    <div className="max-w-[1440px] mx-auto px-8 md:px-16 lg:px-24 relative overflow-hidden">
+    <div className="max-w-[1600px] mx-auto px-8 md:px-16 lg:px-24 relative overflow-hidden">
       {/* Massive Spread Gradient Backgrounds - Substantially Reduced Opacity */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[900px] h-[900px] bg-gradient-to-br from-[var(--primary-color)]/3 to-[var(--primary-blue)]/5 blur-[180px] rounded-full pointer-events-none opacity-40"></div>
       <div className="absolute top-0 right-0 w-[400px] h-[400px] bg-[var(--primary-color)]/2 blur-[120px] rounded-full pointer-events-none"></div>

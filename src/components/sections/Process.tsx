@@ -15,7 +15,7 @@ const Process: React.FC = () => {
   };
 
   return (
-    <div className="max-w-[1440px] mx-auto px-4 md:px-16 lg:px-24 relative py-16 lg:py-20 bg-white overflow-hidden">
+    <div className="max-w-[1600px] mx-auto px-4 md:px-16 lg:px-24 relative py-16 lg:py-20 bg-white overflow-hidden">
       {/* Background Gaussian Blur Accent */}
       <div className="gaussian-blur-accent w-[600px] h-[600px] -top-20 -right-20 opacity-[0.03]"></div>
 

@@ -13,7 +13,7 @@ import {
 
 const KeyServices: React.FC = () => {
   return (
-    <div className="relative max-w-[1440px] mx-auto px-8 md:px-16 lg:px-24 py-16 overflow-hidden">
+    <div className="relative max-w-[1600px] mx-auto px-8 md:px-16 lg:px-24 py-16 overflow-hidden">
       {/* Background Gradients - Reduced Opacity */}
       <div className="gaussian-blur-accent w-[800px] h-[800px] top-[-10%] left-[-20%] opacity-[0.02]"></div>
       <div className="gaussian-blur-accent w-[600px] h-[600px] bottom-[-10%] right-[-10%] opacity-[0.03]" style={{ background: '#00B6FF' }}></div>
