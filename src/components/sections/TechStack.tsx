@@ -224,12 +224,12 @@ const TechStack: React.FC = () => {
             The engine for <br />
             <span className="gradient-text italic">modern systems.</span>
           </h2>
-          <p className="text-[var(--grey-text)] font-semibold text-[9px] md:text-sm leading-snug max-w-[150px] md:max-w-[180px] mx-auto opacity-80">
+          <p className="text-[var(--grey-text)] font-semibold text-[8px] md:text-sm leading-snug max-w-[150px] md:max-w-[180px] mx-auto opacity-80">
             Automated engineering stacks delivering peak performance across
             every environment.
           </p>
           <div className="mt-1 flex flex-col sm:flex-row items-center justify-center gap-4">
-            <button className="bg-[var(--deep-blue)] text-white px-3 py-1 text-[8px] rounded-full font-black uppercase tracking-widest hover:bg-[var(--primary-color)] hover:text-[var(--deep-blue)] transition-all shadow-xl shadow-navy/20">
+            <button className="bg-[var(--deep-blue)] text-white px-3 py-1 text-[7px] rounded-full font-black uppercase tracking-widest hover:bg-[var(--primary-color)] hover:text-[var(--deep-blue)] transition-all shadow-xl shadow-navy/20">
               Methodology
             </button>
           </div>
