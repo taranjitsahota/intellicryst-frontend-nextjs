@@ -46,7 +46,7 @@ const App: React.FC = () => {
       </div>
 
       <main className="relative z-10">
-        <section id="hero">
+        {/* <section id="hero">
           <Hero />
         </section>
 
@@ -59,17 +59,17 @@ const App: React.FC = () => {
           className="bg-transparent relative"
         >
         <ServicesGrid />
-        </section>
+        </section> */}
 
         {/* Premium Gradient Blur Separator - Opacity reduced by 50% */}
-        <div className="relative h-48 -mt-24 -mb-24 z-10 pointer-events-none">
+        {/* <div className="relative h-48 -mt-24 -mb-24 z-10 pointer-events-none">
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-[400px] bg-gradient-to-r from-[var(--primary-color)]/5 via-[var(--primary-blue)]/10 to-[var(--primary-color)]/5 blur-[140px] rounded-full"></div>
           <div className="absolute top-1/2 left-1/4 -translate-x-1/2 -translate-y-1/2 w-[300px] h-[300px] bg-[var(--primary-color)]/8 blur-[100px] rounded-full animate-pulse"></div>
           <div
             className="absolute top-1/2 left-3/4 -translate-x-1/2 -translate-y-1/2 w-[300px] h-[300px] bg-[var(--primary-blue)]/8 blur-[100px] rounded-full animate-pulse"
             style={{ animationDelay: "1s" }}
           ></div>
-        </div>
+        </div> */}
 
         {/* <section id="key-services" className="bg-slate-50/5 relative">
           <KeyServices />
@@ -80,7 +80,7 @@ const App: React.FC = () => {
           <Team />
         </section> */}
 
-        <section id="projects" className="bg-transparent">
+        {/* <section id="projects" className="bg-transparent">
         <Projects />
         </section>
 
@@ -90,7 +90,7 @@ const App: React.FC = () => {
 
         <section id="industries" className="bg-transparent">
         <Industries />
-        </section>
+        </section> */}
 
         {/* <section id="process" className="bg-slate-50/15 relative">
           <Process />
@@ -100,7 +100,7 @@ const App: React.FC = () => {
           <Contact />
         </section> */}
 
-        <section id="why-us" className="bg-transparent">
+        {/* <section id="why-us" className="bg-transparent">
         <WhyChooseUs />
         </section>
 
@@ -110,7 +110,7 @@ const App: React.FC = () => {
 
         <section id="cta-chips">
           <CallToActionChips />
-        </section>
+        </section> */}
       </main>
 
       <ChatWidget />
