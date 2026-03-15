@@ -37,9 +37,9 @@ const App: React.FC = () => {
       </div>
 
       <main className="relative z-10">
-        <section id="hero">
+        {/* <section id="hero">
           <Hero />
-        </section>
+        </section> */}
 
         <section id="trusted">
           <TrustedBy />
