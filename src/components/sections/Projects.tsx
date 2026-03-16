@@ -1,7 +1,16 @@
-
-import React, { useState } from 'react';
-import { ExternalLink, Sprout, Car, Tractor, Shield, ChevronLeft, ChevronRight, MessageSquare, Plus } from 'lucide-react';
-import Link from 'next/link';
+import React, { useState } from "react";
+import {
+  ExternalLink,
+  Sprout,
+  Car,
+  Tractor,
+  Shield,
+  ChevronLeft,
+  ChevronRight,
+  MessageSquare,
+  Plus,
+} from "lucide-react";
+import Link from "next/link";
 
 interface ProjectCardProps {
   project: {
@@ -20,34 +29,41 @@ interface ProjectCardProps {
   onClick: () => void;
 }
 
-const ProjectCard: React.FC<ProjectCardProps> = ({ project, position, onClick }) => {
+const ProjectCard: React.FC<ProjectCardProps> = ({
+  project,
+  position,
+  onClick,
+}) => {
   const translateX = position * 40;
   const translateY = position * -20;
-  const scale = 1 - (position * 0.05);
-  const opacity = 1 - (position * 0.4);
-  const blur = position > 0 ? 'blur(8px)' : 'blur(0px)';
+  const scale = 1 - position * 0.05;
+  const opacity = 1 - position * 0.4;
+  const blur = position > 0 ? "blur(8px)" : "blur(0px)";
   const zIndex = 50 - position;
 
   // Dynamic shadow based on position
-  const shadowClass = position === 0 
-    ? 'shadow-[0_80px_160px_-40px_rgba(1,43,72,0.22)]' // More pronounced for active
-    : 'shadow-[0_20px_40px_-10px_rgba(1,43,72,0.05)]'; // Softer for background
+  const shadowClass =
+    position === 0
+      ? "shadow-[0_80px_160px_-40px_rgba(1,43,72,0.22)]" // More pronounced for active
+      : "shadow-[0_20px_40px_-10px_rgba(1,43,72,0.05)]"; // Softer for background
 
   return (
-    <div 
+    <div
       onClick={onClick}
-      style={{ 
+      style={{
         transform: `translate(${translateX}px, ${translateY}px) scale(${scale})`,
         zIndex: zIndex,
         opacity: opacity,
         filter: blur,
-        transition: 'all 0.8s cubic-bezier(0.34, 1.56, 0.64, 1)'
+        transition: "all 0.8s cubic-bezier(0.34, 1.56, 0.64, 1)",
       }}
       className={`absolute top-0 left-0 w-full max-w-[420px] bg-white rounded-[40px] border border-slate-50 overflow-hidden cursor-pointer group ${shadowClass}`}
     >
       {/* Card Header */}
-      <div className={`h-32 w-full relative flex items-center justify-center ${project.headerColor}`}>
-        <div 
+      <div
+        className={`h-32 w-full relative flex items-center justify-center ${project.headerColor}`}
+      >
+        <div
           className="transform group-hover:scale-110 transition-transform duration-1000"
           style={{ color: project.themeColor, opacity: 0.8 }}
         >
@@ -61,7 +77,11 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, position, onClick })
       {/* Avatar Overlap */}
       <div className="relative -mt-12 px-10 flex items-end justify-between">
         <div className="w-20 h-20 rounded-full border-[6px] border-white bg-white shadow-xl overflow-hidden flex items-center justify-center">
-          <img src={project.avatar} alt={project.name} className="w-full h-full object-cover" />
+          <img
+            src={project.avatar}
+            alt={project.name}
+            className="w-full h-full object-cover"
+          />
         </div>
         <div className="pb-4">
           <div className="w-4 h-4 rounded-full bg-[var(--primary-color)] border-4 border-white shadow-[0_0_20px_#00F5D4] animate-pulse"></div>
@@ -72,28 +92,45 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, position, onClick })
       <div className="p-6 space-y-6">
         <div className="space-y-1">
           <div className="flex items-center flex-wrap gap-2">
-            <h3 className="text-xl font-black text-[var(--deep-blue)] tracking-tight">{project.name}</h3>
+            <h3 className="text-xl font-black text-[var(--deep-blue)] tracking-tight">
+              {project.name}
+            </h3>
             <div className="flex items-center gap-1.5">
-              <div className="w-5 h-5 bg-blue-500 rounded-full flex items-center justify-center text-white text-[10px]">✓</div>
-              <span className="bg-amber-100 text-amber-700 text-[9px] font-black px-2 py-0.5 rounded-md uppercase tracking-widest">Pro</span>
-              <span className="bg-pink-100 text-pink-600 text-[9px] font-black px-2 py-0.5 rounded-md uppercase tracking-widest">Wizard</span>
+              <div className="w-5 h-5 bg-blue-500 rounded-full flex items-center justify-center text-white text-[10px]">
+                ✓
+              </div>
+              <span className="bg-amber-100 text-amber-700 text-[9px] font-black px-2 py-0.5 rounded-md uppercase tracking-widest">
+                Pro
+              </span>
+              <span className="bg-pink-100 text-pink-600 text-[9px] font-black px-2 py-0.5 rounded-md uppercase tracking-widest">
+                Wizard
+              </span>
             </div>
           </div>
-          <p className="text-xs font-bold text-[var(--grey-text)] opacity-40">{project.handle}</p>
+          <p className="text-xs font-bold text-[var(--grey-text)] opacity-40">
+            {project.handle}
+          </p>
         </div>
 
         <div className="space-y-3">
-          <p className="text-base font-black text-[var(--deep-blue)]">{project.title}</p>
+          <p className="text-base font-black text-[var(--deep-blue)]">
+            {project.title}
+          </p>
           <p className="text-sm text-[var(--grey-text)] leading-relaxed font-medium">
             {project.description}
           </p>
         </div>
 
         <div className="space-y-4">
-          <p className="text-[11px] font-black uppercase tracking-[0.2em] text-[var(--deep-blue)]/30">Tech Stack</p>
+          <p className="text-[11px] font-black uppercase tracking-[0.2em] text-[var(--deep-blue)]/30">
+            Tech Stack
+          </p>
           <div className="flex flex-wrap gap-2">
-            {project.tags.map(tag => (
-              <span key={tag} className="bg-slate-50 text-[var(--deep-blue)] text-[10px] font-black px-4 py-2 rounded-xl border border-slate-100 group-hover:bg-[var(--primary-color)]/10 group-hover:border-[var(--primary-color)]/20 transition-all">
+            {project.tags.map((tag) => (
+              <span
+                key={tag}
+                className="bg-slate-50 text-[var(--deep-blue)] text-[10px] font-black px-4 py-2 rounded-xl border border-slate-100 group-hover:bg-[var(--primary-color)]/10 group-hover:border-[var(--primary-color)]/20 transition-all"
+              >
                 {tag}
               </span>
             ))}
@@ -121,103 +158,127 @@ const Projects: React.FC = () => {
       name: "Car Rental Platform",
       handle: "@nexus_mobility",
       title: "Enterprise Fleet & Reservation System",
-      description: "Replaces legacy manual processes with a high-performance web dashboard for real-time inventory management and customer reservations.",
+      description:
+        "Replaces legacy manual processes with a high-performance web dashboard for real-time inventory management and customer reservations.",
       tags: ["Angular", "Azure SQL", "Redis"],
       headerColor: "bg-[#E0F7FA]",
       themeColor: "#00B6FF",
       icon: <Car size={80} strokeWidth={1.5} />,
-      avatar: "https://api.dicebear.com/7.x/avataaars/svg?seed=Felix"
+      avatar: "https://api.dicebear.com/7.x/avataaars/svg?seed=Felix",
     },
     {
       name: "Ezykheti",
       handle: "@ezykheti_agri",
       title: "AgriTech Booking & Scheduling Hub",
-      description: "A comprehensive solution solving fragmented coordination between farmers and machine operators through real-time booking and dispatch.",
+      description:
+        "A comprehensive solution solving fragmented coordination between farmers and machine operators through real-time booking and dispatch.",
       tags: ["React Engine", "Node.js", "PostgreSQL"],
       headerColor: "bg-[#F1F8E9]",
       themeColor: "#689F38",
       icon: <Sprout size={80} strokeWidth={1.5} />,
-      avatar: "https://api.dicebear.com/7.x/avataaars/svg?seed=Jasper"
+      avatar: "https://api.dicebear.com/7.x/avataaars/svg?seed=Jasper",
     },
     {
       name: "Ezyfarms",
       handle: "@ezyfarms_ops",
       title: "Farm Operations Management Platform",
-      description: "Empowering agricultural managers with data-driven activity logging and location-based resource tracking to ensure operational stability.",
+      description:
+        "Empowering agricultural managers with data-driven activity logging and location-based resource tracking to ensure operational stability.",
       tags: ["React Native", "Firebase", "AWS S3"],
       headerColor: "bg-[#FFF3E0]",
       themeColor: "#F57C00",
       icon: <Tractor size={80} strokeWidth={1.5} />,
-      avatar: "https://api.dicebear.com/7.x/avataaars/svg?seed=Luna"
-    }
+      avatar: "https://api.dicebear.com/7.x/avataaars/svg?seed=Luna",
+    },
   ];
 
-  const nextProject = () => setActiveIndex((prev) => (prev + 1) % projectsData.length);
-  const prevProject = () => setActiveIndex((prev) => (prev - 1 + projectsData.length) % projectsData.length);
+  const nextProject = () =>
+    setActiveIndex((prev) => (prev + 1) % projectsData.length);
+  const prevProject = () =>
+    setActiveIndex(
+      (prev) => (prev - 1 + projectsData.length) % projectsData.length,
+    );
 
   return (
     <div className="relative w-full overflow-hidden bg-white">
       {/* Dynamic Background Glow that changes according to the active project */}
-      <div 
+      <div
         className="absolute right-0 top-0 bottom-0 w-[80%] opacity-[0.15] blur-[160px] pointer-events-none z-0 transition-all duration-1000"
-        style={{ 
-          background: `radial-gradient(circle at 70% 50%, ${projectsData[activeIndex].themeColor}, transparent 70%)` 
+        style={{
+          background: `radial-gradient(circle at 70% 50%, ${projectsData[activeIndex].themeColor}, transparent 70%)`,
         }}
       ></div>
-      
+
       {/* Secondary accent glow */}
-      <div 
+      <div
         className="absolute right-[-10%] top-1/4 w-[600px] h-[600px] rounded-full blur-[140px] pointer-events-none z-0 transition-all duration-1000 opacity-20"
         style={{ backgroundColor: projectsData[activeIndex].themeColor }}
       ></div>
 
-      <div className="max-w-[1800px] mx-auto px-8 md:px-16 lg:px-24 py-10 relative z-10">
+      <div className="max-w-[1800px] mx-auto p-6 md:p-12 lg:p-20 xl:p-28  relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
-          
           {/* Content Left */}
           <div className="space-y-10 animate-in slide-in-from-left duration-1000">
             <div className="space-y-6">
-              <h4 className="text-[var(--deep-blue)] font-black text-xs uppercase tracking-[0.4em]">Featured Case Studies</h4>
+              <h4 className="text-[var(--deep-blue)] font-black text-xs uppercase tracking-[0.4em]">
+                Featured Case Studies
+              </h4>
               <h2 className="text-4xl lg:text-5xl font-black text-[var(--deep-blue)] tracking-tighter leading-[0.9]">
                 Building the <br />
                 <span className="gradient-text">future of systems.</span>
               </h2>
-              <div 
+              <div
                 className="h-1.5 w-24 rounded-full transition-all duration-700"
-                style={{ backgroundColor: projectsData[activeIndex].themeColor }}
+                style={{
+                  backgroundColor: projectsData[activeIndex].themeColor,
+                }}
               ></div>
             </div>
-            
+
             <p className="text-base lg:text-lg text-[var(--grey-text)] font-semibold leading-relaxed max-w-lg">
-              Our portfolio spans critical infrastructure in agriculture and mobility, 
-              focusing on high-availability and zero-trust security architecture.
+              Our portfolio spans critical infrastructure in agriculture and
+              mobility, focusing on high-availability and zero-trust security
+              architecture.
             </p>
 
             <div className="flex flex-col sm:flex-row items-center gap-6 pt-6">
-              <Link href="/projects" >
-              <button className="px-8 py-4 text-sm bg-[var(--deep-blue)] text-white rounded-2xl font-black flex items-center gap-4 hover:scale-105 transition-all shadow-2xl shadow-navy/30 hover:cursor-pointer">
-                Explore All <ExternalLink size={24} />
-              </button>
-              </Link>
-              
-              <div className="flex items-center gap-5">
-                <button onClick={prevProject} className="w-12 h-12 rounded-full border-2 border-slate-100 flex items-center justify-center text-[var(--deep-blue)] hover:bg-slate-50 transition-all group bg-white shadow-sm">
-                  <ChevronLeft size={32} className="group-hover:-translate-x-1 transition-transform" />
+              <Link href="/projects">
+                <button className="px-8 py-4 text-sm bg-[var(--deep-blue)] text-white rounded-2xl font-black flex items-center gap-4 hover:scale-105 transition-all shadow-2xl shadow-navy/30 hover:cursor-pointer">
+                  Explore All <ExternalLink size={24} />
                 </button>
-                <button onClick={nextProject} className="w-12 h-12 rounded-full border-2 border-slate-100 flex items-center justify-center text-[var(--deep-blue)] hover:bg-slate-50 transition-all group bg-white shadow-sm">
-                  <ChevronRight size={32} className="group-hover:translate-x-1 transition-transform" />
+              </Link>
+
+              <div className="flex items-center gap-5">
+                <button
+                  onClick={prevProject}
+                  className="w-12 h-12 rounded-full border-2 border-slate-100 flex items-center justify-center text-[var(--deep-blue)] hover:bg-slate-50 transition-all group bg-white shadow-sm"
+                >
+                  <ChevronLeft
+                    size={32}
+                    className="group-hover:-translate-x-1 transition-transform"
+                  />
+                </button>
+                <button
+                  onClick={nextProject}
+                  className="w-12 h-12 rounded-full border-2 border-slate-100 flex items-center justify-center text-[var(--deep-blue)] hover:bg-slate-50 transition-all group bg-white shadow-sm"
+                >
+                  <ChevronRight
+                    size={32}
+                    className="group-hover:translate-x-1 transition-transform"
+                  />
                 </button>
               </div>
             </div>
           </div>
 
           {/* Cards Right - Positioned with breathing space on the right */}
-          <div className="relative h-[520px] w-full flex items-center justify-center lg:justify-end lg:pr-24">
-            <div className="relative w-full max-w-[420px] h-full">
+          <div className="relative h-[620px] w-full flex items-center justify-center lg:justify-end lg:pr-24">
+            <div className="relative h-[600px] w-full flex items-center justify-center lg:justify-end lg:pr-24">
               {projectsData.map((proj, i) => {
-                let position = (i - activeIndex + projectsData.length) % projectsData.length;
+                let position =
+                  (i - activeIndex + projectsData.length) % projectsData.length;
                 return (
-                  <ProjectCard 
+                  <ProjectCard
                     key={proj.name}
                     project={proj}
                     isActive={position === 0}
@@ -228,7 +289,6 @@ const Projects: React.FC = () => {
               })}
             </div>
           </div>
-
         </div>
       </div>
     </div>
