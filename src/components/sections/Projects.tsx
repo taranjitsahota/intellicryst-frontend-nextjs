@@ -215,7 +215,7 @@ const Projects: React.FC = () => {
         style={{ backgroundColor: projectsData[activeIndex].themeColor }}
       ></div>
 
-      <div className="max-w-[1800px] mx-auto p-6 md:p-12 lg:p-20 xl:p-28  relative z-10">
+      <div className="max-w-[1800px] mx-auto p-4 md:p-8 lg:p-12 xl:p-16 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
           {/* Content Left */}
           <div className="space-y-10 animate-in slide-in-from-left duration-1000">
