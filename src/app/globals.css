@@ -215,7 +215,6 @@ html {
   font-size: 16px;
 }
 
-/* Text Stroke Utility */
 .text-stroke {
   -webkit-text-stroke: 1px currentColor;
   -webkit-text-fill-color: transparent;
