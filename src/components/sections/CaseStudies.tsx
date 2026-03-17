@@ -51,17 +51,13 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
             className="transform group-hover:scale-110 transition-transform duration-1000"
             style={{ color: project.themeColor, opacity: 0.8 }}
           >
-            {typeof Icon === "function" ? (
-              <Icon size={64} className="mx-auto text-[var(--primary-color)]" />
-            ) : (
-              <Image
-                src={Icon}
-                alt={project.name}
-                width={64}
-                height={64}
-                className="mx-auto"
-              />
-            )}
+            <Image
+              src={Icon}
+              alt={project.name}
+              width={64}
+              height={64}
+              className="mx-auto"
+            />
           </div>
           <div className="absolute top-6 right-6 opacity-30">
             <Shield size={20} className="text-[var(--deep-blue)]" />

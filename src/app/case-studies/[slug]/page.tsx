@@ -51,21 +51,13 @@ export default async function CaseStudyPage({ params }: PageProps) {
           <div
             className={`w-14 h-14 flex items-center justify-center rounded-2xl ${caseStudy.headerColor}`}
           >
-            {typeof Icon === "function" ? (
-              <Icon
-                size={28}
-                strokeWidth={1.5}
-                style={{ color: caseStudy.themeColor }}
-              />
-            ) : (
-              <Image
-                src={Icon}
-                alt={caseStudy.name}
-                width={28}
-                height={28}
-                className="object-contain"
-              />
-            )}
+            <Image
+              src={Icon}
+              alt={caseStudy.name}
+              width={28}
+              height={28}
+              className="object-contain"
+            />
           </div>
           <h1 className="text-5xl md:text-6xl font-black text-[var(--deep-blue)] mt-8">
             {caseStudy.title}

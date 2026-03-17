@@ -54,20 +54,13 @@ export default function CaseStudiesGrid() {
                     <div
                       className={`w-14 h-14 flex items-center justify-center rounded-2xl ${project.headerColor}`}
                     >
-                      {typeof Icon === "function" ? (
-                        <Icon
-                          size={64}
-                          className="mx-auto text-[var(--primary-color)]"
-                        />
-                      ) : (
-                        <Image
-                          src={Icon}
-                          alt={project.name}
-                          width={64}
-                          height={64}
-                          className="mx-auto"
-                        />
-                      )}
+                      <Image
+                        src={Icon}
+                        alt={project.name}
+                        width={64}
+                        height={64}
+                        className="mx-auto"
+                      />
                     </div>
 
                     <div>
