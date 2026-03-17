@@ -175,7 +175,7 @@ const TechStack: React.FC = () => {
   };
 
   return (
-    <div className="relative w-full min-h-[380px] md:min-h-[420px] flex items-center justify-center overflow-hidden py-8 bg-white">
+    <div className="relative w-full min-h-[380px] md:min-h-[420px] flex items-center justify-center overflow-hidden py-12 bg-white">
       <div className="absolute top-0 left-0 w-full h-full opacity-[0.03] pointer-events-none">
         <svg
           width="100%"

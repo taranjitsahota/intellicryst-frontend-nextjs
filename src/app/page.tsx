@@ -5,7 +5,7 @@ import TrustedBy from "@/components/sections/TrustedBy";
 import ServicesGrid from "@/components/sections/ServicesGrid";
 import KeyServices from "@/components/sections/KeyServices";
 import WhyChooseUs from "@/components/sections/WhyChooseUs";
-import Projects from "@/components/sections/Projects";
+import CaseStudies from "@/components/sections/CaseStudies";
 import Testimonials from "@/components/sections/Testimonials";
 import TechStack from "@/components/sections/TechStack";
 import Team from "@/components/sections/Team";
@@ -45,11 +45,8 @@ const App: React.FC = () => {
           <TrustedBy />
         </section>
 
-        <section
-          id="services-summary"
-          className="bg-transparent relative"
-        >
-        <ServicesGrid />
+        <section id="services-summary" className="bg-transparent relative">
+          <ServicesGrid />
         </section>
 
         {/* Premium Gradient Blur Separator - Opacity reduced by 50% */}
@@ -71,16 +68,16 @@ const App: React.FC = () => {
           <Team />
         </section> */}
 
-        <section id="projects" className="bg-transparent">
-        <Projects />
+        <section id="case-studies" className="bg-transparent">
+          <CaseStudies />
         </section>
 
         <section id="tech-stack" className="bg-slate-50/10 relative">
-        <TechStack />
+          <TechStack />
         </section>
 
         <section id="industries" className="bg-transparent">
-        <Industries />
+          <Industries />
         </section>
 
         {/* <section id="process" className="bg-slate-50/15 relative">
@@ -92,11 +89,11 @@ const App: React.FC = () => {
         </section> */}
 
         <section id="why-us" className="bg-transparent">
-        <WhyChooseUs />
+          <WhyChooseUs />
         </section>
 
         <section id="testimonials" className="bg-slate-50/5 relative">
-        <Testimonials />
+          <Testimonials />
         </section>
 
         <section id="cta-chips">

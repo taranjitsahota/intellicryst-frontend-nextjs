@@ -1,6 +1,7 @@
 import { MetadataRoute } from "next";
 import { services } from "@/data/services";
 import { technologies } from "@/data/technologies";
+import { caseStudies } from "@/data/case-studies";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = "https://intellicryst.com";
@@ -10,7 +11,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/about",
     "/services",
     "/industries",
-    "/projects",
+    "/case-studies",
     "/contact",
     "/technology",
     "/privacy-policy",
@@ -24,7 +25,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
     (tech) => `/technology/${tech.slug}`,
   );
 
-  const allRoutes = [...routes, ...servicePages, ...technologyPages];
+  const caseStudyPages = caseStudies.map(
+    (caseStudy) => `/case-studies/${caseStudy.slug}`,
+  );
+
+  const allRoutes = [...routes, ...servicePages, ...technologyPages, ...caseStudyPages];
 
   return allRoutes.map((route) => ({
     url: `${baseUrl}${route}`,

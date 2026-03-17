@@ -130,7 +130,7 @@ const Hero: React.FC = () => {
               />
             </button>
           </Link>
-          <Link href="/projects">
+          <Link href="/case-studies">
             <button className="px-8 py-4 text-sm rounded-full border-2 border-white/10 text-white/60 font-black transition-all hover:text-white hover:border-white/40 hover:bg-white/5 hover:cursor-pointer">
               See What We Build
             </button>

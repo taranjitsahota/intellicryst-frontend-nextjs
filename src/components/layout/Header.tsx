@@ -56,24 +56,11 @@ const Header: React.FC<{}> = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  // const navItems = [
-  //   { label: "Home", href: "#" },
-  //   { label: "Services", href: "#services-summary" },
-  //   { label: "Key Services", href: "#key-services" },
-  //   { label: "Why Us", href: "#why-us" },
-  //   { label: "Team", href: "#team" },
-  //   { label: "Projects", href: "#projects" },
-  //   { label: "Testimonials", href: "#testimonials" },
-  //   { label: "Tech Stack", href: "#tech-stack" },
-  //   { label: "Industries", href: "#industries" },
-  //   { label: "Process", href: "#process" },
-  //   { label: "Contact", href: "#contact" },
-  // ];
   const navItems = [
     { label: "Home", href: "/" },
     { label: "Services", href: "/services" },
     { label: "Industries", href: "/industries" },
-    { label: "Projects", href: "/projects" },
+    { label: "Case Studies", href: "/case-studies" },
     { label: "About", href: "/about" },
     { label: "Contact", href: "/contact" },
     { label: "Technology", href: "/technology" },

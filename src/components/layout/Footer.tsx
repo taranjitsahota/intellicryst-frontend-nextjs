@@ -166,10 +166,10 @@ const Footer: React.FC = () => {
             </h4>
             <ul className="space-y-5">
               {[
-                { label: "Ezykheti", href: "/projects/ezykheti" },
-                { label: "Ezyfarms", href: "/projects/ezyfarms" },
-                { label: "Mobility Hub", href: "/projects/mobility-hub" },
-                { label: "Secure Gateway", href: "/projects/secure-gateway" },
+                { label: "Ezykheti", href: "/case-studies/ezykheti" },
+                { label: "Ezyfarms", href: "/case-studies/ezyfarms" },
+                { label: "Mobility Hub", href: "/case-studies/mobility-hub" },
+                { label: "Secure Gateway", href: "/case-studies/secure-gateway" },
               ].map((link) => (
                 <li key={link.label}>
                   <Link
