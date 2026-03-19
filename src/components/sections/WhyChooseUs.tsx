@@ -8,6 +8,8 @@ import {
   ShieldCheck, 
   MessagesSquare 
 } from 'lucide-react';
+import Image from 'next/image';
+import LaptopDesk from '../../../public/images/about/laptop-desk.jpg';
 
 const WhyChooseUs: React.FC = () => {
   const choosePoints = [
@@ -54,8 +56,8 @@ const WhyChooseUs: React.FC = () => {
         {/* Left Side: Image with Overlay */}
         <div className="relative animate-in slide-in-from-left duration-1000">
           <div className="rounded-[64px] overflow-hidden shadow-2xl relative">
-            <img 
-              src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&q=80&w=1200" 
+            <Image 
+              src={LaptopDesk} 
               alt="Intellicryst Engineering" 
               className="w-full h-[420px] lg:h-[520px] object-cover hover:scale-105 transition-transform duration-700"
             />

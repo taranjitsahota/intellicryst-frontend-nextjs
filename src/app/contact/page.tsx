@@ -17,8 +17,8 @@ export default function ServicesPage() {
       </section> */}
 
       {/* components */}
-      <Process />
       <Contact />
+      <Process />
     </main>
   );
 }

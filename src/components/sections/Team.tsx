@@ -130,13 +130,13 @@ const Team: React.FC = () => {
                   }`}
                 >
                   <div className="glass border border-white/20 p-5 rounded-2xl backdrop-blur-xl relative overflow-hidden">
-                    <div className="absolute top-0 right-0 p-4 opacity-20 text-[var(--primary-color)]">
+                    <div className="absolute top-0 right-0 p-4 opacity-20 text-[var(--deep-blue)]">
                       {member.icon}
                     </div>
                     
                     <div className="flex items-end justify-between gap-6">
                       <div className="space-y-2">
-                        <p className="text-[var(--primary-color)] font-black text-[10px] uppercase tracking-[0.3em] mb-2">{member.role}</p>
+                        <p className="text-[var(--grey-text)] font-black text-[10px] uppercase tracking-[0.3em] mb-2">{member.role}</p>
                         <h3 className="text-2xl font-black text-white tracking-tighter">{member.name}</h3>
                       </div>
                       

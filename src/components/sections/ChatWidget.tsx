@@ -152,7 +152,7 @@ const ChatWidget: React.FC = () => {
 
       <button 
         onClick={() => setIsOpen(!isOpen)}
-        className="w-16 h-16 bg-[var(--deep-blue)] rounded-[24px] flex items-center justify-center text-[var(--primary-color)] shadow-2xl hover:scale-110 transition-transform relative group"
+        className="w-16 h-16 bg-[var(--deep-blue)] rounded-[24px] flex items-center justify-center text-[var(--primary-color)] shadow-2xl hover:scale-110 transition-transform relative group hover:cursor-pointer"
       >
         <div className="absolute inset-0 bg-[var(--primary-color)] rounded-[24px] scale-90 opacity-0 group-hover:opacity-20 transition-all"></div>
         {isOpen ? <X size={28} /> : <MessageCircle size={28} />}

@@ -59,11 +59,11 @@ const Header: React.FC<{}> = () => {
   const navItems = [
     { label: "Home", href: "/" },
     { label: "Services", href: "/services" },
+    { label: "Technology", href: "/technology" },
     { label: "Industries", href: "/industries" },
     { label: "Case Studies", href: "/case-studies" },
     { label: "About", href: "/about" },
     { label: "Contact", href: "/contact" },
-    { label: "Technology", href: "/technology" },
   ];
 
   const textColorClass = isHomePage

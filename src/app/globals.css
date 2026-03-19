@@ -183,7 +183,7 @@ body {
 .animate-marquee {
   display: flex;
   width: max-content;
-  animation: marquee 40s linear infinite;
+  animation: marquee 100s linear infinite;
 }
 
 .animate-marquee-reverse {
@@ -218,4 +218,9 @@ html {
 .text-stroke {
   -webkit-text-stroke: 1px currentColor;
   -webkit-text-fill-color: transparent;
+}
+
+::selection {
+  background: rgba(0, 150, 255, 0.2); /* light transparent blue */
+  color: #000; /* or your text color */
 }

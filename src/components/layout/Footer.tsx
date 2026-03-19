@@ -66,7 +66,7 @@ const socials = [
   },
   {
     icon: Youtube,
-    href: "https://youtube.com/intellicryst",
+    href: "https://youtube.com/@intellicryst",
   },
   {
     icon: Facebook,

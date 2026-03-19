@@ -1,5 +1,6 @@
 import React from "react";
 import { industries } from "@/data/industries";
+import Link from "next/link";
 
 const Industries: React.FC = () => {
   return (
@@ -119,9 +120,9 @@ const Industries: React.FC = () => {
 
           {/* Action Button - Compact */}
           <div className="pt-2">
-            <button className="px-6 py-2.5 bg-white text-[var(--deep-blue)] rounded-2xl font-black text-[11px] uppercase tracking-widest transition-all hover:bg-[var(--primary-color)] hover:scale-105 shadow-2xl">
+            <Link href="/industries" className="px-6 py-2.5 bg-white text-[var(--deep-blue)] rounded-2xl font-black text-[11px] uppercase tracking-widest transition-all hover:bg-[var(--primary-color)] hover:scale-105 shadow-2xl">
               Start Exploring
-            </button>
+            </Link>
           </div>
         </div>
       </div>

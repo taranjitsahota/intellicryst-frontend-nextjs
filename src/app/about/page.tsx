@@ -1,7 +1,6 @@
 "use client";
 
 import Team from "@/components/sections/Team";
-import TechStack from "@/components/sections/TechStack";
 import WhyChooseUs from "@/components/sections/WhyChooseUs";
 
 export default function ServicesPage() {
@@ -20,7 +19,6 @@ export default function ServicesPage() {
       {/* components */}
       <WhyChooseUs />
       <Team />
-      <TechStack />
     </main>
   );
 }
