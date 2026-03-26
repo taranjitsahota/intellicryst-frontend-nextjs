@@ -194,7 +194,7 @@ const Footer: React.FC = () => {
             <ul className="space-y-5">
               {[
                 { label: "About Intellicryst", href: "/about" },
-                { label: "Contact Engineering", href: "/contact" },
+                { label: "Contact", href: "/contact" },
                 { label: "Career Portal", href: "/careers" },
                 { label: "Privacy Policy", href: "/privacy-policy" },
                 { label: "Terms & Conditions", href: "/terms-and-conditions" },

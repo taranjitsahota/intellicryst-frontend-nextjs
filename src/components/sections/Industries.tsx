@@ -7,6 +7,7 @@ const Industries: React.FC = () => {
     <div className="w-full max-w-[1800px] mx-auto px-6 md:px-10 lg:px-16 py-12 md:py-14 lg:py-16 ">
       {/* Container with decreased height and theme deep blue background (#012B48) */}
       <div className="bg-[var(--deep-blue)] rounded-[48px] min-h-[240px] lg:min-h-[280px] relative overflow-hidden flex flex-col justify-center p-6 lg:p-8 group">
+        <div className="absolute right-0 top-0 h-full w-1/2 bg-gradient-to-l from-white/5 to-transparent pointer-events-none z-0" />
         {/* Swirling Ribbon / Flow Background (Matching Reference) */}
         <div className="absolute inset-0 pointer-events-none select-none overflow-hidden">
           {/* Main Swirl Component - SVG for precision */}
@@ -80,48 +81,61 @@ const Industries: React.FC = () => {
         </div>
 
         {/* Content Section - More compact spacing */}
-        <div className="relative z-10 space-y-6 max-w-2xl">
-          <div className="space-y-3">
-            <div className="inline-flex items-center text-white/40 text-[6px] font-black uppercase tracking-[0.5em]">
+        <div className="relative z-10 grid lg:grid-cols-2 gap-16 items-center">
+          <div className="space-y-6 max-w-xl">
+            <div className="inline-flex items-center text-white/40 text-[10px] font-black uppercase tracking-[0.5em]">
               Industries & Solutions
             </div>
 
             <h2 className="text-3xl lg:text-4xl font-extrabold text-white tracking-tighter leading-[1] max-w-xl">
-              Expertise Across <br />
+              Building Systems for <br />
               <span className="italic opacity-90 text-[var(--primary-color)]">
-                Key Industries
+                Real-World Industries
               </span>
             </h2>
 
-            <p className="text-white/50 text-sm lg:text-base font-medium max-w-md leading-relaxed">
-              We design, build, and deploy high-availability systems tailored to
-              the specific demands of your market sector.
+            <p className="text-white/60 text-sm lg:text-base font-medium max-w-md leading-relaxed">
+              From agriculture infrastructure to fleet operations, we design and
+              deploy production-grade systems that solve real business
+              challenges — not just interfaces.
             </p>
           </div>
 
           {/* Industry Selection Pills - Smaller icons/text */}
-          <div className="flex flex-wrap gap-2">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             {industries.map((ind, i) => {
               const Icon = ind.icon;
 
               return (
                 <div
                   key={i}
-                  className="flex items-center gap-2 bg-white/5 border border-white/10 px-3 py-1.5 rounded-full hover:bg-white/10 hover:border-white/20 transition-all cursor-default backdrop-blur-md"
+                  className="group p-5 rounded-2xl bg-white/5 border border-white/10 hover:bg-white/10 hover:border-white/20 transition-all backdrop-blur-md hover:-translate-y-1"
                 >
-                  <Icon size={16} className="text-[var(--primary-color)]" />
-                  <span className="text-white/80 font-bold text-[6px] uppercase tracking-widest">
-                    {ind.title}
-                  </span>
+                  <div className="flex items-center gap-3 mb-2">
+                    <div className="w-8 h-8 rounded-lg bg-white/10 flex items-center justify-center">
+                      <Icon size={16} className="text-[var(--primary-color)]" />
+                    </div>
+
+                    <span className="text-white font-bold text-xs uppercase tracking-wider">
+                      {ind.title}
+                    </span>
+                  </div>
+
+                  <p className="text-white/60 text-xs leading-relaxed">
+                    {ind.desc}
+                  </p>
                 </div>
               );
             })}
           </div>
 
           {/* Action Button - Compact */}
-          <div className="pt-2">
-            <Link href="/industries" className="px-6 py-2.5 bg-white text-[var(--deep-blue)] rounded-2xl font-black text-[11px] uppercase tracking-widest transition-all hover:bg-[var(--primary-color)] hover:scale-105 shadow-2xl">
-              Start Exploring
+          <div className="pt-4 flex">
+            <Link
+              href="/case-studies"
+              className="px-6 py-2.5 bg-white text-[var(--deep-blue)] rounded-2xl font-black text-[11px] uppercase tracking-widest transition-all hover:bg-[var(--primary-color)] hover:scale-105 shadow-2xl"
+            >
+              Explore Case Studies
             </Link>
           </div>
         </div>

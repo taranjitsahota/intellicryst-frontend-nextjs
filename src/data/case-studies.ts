@@ -3,10 +3,15 @@ import { LucideIcon } from "lucide-react";
 import Ezykheti from "../../public/images/case-studies/logos/ezykheti-logo.png";
 import RSGoa from "../../public/images/case-studies/logos/rs-goa-car-rental-logo.png";
 import Ezyfarms from "../../public/images/case-studies/logos/Ezyfarms-logo.png";
-import EzykhetiSsDashboard from "../../public/images/case-studies/ezykheti-ss-dashboard.png";
-import Mockup1 from "../../public/images/case-studies/MOCKUP-1.png";
-import Mockup11 from "../../public/images/case-studies/MOCKUP-11.png";
-import Mockup12 from "../../public/images/case-studies/MOCKUP-12.png";
+import EzykhetiSsDashboard from "../../public/images/case-studies/ezykheti/dashboard.png";
+import Mockup1 from "../../public/images/case-studies/ezykheti/MOCKUP-1.png";
+import Mockup11 from "../../public/images/case-studies/ezykheti/MOCKUP-11.png";
+import Mockup12 from "../../public/images/case-studies/ezykheti/MOCKUP-12.png";
+import EzykhetiProblem from "../../public/images/case-studies/ezykheti/problem.png";
+import EzyfarmsProblem from "../../public/images/case-studies/ezyfarms/problem.png";
+import EzyfarmsDashboard from "../../public/images/case-studies/ezyfarms/dashboard.png";
+import RsGoaCarRentalProblem from "../../public/images/case-studies/rs-goa-car-rental/problem.png";
+import RsGoaCarRentalDashboard from "../../public/images/case-studies/rs-goa-car-rental/dashboard.png";
 import { StaticImageData } from "next/image";
 
 export interface Project {
@@ -31,7 +36,13 @@ export interface Project {
     items: {
       title: string;
       desc: string;
-      icon: "smartphone" | "dashboard" | "shield";
+      icon:
+        | "smartphone"
+        | "dashboard"
+        | "shield"
+        | "map"
+        | "database"
+        | "calendar";
     }[];
   };
   metrics?: {
@@ -42,7 +53,6 @@ export interface Project {
   headerColor: string;
   themeColor: string;
   icon: StaticImageData; // store icon component instead of JSX
-  avatar: string;
   screenshots?: StaticImageData[];
   features?: {
     title: string;
@@ -98,25 +108,18 @@ export interface Project {
       value: string;
     }[];
   };
+
+  liveUrl?: string;
+  githubUrl?: string;
+  isFeatured?: boolean;
 }
 
 export const caseStudies: Project[] = [
   {
-    slug: "rs-goa-car-rental",
-    name: "RS Goa Car Rental",
-    handle: "@rs_goa_car_rental",
-    title: "Enterprise Fleet & Reservation System",
-    description:
-      "Replaces legacy manual processes with a high-performance web dashboard for real-time inventory management and customer reservations.",
-    tags: ["Next.js", "React", "Tailwind CSS"],
-    headerColor: "bg-[#E0F7FA]",
-    themeColor: "#0D9488",
-    icon: RSGoa,
-    avatar: "https://api.dicebear.com/7.x/avataaars/svg?seed=Felix",
-  },
-  {
     slug: "ezykheti",
     name: "Ezykheti",
+    liveUrl: "https://ezykheti.com",
+    isFeatured: true,
     handle: "@ezykheti",
     title: "AgriTech Booking & Scheduling Hub",
     description:
@@ -139,7 +142,7 @@ export const caseStudies: Project[] = [
           desc: "No discovery beyond local radius.",
         },
       ],
-      image: "https://picsum.photos/seed/agri-problem/800/600",
+      image: EzykhetiProblem,
     },
 
     solutionSection: {
@@ -184,7 +187,6 @@ export const caseStudies: Project[] = [
     headerColor: "bg-[#F1F8E9]",
     themeColor: "#00B86C",
     icon: Ezykheti,
-    avatar: "https://api.dicebear.com/7.x/avataaars/svg?seed=Jasper",
     screenshots: [EzykhetiSsDashboard, Mockup1, Mockup11, Mockup12],
     features: [
       {
@@ -297,16 +299,289 @@ export const caseStudies: Project[] = [
     },
   },
   {
+    slug: "rs-goa-car-rental",
+    name: "RS Goa Car Rental",
+    liveUrl: "https://rsgoacarrental.com/",
+    handle: "@rs_goa_car_rental",
+    title: "Enterprise Fleet & Reservation System",
+    description:
+      "Replaces legacy manual processes with a high-performance web dashboard for real-time inventory management and customer reservations.",
+    tags: ["Next.js", "React", "Tailwind CSS"],
+    headerColor: "bg-[#E0F7FA]",
+    themeColor: "#0D9488",
+    icon: RSGoa,
+    problemSection: {
+      title: "Manual Fleet Chaos",
+      subtitle:
+        "The business relied on manual tracking, leading to inefficiencies and revenue leakage.",
+      points: [
+        {
+          title: "No Real-Time Inventory",
+          desc: "Cars availability was tracked manually, causing double bookings.",
+        },
+        {
+          title: "Booking Errors",
+          desc: "Customer reservations were not synchronized across channels.",
+        },
+        {
+          title: "Revenue Loss",
+          desc: "Idle vehicles and missed bookings reduced profitability.",
+        },
+      ],
+      image: RsGoaCarRentalProblem,
+    },
+
+    solutionSection: {
+      title: "Centralized Fleet Engine",
+      subtitle:
+        "We built a real-time system to manage vehicles, bookings, and customers seamlessly.",
+      items: [
+        {
+          icon: "dashboard",
+          title: "Fleet Dashboard",
+          desc: "Live tracking of all vehicles and availability.",
+        },
+        {
+          icon: "calendar",
+          title: "Reservation System",
+          desc: "Automated booking with conflict prevention.",
+        },
+        {
+          icon: "database",
+          title: "Customer Management",
+          desc: "Centralized records with booking history.",
+        },
+      ],
+    },
+
+    metrics: [
+      { label: "Bookings Increased", value: "60%" },
+      { label: "Manual Work Reduced", value: "70%" },
+      { label: "Fleet Utilization", value: "85%" },
+    ],
+
+    features: [
+      {
+        title: "Real-time Inventory",
+        desc: "Track availability and status of vehicles instantly.",
+      },
+      {
+        title: "Automated Booking",
+        desc: "Prevents double booking with smart scheduling.",
+      },
+      {
+        title: "Analytics Dashboard",
+        desc: "Revenue and usage insights for business decisions.",
+      },
+    ],
+
+    stats: [
+      { label: "Daily Bookings", value: "120+" },
+      { label: "Fleet Size Managed", value: "50+" },
+      { label: "System Accuracy", value: "99%" },
+    ],
+
+    productSection: {
+      title: "Built for Fleet Intelligence",
+      subtitle:
+        "A powerful dashboard system to monitor vehicles, bookings, and revenue in real-time.",
+
+      dashboard: {
+        image: RsGoaCarRentalDashboard,
+        title: "Fleet Control Dashboard",
+        description:
+          "Centralized system to track all vehicles, bookings, and availability.",
+        points: [
+          "Live Vehicle Availability",
+          "Booking Conflict Prevention",
+          "Revenue Tracking",
+        ],
+      },
+    },
+
+    featuresSection: {
+      title: "Core Features",
+      subtitle: "Everything needed to manage a modern fleet business.",
+      items: [
+        {
+          icon: "calendar",
+          title: "Smart Booking",
+          desc: "Automated scheduling prevents conflicts.",
+        },
+        {
+          icon: "map",
+          title: "Fleet Tracking",
+          desc: "Track vehicle status and availability.",
+        },
+        {
+          icon: "payment",
+          title: "Payment Handling",
+          desc: "Manage bookings and payments efficiently.",
+        },
+        {
+          icon: "database",
+          title: "Customer Records",
+          desc: "Store and manage user data securely.",
+        },
+      ],
+    },
+
+    impactSection: {
+      title: "Business Impact",
+      subtitle: "Transforming operations with automation.",
+      stats: [
+        { label: "Booking Efficiency", value: "+60%" },
+        { label: "Manual Errors", value: "-70%" },
+        { label: "Fleet Usage", value: "85%" },
+        { label: "Revenue Growth", value: "+40%" },
+      ],
+    },
+  },
+  {
     slug: "ezyfarms",
     name: "Ezyfarms",
+    liveUrl: "https://ezyfarms.com",
     handle: "@ezyfarms_ops",
     title: "Farm Operations Management Platform",
     description:
       "Empowering agricultural managers with data-driven activity logging and location-based resource tracking to ensure operational stability.",
-    tags: ["Flutter", "Firebase", "AWS S3"],
+    tags: ["Django", "Next.js", "Vercel", "AWS", "Docker", "Tailwind CSS"],
     headerColor: "bg-[#FFF3E0]",
     themeColor: "#F57C00",
     icon: Ezyfarms,
-    avatar: "https://api.dicebear.com/7.x/avataaars/svg?seed=Luna",
+    problemSection: {
+      title: "Unstructured Farm Operations",
+      subtitle:
+        "Farm management lacked visibility, tracking, and accountability.",
+      points: [
+        {
+          title: "No Activity Tracking",
+          desc: "Daily farm operations were not logged or monitored.",
+        },
+        {
+          title: "Resource Mismanagement",
+          desc: "Difficult to track labor, inputs, and outputs.",
+        },
+        {
+          title: "Lack of Data",
+          desc: "No insights for improving productivity.",
+        },
+      ],
+      image: EzyfarmsProblem,
+    },
+
+    solutionSection: {
+      title: "Data-Driven Farm Management",
+      subtitle:
+        "We created a mobile-first platform for tracking, monitoring, and optimizing farm operations.",
+      items: [
+        {
+          icon: "smartphone",
+          title: "Field Logging",
+          desc: "Workers log activities in real-time.",
+        },
+        {
+          icon: "map",
+          title: "Location Tracking",
+          desc: "Monitor activities based on farm zones.",
+        },
+        {
+          icon: "dashboard",
+          title: "Operations Dashboard",
+          desc: "Centralized monitoring for managers.",
+        },
+      ],
+    },
+
+    metrics: [
+      { label: "Productivity Increase", value: "35%" },
+      { label: "Data Accuracy", value: "90%" },
+      { label: "Operational Efficiency", value: "40%" },
+    ],
+
+    features: [
+      {
+        title: "Activity Logging",
+        desc: "Track every farm task with timestamps.",
+      },
+      {
+        title: "Geo-tagging",
+        desc: "Location-based tracking of operations.",
+      },
+      {
+        title: "Reports & Insights",
+        desc: "Generate data-driven farm reports.",
+      },
+    ],
+
+    stats: [
+      { label: "Farms Managed", value: "20+" },
+      { label: "Workers Tracked", value: "100+" },
+      { label: "Tasks Logged", value: "10K+" },
+    ],
+    productSection: {
+      title: "Operational Visibility",
+      subtitle:
+        "A mobile-first platform enabling real-time tracking of farm activities.",
+      dashboard: {
+        image: EzyfarmsDashboard,
+        title: "Field Operations Dashboard",
+        description:
+          "Workers log tasks and activities directly from the field.",
+        points: [
+          "Improved tracking from manual logs → real-time system",
+          "Enhanced visibility for managers",
+          "Efficient resource allocation",
+        ],
+      },
+      // mobile: {
+      //   images: [
+      //     "https://picsum.photos/seed/farm1/300/600",
+      //     "https://picsum.photos/seed/farm2/300/600",
+      //   ],
+      //   title: "Field Operations App",
+      //   description:
+      //     "Workers log tasks and activities directly from the field.",
+      //   highlight: "Improved tracking from manual logs → real-time system",
+      // },
+    },
+
+    featuresSection: {
+      title: "Farm Management Features",
+      subtitle: "Built for real agricultural workflows.",
+      items: [
+        {
+          icon: "calendar",
+          title: "Task Scheduling",
+          desc: "Plan and assign daily farm activities.",
+        },
+        {
+          icon: "map",
+          title: "Geo Tracking",
+          desc: "Track operations based on farm location.",
+        },
+        {
+          icon: "database",
+          title: "Data Logging",
+          desc: "Store all activities for analytics.",
+        },
+        {
+          icon: "payment",
+          title: "Resource Tracking",
+          desc: "Monitor labor and inputs usage.",
+        },
+      ],
+    },
+
+    impactSection: {
+      title: "Operational Impact",
+      subtitle: "Driving efficiency through structured workflows.",
+      stats: [
+        { label: "Productivity", value: "+35%" },
+        { label: "Data Accuracy", value: "90%" },
+        { label: "Efficiency", value: "+40%" },
+        { label: "Tasks Logged", value: "10K+" },
+      ],
+    },
   },
 ];

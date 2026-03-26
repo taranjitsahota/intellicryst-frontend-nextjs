@@ -34,6 +34,9 @@ const iconMap = {
   smartphone: Smartphone,
   dashboard: LayoutDashboard,
   shield: ShieldCheck,
+  map: MapPin,
+  calendar: Calendar,
+  database: Database,
 };
 
 const featureIconMap = {
@@ -196,11 +199,11 @@ export default function CaseStudyAIDemo({ caseStudy }: { caseStudy: Project }) {
       {/* --- Hero Section --- */}
       <section className="relative pt-40 pb-32 overflow-hidden">
         <div
-          className="absolute top-0 left-1/4 w-[500px] h-[500px] rounded-full blur-[120px]"
+          className="absolute top-0 left-1/4 w-[500px] h-[500px] rounded-full blur-[120px] pointer-events-none"
           style={{ background: `${caseStudy.themeColor}20` }}
         />
         <div
-          className="absolute bottom-0 right-1/4 w-[600px] h-[600px] rounded-full blur-[150px]"
+          className="absolute bottom-0 right-1/4 w-[600px] h-[600px] rounded-full blur-[150px] pointer-events-none"
           style={{ background: `${caseStudy.themeColor}10` }}
         />
 
@@ -239,6 +242,29 @@ export default function CaseStudyAIDemo({ caseStudy }: { caseStudy: Project }) {
           >
             {caseStudy.description}
           </motion.p>
+
+          {caseStudy.liveUrl && (
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.2 }}
+              className="flex justify-center mt-8"
+            >
+              <a
+                href={caseStudy.liveUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={(e) => e.stopPropagation()} 
+                className="flex justify-center mb-12 relative z-10 inline-flex items-center gap-3 px-8 py-4 rounded-2xl font-black text-sm shadow-xl transition-all hover:scale-105"
+                style={{
+                  backgroundColor: caseStudy.themeColor,
+                  color: "#fff",
+                }}
+              >
+                Visit Live Project <ExternalLink size={18} />
+              </a>
+            </motion.div>
+          )}
 
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -313,6 +339,17 @@ export default function CaseStudyAIDemo({ caseStudy }: { caseStudy: Project }) {
                 ))}
               </div>
             </div>
+
+            {caseStudy.liveUrl && (
+              <a
+                href={caseStudy.liveUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mt-4 inline-flex items-center gap-2 text-xs font-bold bg-white text-[var(--deep-blue)] px-3 py-2 rounded-lg hover:scale-105 transition-all"
+              >
+                Visit Website <ExternalLink size={12} />
+              </a>
+            )}
           </div>
         </aside>
 
@@ -491,6 +528,17 @@ export default function CaseStudyAIDemo({ caseStudy }: { caseStudy: Project }) {
                     <h3 className="text-2xl font-black mb-4">
                       {caseStudy.productSection.dashboard.title}
                     </h3>
+                    {caseStudy.liveUrl && (
+                      <a
+                        href={caseStudy.liveUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-2 text-sm font-bold mt-2"
+                        style={{ color: caseStudy.themeColor }}
+                      >
+                        Open Live Dashboard <ExternalLink size={14} />
+                      </a>
+                    )}
 
                     <p className="text-slate-600 mb-6">
                       {caseStudy.productSection.dashboard.description}

@@ -5,7 +5,7 @@ import TrustedBy from "@/components/sections/TrustedBy";
 import ServicesGrid from "@/components/sections/ServicesGrid";
 import KeyServices from "@/components/sections/KeyServices";
 import WhyChooseUs from "@/components/sections/WhyChooseUs";
-import CaseStudies from "@/components/sections/CaseStudies";
+import CaseStudies from "@/components/sections/case-studies/CaseStudies";
 import Testimonials from "@/components/sections/Testimonials";
 import TechStack from "@/components/sections/TechStack";
 import Team from "@/components/sections/Team";

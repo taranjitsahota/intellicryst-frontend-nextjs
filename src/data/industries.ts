@@ -1,20 +1,24 @@
-import { Sprout, Truck, ShoppingCart, LayoutPanelLeft } from "lucide-react";
+import { Sprout, Truck, LayoutPanelLeft, Database } from "lucide-react";
 
 export const industries = [
   {
     icon: Sprout,
-    title: "Agriculture & AgriTech",
+    title: "AgriTech Platforms",
+    desc: "Digital infrastructure for farmers, operators, and rural services",
   },
   {
     icon: Truck,
-    title: "Mobility & Transportation",
-  },
-  {
-    icon: ShoppingCart,
-    title: "eCommerce",
+    title: "Fleet & Mobility Systems",
+    desc: "Vehicle booking, tracking, and fleet optimization platforms",
   },
   {
     icon: LayoutPanelLeft,
-    title: "SaaS Platforms",
+    title: "Farm Operations SaaS",
+    desc: "Data-driven farm activity tracking and management systems",
+  },
+  {
+    icon: Database,
+    title: "Admin & Control Dashboards",
+    desc: "Centralized control systems with analytics and automation",
   },
 ];

@@ -1,4 +1,4 @@
-import CaseStudiesGrid from "@/components/sections/CaseStudiesGrid";
+import CaseStudiesGrid from "@/components/sections/case-studies/CaseStudiesGrid";
 
 export default function CaseStudiesPage() {
   return (
