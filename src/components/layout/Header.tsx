@@ -12,9 +12,9 @@ const Header: React.FC<{}> = () => {
   const isHomePage = pathname === "/";
 
   const logoSrc =
-  isHomePage && !scrolled
-    ? "/images/logo/logo_v.1.2.svg"
-    : "/images/logo/logo_v.1.0.svg";
+    isHomePage && !scrolled
+      ? "/images/logo/logo_v.1.2.svg"
+      : "/images/logo/logo_v.1.0.svg";
 
   useEffect(() => {
     const handleScroll = () => {
@@ -50,9 +50,9 @@ const Header: React.FC<{}> = () => {
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isHomePage
           ? scrolled
-            ? "glass py-3 shadow-md border-b border-black/20"
+            ? "backdrop-blur-md bg-white/70 py-3 shadow-md border-b border-black/20"
             : "bg-transparent py-6"
-          : "glass py-3 shadow-md border-b border-black/20"
+          : "backdrop-blur-md bg-white/70 py-3 shadow-md border-b border-black/20"
       }`}
     >
       <div className="max-w-[1600px] mx-auto px-6 md:px-12 flex items-center justify-between">
