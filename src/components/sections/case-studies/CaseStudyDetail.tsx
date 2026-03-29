@@ -79,7 +79,7 @@ const BrowserFrame = ({
     <div className="relative aspect-video bg-slate-100 overflow-hidden">
       {children}
     </div>
-  </div>
+  </div>  
 );
 
 const PhoneFrame = ({
@@ -226,7 +226,7 @@ export default function CaseStudyAIDemo({ caseStudy }: { caseStudy: Project }) {
           <motion.h1
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            className="text-4xl md:text-6xl font-black text-[var(--deep-blue)] mb-8 leading-[0.9] tracking-tighter"
+            className="text-4xl md:text-6xl font-black text-[var(--deep-blue)] text-leading-[0.9]  mb-8 leading-[1.1] tracking-tighter"
           >
             {caseStudy.name}: The Future of <br />
             <span style={{ color: caseStudy.themeColor }} className="italic">

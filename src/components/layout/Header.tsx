@@ -3,50 +3,18 @@ import React, { useEffect, useState } from "react";
 import { Menu, X, ExternalLink } from "lucide-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-
-const LogoMark = () => (
-  <svg
-    width="40"
-    height="40"
-    viewBox="0 0 40 40"
-    fill="none"
-    xmlns="http://www.w3.org/2000/svg"
-    className="group-hover:rotate-90 transition-transform duration-500"
-  >
-    <rect width="40" height="40" rx="8" fill="url(#logoGrad)" />
-    <path
-      d="M10 15V25H20V15H15"
-      stroke="white"
-      strokeWidth="2.5"
-      strokeLinecap="round"
-    />
-    <path
-      d="M30 15H20V30H10"
-      stroke="white"
-      strokeWidth="2.5"
-      strokeLinecap="round"
-    />
-    <defs>
-      <linearGradient
-        id="logoGrad"
-        x1="0"
-        y1="0"
-        x2="40"
-        y2="40"
-        gradientUnits="userSpaceOnUse"
-      >
-        <stop stopColor="#00F5D4" />
-        <stop offset="1" stopColor="#00B6FF" />
-      </linearGradient>
-    </defs>
-  </svg>
-);
+import Image from "next/image";
 
 const Header: React.FC<{}> = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const pathname = usePathname();
   const isHomePage = pathname === "/";
+
+  const logoSrc =
+  isHomePage && !scrolled
+    ? "/images/logo/logo_v.1.2.svg"
+    : "/images/logo/logo_v.1.0.svg";
 
   useEffect(() => {
     const handleScroll = () => {
@@ -91,12 +59,13 @@ const Header: React.FC<{}> = () => {
         {/* Logo */}
         <div className="flex items-center gap-3 group cursor-pointer">
           <Link href="/" className="flex items-center gap-3 group">
-            <LogoMark />
-            <span
-              className={`text-xl font-black tracking-tight transition-colors duration-300 ${logoTextClass}`}
-            >
-              INTELLICRYST
-            </span>
+            <Image
+              src={logoSrc}
+              alt="Intellicryst Logo"
+              width={150}
+              height={150}
+              className="transition-all duration-300"
+            />
           </Link>
         </div>
 

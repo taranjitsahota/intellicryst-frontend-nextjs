@@ -1,15 +1,19 @@
-
-import React, { useState, useRef, useEffect } from 'react';
-import { MessageCircle, X, Send, Loader2 } from 'lucide-react';
+import React, { useState, useRef, useEffect } from "react";
+import { MessageCircle, X, Send, Loader2 } from "lucide-react";
 /* Import GoogleGenAI and associated types for Gemini integration */
 import { GoogleGenAI, GenerateContentResponse, Chat } from "@google/genai";
 
 const ChatWidget: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const [messages, setMessages] = useState<{ role: 'user' | 'model'; text: string }[]>([
-    { role: 'model', text: 'Welcome to Intellicryst! How can our engineering team assist your project today?' }
+  const [messages, setMessages] = useState<
+    { role: "user" | "model"; text: string }[]
+  >([
+    {
+      role: "model",
+      text: "Welcome to Intellicryst! How can our engineering team assist your project today?",
+    },
   ]);
-  const [input, setInput] = useState('');
+  const [input, setInput] = useState("");
   const [isLoading, setIsLoading] = useState(false);
   /* Use a ref to store the chat session persistent across re-renders */
   const chatRef = useRef<Chat | null>(null);
@@ -25,39 +29,83 @@ const ChatWidget: React.FC = () => {
   /* Lazy initialize the Gemini chat session with context-specific instructions */
   const getChatSession = () => {
     if (!chatRef.current) {
-      const ai = new GoogleGenAI({ apiKey: process.env.API_KEY });
+      const ai = new GoogleGenAI({ apiKey: process.env.GEMINI_API_KEY! });
       chatRef.current = ai.chats.create({
-        model: 'gemini-3-flash-preview',
+        model: "gemini-3-flash-preview",
         config: {
-          systemInstruction: 'You are an expert solution architect at Intellicryst, a high-end digital engineering firm. You assist clients with technical queries regarding web/mobile development, hybrid cloud infrastructure, and security. Be professional, direct, and helpful. Use technical terminology accurately but remain accessible.',
+          systemInstruction:
+            "You are an expert solution architect at Intellicryst, a high-end digital engineering firm. You assist clients with technical queries regarding web/mobile development, hybrid cloud infrastructure, and security. Be professional, direct, and helpful. Use technical terminology accurately but remain accessible.",
         },
       });
     }
     return chatRef.current;
   };
 
+  // const handleSend = async (textOverride?: string) => {
+  //   const textToSend = textOverride || input;
+  //   if (!textToSend.trim() || isLoading) return;
+
+  //   const userMessage = textToSend.trim();
+  //   setInput("");
+  //   setMessages((prev) => [...prev, { role: "user", text: userMessage }]);
+  //   setIsLoading(true);
+
+  //   try {
+  //     const res = await fetch("/api/chat", {
+  //       method: "POST",
+  //       headers: {
+  //         "Content-Type": "application/json",
+  //       },
+  //       body: JSON.stringify({ message: userMessage }),
+  //     });
+
+  //     const data = await res.json();
+  //     const botResponse = data.reply || "I'm having trouble connecting to my knowledge base right now. Please try again later.";
+
+  //     setMessages((prev) => [...prev, { role: "model", text: botResponse }]);
+  //   } catch (error) {
+  //     console.error("Chat Error:", error);
+  //     setMessages((prev) => [
+  //       ...prev,
+  //       {
+  //         role: "model",
+  //         text: "Nexus connection interrupted. Our engineers are investigating.",
+  //       },
+  //     ]);
+  //   } finally {
+  //     setIsLoading(false);
+  //   }
+  // };
+
   const handleSend = async (textOverride?: string) => {
     const textToSend = textOverride || input;
-    if (!textToSend.trim() || isLoading) return;
+    if (!textToSend.trim()) return;
 
     const userMessage = textToSend.trim();
-    setInput('');
-    setMessages(prev => [...prev, { role: 'user', text: userMessage }]);
-    setIsLoading(true);
 
-    try {
-      const chat = getChatSession();
-      /* Call Gemini sendMessage and extract the resulting text */
-      const result: GenerateContentResponse = await chat.sendMessage({ message: userMessage });
-      const botResponse = result.text || "I'm having trouble connecting to my knowledge base right now. Please try again later.";
-      
-      setMessages(prev => [...prev, { role: 'model', text: botResponse }]);
-    } catch (error) {
-      console.error("Chat Error:", error);
-      setMessages(prev => [...prev, { role: 'model', text: "Nexus connection interrupted. Our engineers are investigating." }]);
-    } finally {
-      setIsLoading(false);
-    }
+    // ✅ Show message in chat UI
+    setMessages((prev) => [...prev, { role: "user", text: userMessage }]);
+    setInput("");
+
+    // ✅ Fake bot response (nice UX)
+    setTimeout(() => {
+      setMessages((prev) => [
+        ...prev,
+        {
+          role: "model",
+          text: "Connecting you to our team on WhatsApp...",
+        },
+      ]);
+    }, 500);
+
+    // ✅ Open WhatsApp after 1 sec
+    setTimeout(() => {
+      const message = encodeURIComponent(
+        `Hello Intellicryst Team,\n\n${userMessage}`,
+      );
+
+      window.open(`https://wa.me/917087886881?text=${message}`, "_blank");
+    }, 1000);
   };
 
   return (
@@ -71,49 +119,63 @@ const ChatWidget: React.FC = () => {
                 <MessageCircle size={22} className="text-[var(--deep-blue)]" />
               </div>
               <div>
-                <h4 className="text-white font-black text-sm tracking-tight">Intellicryst Nexus</h4>
+                <h4 className="text-white font-black text-sm tracking-tight">
+                  Intellicryst Nexus
+                </h4>
                 <div className="flex items-center gap-1.5">
-                  <div className={`w-1.5 h-1.5 rounded-full ${isLoading ? 'bg-amber-400' : 'bg-[var(--primary-color)]'} animate-pulse`}></div>
+                  <div
+                    className={`w-1.5 h-1.5 rounded-full ${isLoading ? "bg-amber-400" : "bg-[var(--primary-color)]"} animate-pulse`}
+                  ></div>
                   <span className="text-[10px] text-white/50 font-black uppercase tracking-widest">
-                    {isLoading ? 'Analyzing...' : 'Active Architect'}
+                    {isLoading ? "Analyzing..." : "Active Architect"}
                   </span>
                 </div>
               </div>
             </div>
-            <button onClick={() => setIsOpen(false)} className="text-white/40 hover:text-white transition-colors p-2">
+            <button
+              onClick={() => setIsOpen(false)}
+              className="text-white/40 hover:text-white transition-colors p-2"
+            >
               <X size={20} />
             </button>
           </div>
 
           {/* Messages Container */}
-          <div ref={scrollRef} className="h-[320px] overflow-y-auto p-6 space-y-5 bg-slate-50/30 scroll-smooth">
+          <div
+            ref={scrollRef}
+            className="h-[320px] overflow-y-auto p-6 space-y-5 bg-slate-50/30 scroll-smooth"
+          >
             {messages.map((msg, idx) => (
-              <div 
-                key={idx} 
+              <div
+                key={idx}
                 className={`p-5 rounded-2xl border shadow-sm max-w-[90%] text-sm leading-relaxed font-medium ${
-                  msg.role === 'user' 
-                    ? 'bg-[var(--deep-blue)] text-white ml-auto rounded-tr-none border-[var(--deep-blue)]' 
-                    : 'bg-white text-[var(--navy-text)] mr-auto rounded-tl-none border-slate-100'
+                  msg.role === "user"
+                    ? "bg-[var(--deep-blue)] text-white ml-auto rounded-tr-none border-[var(--deep-blue)]"
+                    : "bg-white text-[var(--navy-text)] mr-auto rounded-tl-none border-slate-100"
                 }`}
               >
                 {msg.text}
               </div>
             ))}
-            
+
             {messages.length < 3 && !isLoading && (
               <div className="flex flex-col gap-2">
-                 <button 
-                   onClick={() => handleSend("Explain your development methodology.")}
-                   className="w-full text-left px-5 py-3 rounded-xl bg-white border border-slate-200 text-[var(--deep-blue)] text-xs font-bold hover:border-[var(--primary-color)] hover:text-[var(--primary-color)] transition-all"
-                 >
-                    Service Capabilities
-                 </button>
-                 <button 
-                   onClick={() => handleSend("I'd like to request a system security audit.")}
-                   className="w-full text-left px-5 py-3 rounded-xl bg-white border border-slate-200 text-[var(--deep-blue)] text-xs font-bold hover:border-[var(--primary-color)] hover:text-[var(--primary-color)] transition-all"
-                 >
-                    Project Blueprint Request
-                 </button>
+                <button
+                  onClick={() =>
+                    handleSend("Explain your development methodology.")
+                  }
+                  className="w-full text-left px-5 py-3 rounded-xl bg-white border border-slate-200 text-[var(--deep-blue)] text-xs font-bold hover:border-[var(--primary-color)] hover:text-[var(--primary-color)] transition-all"
+                >
+                  Service Capabilities
+                </button>
+                <button
+                  onClick={() =>
+                    handleSend("I'd like to request a system security audit.")
+                  }
+                  className="w-full text-left px-5 py-3 rounded-xl bg-white border border-slate-200 text-[var(--deep-blue)] text-xs font-bold hover:border-[var(--primary-color)] hover:text-[var(--primary-color)] transition-all"
+                >
+                  Project Blueprint Request
+                </button>
               </div>
             )}
 
@@ -127,30 +189,37 @@ const ChatWidget: React.FC = () => {
           </div>
 
           {/* Input Area */}
-          <form 
-            onSubmit={(e) => { e.preventDefault(); handleSend(); }}
+          <form
+            onSubmit={(e) => {
+              e.preventDefault();
+              handleSend();
+            }}
             className="p-4 border-t border-slate-100 flex gap-3 bg-white"
           >
-            <input 
-              type="text" 
+            <input
+              type="text"
               value={input}
               onChange={(e) => setInput(e.target.value)}
-              placeholder="Type your query..." 
+              placeholder="Type your query..."
               disabled={isLoading}
               className="flex-1 px-5 py-3.5 bg-slate-50 rounded-2xl text-sm font-medium focus:outline-none focus:ring-2 focus:ring-[var(--primary-color)]/20 transition-all disabled:opacity-50"
             />
-            <button 
+            <button
               type="submit"
               disabled={isLoading || !input.trim()}
               className="w-12 h-12 bg-[var(--deep-blue)] text-white rounded-2xl flex items-center justify-center hover:bg-[var(--primary-color)] hover:text-[var(--deep-blue)] transition-all shadow-lg disabled:opacity-50"
             >
-              {isLoading ? <Loader2 className="animate-spin" size={18} /> : <Send size={18} />}
+              {isLoading ? (
+                <Loader2 className="animate-spin" size={18} />
+              ) : (
+                <Send size={18} />
+              )}
             </button>
           </form>
         </div>
       )}
 
-      <button 
+      <button
         onClick={() => setIsOpen(!isOpen)}
         className="w-16 h-16 bg-[var(--deep-blue)] rounded-[24px] flex items-center justify-center text-[var(--primary-color)] shadow-2xl hover:scale-110 transition-transform relative group hover:cursor-pointer"
       >

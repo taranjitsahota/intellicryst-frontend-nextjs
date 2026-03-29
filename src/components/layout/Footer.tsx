@@ -9,43 +9,7 @@ import {
   Facebook,
 } from "lucide-react";
 import Link from "next/link";
-
-const LogoMark = () => (
-  <svg
-    width="32"
-    height="32"
-    viewBox="0 0 40 40"
-    fill="none"
-    xmlns="http://www.w3.org/2000/svg"
-  >
-    <rect width="40" height="40" rx="8" fill="url(#footerLogoGrad)" />
-    <path
-      d="M10 15V25H20V15H15"
-      stroke="white"
-      strokeWidth="2.5"
-      strokeLinecap="round"
-    />
-    <path
-      d="M30 15H20V30H10"
-      stroke="white"
-      strokeWidth="2.5"
-      strokeLinecap="round"
-    />
-    <defs>
-      <linearGradient
-        id="footerLogoGrad"
-        x1="0"
-        y1="0"
-        x2="40"
-        y2="40"
-        gradientUnits="userSpaceOnUse"
-      >
-        <stop stopColor="#00F5D4" />
-        <stop offset="1" stopColor="#00B6FF" />
-      </linearGradient>
-    </defs>
-  </svg>
-);
+import Image from "next/image";
 
 const socials = [
   {
@@ -98,10 +62,12 @@ const Footer: React.FC = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-16 mb-24">
           <div className="space-y-8">
             <div className="flex items-center gap-3">
-              <LogoMark />
-              <span className="text-xl font-black tracking-tighter">
-                INTELLICRYST
-              </span>
+              <Image
+                src="/images/logo/logo_v.1.2.svg"
+                alt="Intellicryst logo"
+                width={150}
+                height={150}
+              />
             </div>
             <p className="text-[var(--light-grey)]/60 leading-relaxed font-semibold max-w-sm">
               Premium digital engineering for complex systems. Your vision. Our
@@ -168,7 +134,7 @@ const Footer: React.FC = () => {
               {[
                 { label: "Ezykheti", href: "/case-studies/ezykheti" },
                 { label: "Ezyfarms", href: "/case-studies/ezyfarms" },
-                { label: "Mobility Hub", href: "/case-studies/mobility-hub" },
+                { label: "Rs Goa Car Rental", href: "/case-studies/rs-goa-car-rental" },
                 { label: "Secure Gateway", href: "/case-studies/secure-gateway" },
               ].map((link) => (
                 <li key={link.label}>

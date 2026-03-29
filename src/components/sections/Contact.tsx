@@ -6,6 +6,7 @@ import FormWrapper from "@/components/forms/FormWrapper";
 import FormField from "@/components/forms/FormField";
 import FormSelect from "@/components/forms/FormSelect";
 import FormTextarea from "@/components/forms/FormTextarea";
+import { BsWhatsapp } from "react-icons/bs";
 
 const Contact: React.FC = () => {
   return (
@@ -57,7 +58,27 @@ const Contact: React.FC = () => {
                   Call Us
                 </p>
                 <p className="text-[var(--deep-blue)] font-black text-lg group-hover:text-[var(--primary-color)] transition-colors">
-                  <a href="tel: +1 (555) 000-TECH">+1 (555) 000-TECH</a>
+                  <a href="tel: +91 7087886881">+91 7087886881</a>
+                </p>
+              </div>
+            </div>
+
+            <div className="flex items-center gap-6 group cursor-pointer">
+              <div className="w-11 h-11 rounded-2xl bg-white shadow-sm border border-slate-100 flex items-center justify-center text-[var(--deep-blue)] group-hover:bg-[var(--primary-color)] group-hover:scale-110 group-hover:shadow-lg group-hover:shadow-cyan-400/20 transition-all duration-500">
+                <BsWhatsapp size={22} />
+              </div>
+              <div>
+                <p className="text-[10px] font-black text-slate-400 uppercase tracking-widest mb-1">
+                  Whatsapp Us
+                </p>
+                <p className="text-[var(--deep-blue)] font-black text-lg group-hover:text-[var(--primary-color)] transition-colors">
+                  <a
+                    href="https://wa.me/917087886881?text=Hello%20I%20want%20to%20know%20more%20about%20your%20services"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    +91 7087886881
+                  </a>
                 </p>
               </div>
             </div>
