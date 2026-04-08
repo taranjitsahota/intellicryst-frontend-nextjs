@@ -15,15 +15,24 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://intellicryst.com"),
-  title: "Intellicryst Tech | Software Development & Cloud Engineering",
+  title:
+    "Software Development Company in Navi Mumbai | Serving Clients Worldwide - Intellicryst",
   description:
-    "Intellicryst builds high-performance web platforms, mobile apps, and cloud infrastructure for modern businesses.",
+    "Looking for the best software development company in Navi Mumbai? Intellicryst is serving clients worldwide, mobile & cloud solutions. Get a free consultation today.",
   keywords: [
-    "software development",
-    "cloud infrastructure",
-    "mobile app development",
-    "web platforms",
+    "software development company in navi mumbai",
+    "mobile app development company navi mumbai",
+    "web development company india",
+    "cloud engineering services",
   ],
+  openGraph: {
+    title: "Best Software Development Company in Navi Mumbai | Intellicryst",
+    description:
+      "We build scalable web, mobile & cloud solutions for modern businesses. Get a free consultation today.",
+    url: "https://intellicryst.com",
+    siteName: "Intellicryst",
+    type: "website",
+  },
 };
 
 export default function RootLayout({
