@@ -1,22 +1,128 @@
 import React, { useState, useRef, useEffect } from "react";
-import { MessageCircle, X, Send, Loader2 } from "lucide-react";
-/* Import GoogleGenAI and associated types for Gemini integration */
-import { GoogleGenAI, GenerateContentResponse, Chat } from "@google/genai";
+import { Download, FileText, MessageCircle, Paperclip, X, Send, Loader2 } from "lucide-react";
+
+type ChatMessage = {
+  role: "user" | "model";
+  text: string;
+  quotation?: Quotation;
+  questions?: Question[];
+};
+
+type Question = {
+  id: string;
+  question: string;
+  options: string[];
+  suggestion: string;
+};
+
+type QuotationItem = {
+  module: string;
+  item: string;
+  quantity: number;
+  unit: string;
+  rate: number;
+  amount: number;
+};
+
+type Quotation = {
+  scope: string;
+  plan: string[];
+  items: QuotationItem[];
+  total: number;
+  assumptions: string[];
+  answers: string[];
+};
+
+function escapeHtml(value: string) {
+  return value
+    .replaceAll("&", "&amp;")
+    .replaceAll("<", "&lt;")
+    .replaceAll(">", "&gt;")
+    .replaceAll('"', "&quot;")
+    .replaceAll("'", "&#039;");
+}
+
+function formatCurrency(value: number) {
+  return new Intl.NumberFormat("en-IN", {
+    style: "currency",
+    currency: "INR",
+    maximumFractionDigits: 0,
+  }).format(value);
+}
+
+function downloadQuotation(quotation: Quotation) {
+  const quotationDate = new Intl.DateTimeFormat("en-IN", {
+    dateStyle: "long",
+  }).format(new Date());
+  const rows = quotation.items
+    .map(
+      (item) => `<tr>
+        <td>${escapeHtml(item.module)}</td>
+        <td>${escapeHtml(item.item)}</td>
+        <td>${item.quantity} ${escapeHtml(item.unit)}</td>
+        <td>${formatCurrency(item.rate)}</td>
+        <td>${formatCurrency(item.amount)}</td>
+      </tr>`,
+    )
+    .join("");
+  const assumptions = quotation.assumptions
+    .map((assumption) => `<li>${escapeHtml(assumption)}</li>`)
+    .join("");
+  const plan = quotation.plan.map((step) => `<li>${escapeHtml(step)}</li>`).join("");
+  const answers = quotation.answers.map((answer) => `<li>${escapeHtml(answer)}</li>`).join("");
+  const documentHtml = `
+    <html>
+      <head><meta charset="utf-8"><title>Intellicryst Quotation</title></head>
+      <body style="font-family:Arial,sans-serif;color:#102a43;line-height:1.6;max-width:800px;margin:40px auto">
+        <h1 style="color:#012b48;margin-bottom:4px">Intellicryst Project Quotation</h1>
+        <p style="color:#627d98">Prepared on ${escapeHtml(quotationDate)}</p>
+        <h2 style="color:#012b48">Scope</h2>
+        <p>${escapeHtml(quotation.scope)}</p>
+        <h2 style="color:#012b48">Implementation plan</h2>
+        <ol>${plan}</ol>
+        <table style="border-collapse:collapse;width:100%;margin-top:24px">
+          <thead><tr style="background:#012b48;color:white">
+            <th style="padding:10px;text-align:left">Module</th>
+            <th style="padding:10px;text-align:left">Detailed task</th>
+            <th style="padding:10px;text-align:left">Quantity</th>
+            <th style="padding:10px;text-align:right">Rate</th>
+            <th style="padding:10px;text-align:right">Amount</th>
+          </tr></thead>
+          <tbody>${rows}</tbody>
+          <tfoot><tr>
+            <td colspan="4" style="padding:12px;text-align:right;font-weight:bold;border-top:2px solid #012b48">Total</td>
+            <td style="padding:12px;text-align:right;font-weight:bold;border-top:2px solid #012b48">${formatCurrency(quotation.total)}</td>
+          </tr></tfoot>
+        </table>
+        <h2 style="color:#012b48">Client preferences</h2>
+        <ul>${answers}</ul>
+        <h2 style="color:#012b48">Assumptions</h2>
+        <ul>${assumptions}</ul>
+      </body>
+    </html>`;
+  const blob = new Blob([documentHtml], { type: "application/msword" });
+  const downloadUrl = URL.createObjectURL(blob);
+  const link = document.createElement("a");
+  link.href = downloadUrl;
+  link.download = `intellicryst-quotation-${new Date().toISOString().slice(0, 10)}.doc`;
+  document.body.appendChild(link);
+  link.click();
+  link.remove();
+  URL.revokeObjectURL(downloadUrl);
+}
 
 const ChatWidget: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const [messages, setMessages] = useState<
-    { role: "user" | "model"; text: string }[]
-  >([
+  const [messages, setMessages] = useState<ChatMessage[]>([
     {
       role: "model",
-      text: "Welcome to Intellicryst! How can our engineering team assist your project today?",
+      text: "Share a project brief or upload a PDF/DOCX. I will turn it into a concise implementation quotation.",
     },
   ]);
   const [input, setInput] = useState("");
+  const [file, setFile] = useState<File | null>(null);
+  const [selectedAnswers, setSelectedAnswers] = useState<Record<string, string>>({});
   const [isLoading, setIsLoading] = useState(false);
-  /* Use a ref to store the chat session persistent across re-renders */
-  const chatRef = useRef<Chat | null>(null);
   const scrollRef = useRef<HTMLDivElement>(null);
 
   /* Ensure the chat window scrolls to the latest message */
@@ -26,86 +132,41 @@ const ChatWidget: React.FC = () => {
     }
   }, [messages]);
 
-  /* Lazy initialize the Gemini chat session with context-specific instructions */
-  const getChatSession = () => {
-    if (!chatRef.current) {
-      const ai = new GoogleGenAI({ apiKey: process.env.GEMINI_API_KEY! });
-      chatRef.current = ai.chats.create({
-        model: "gemini-3-flash-preview",
-        config: {
-          systemInstruction:
-            "You are an expert solution architect at Intellicryst, a high-end digital engineering firm. You assist clients with technical queries regarding web/mobile development, hybrid cloud infrastructure, and security. Be professional, direct, and helpful. Use technical terminology accurately but remain accessible.",
-        },
-      });
-    }
-    return chatRef.current;
-  };
-
-  // const handleSend = async (textOverride?: string) => {
-  //   const textToSend = textOverride || input;
-  //   if (!textToSend.trim() || isLoading) return;
-
-  //   const userMessage = textToSend.trim();
-  //   setInput("");
-  //   setMessages((prev) => [...prev, { role: "user", text: userMessage }]);
-  //   setIsLoading(true);
-
-  //   try {
-  //     const res = await fetch("/api/chat", {
-  //       method: "POST",
-  //       headers: {
-  //         "Content-Type": "application/json",
-  //       },
-  //       body: JSON.stringify({ message: userMessage }),
-  //     });
-
-  //     const data = await res.json();
-  //     const botResponse = data.reply || "I'm having trouble connecting to my knowledge base right now. Please try again later.";
-
-  //     setMessages((prev) => [...prev, { role: "model", text: botResponse }]);
-  //   } catch (error) {
-  //     console.error("Chat Error:", error);
-  //     setMessages((prev) => [
-  //       ...prev,
-  //       {
-  //         role: "model",
-  //         text: "Nexus connection interrupted. Our engineers are investigating.",
-  //       },
-  //     ]);
-  //   } finally {
-  //     setIsLoading(false);
-  //   }
-  // };
-
   const handleSend = async (textOverride?: string) => {
     const textToSend = textOverride || input;
-    if (!textToSend.trim()) return;
+    const selectedAnswerText = Object.values(selectedAnswers).join("\n");
+    if ((!textToSend.trim() && !selectedAnswerText && !file) || isLoading) return;
 
-    const userMessage = textToSend.trim();
-
-    // ✅ Show message in chat UI
-    setMessages((prev) => [...prev, { role: "user", text: userMessage }]);
+    const userMessage = [selectedAnswerText, textToSend.trim()].filter(Boolean).join("\n");
+    setMessages((prev) => [...prev, { role: "user", text: userMessage || file?.name || "Uploaded project brief" }]);
     setInput("");
+    setIsLoading(true);
+    const formData = new FormData();
+    const previousConversation = messages
+      .filter((message) => message.role === "user" || message.questions)
+      .map((message) => `${message.role === "user" ? "User" : "Estimator"}: ${message.text}${message.questions ? `\n${message.questions.map((question) => `${question.question}\nOptions: ${question.options.join(", ")}\nSuggestion: ${question.suggestion}`).join("\n")}` : ""}`)
+      .join("\n");
+    formData.append(
+      "message",
+      previousConversation ? `${previousConversation}\nUser: ${userMessage}` : userMessage,
+    );
+    if (file) formData.append("file", file);
+    setFile(null);
 
-    // ✅ Fake bot response (nice UX)
-    setTimeout(() => {
+    try {
+      const response = await fetch("/api/chat", { method: "POST", body: formData });
+      const data = await response.json();
+      if (!response.ok) throw new Error(data.error || "Unable to create a quotation.");
       setMessages((prev) => [
         ...prev,
-        {
-          role: "model",
-          text: "Connecting you to our team on WhatsApp...",
-        },
+        { role: "model", text: data.reply, quotation: data.quotation, questions: data.questions },
       ]);
-    }, 500);
-
-    // ✅ Open WhatsApp after 1 sec
-    setTimeout(() => {
-      const message = encodeURIComponent(
-        `Hello Intellicryst Team,\n\n${userMessage}`,
-      );
-
-      window.open(`https://wa.me/917087886881?text=${message}`, "_blank");
-    }, 1000);
+      setSelectedAnswers({});
+    } catch (error) {
+      setMessages((prev) => [...prev, { role: "model", text: error instanceof Error ? error.message : "Unable to create a quotation." }]);
+    } finally {
+      setIsLoading(false);
+    }
   };
 
   return (
@@ -155,6 +216,45 @@ const ChatWidget: React.FC = () => {
                 }`}
               >
                 {msg.text}
+                {msg.questions && (
+                  <div className="mt-3 space-y-3">
+                    {msg.questions.map((question) => (
+                      <div key={question.id}>
+                        <p className="font-bold">{question.question}</p>
+                        <div className="mt-2 flex flex-wrap gap-2">
+                          {question.options.map((option) => (
+                            <button
+                              type="button"
+                              key={option}
+                              onClick={() => setSelectedAnswers((previous) => ({ ...previous, [question.id]: `${question.question}: ${option}` }))}
+                              className={`rounded-lg border px-2 py-1 text-left text-xs font-semibold transition-colors ${
+                                selectedAnswers[question.id] === `${question.question}: ${option}`
+                                  ? "border-[var(--primary-color)] bg-[var(--primary-color)]/20"
+                                  : "border-slate-200 hover:border-[var(--primary-color)]"
+                              }`}
+                            >
+                              {option}
+                            </button>
+                          ))}
+                        </div>
+                        <p className="mt-1 text-xs opacity-70">Suggestion: {question.suggestion}</p>
+                        {selectedAnswers[question.id] && (
+                          <p className="mt-1 text-xs font-bold text-[var(--deep-blue)]">Selected</p>
+                        )}
+                      </div>
+                    ))}
+                  </div>
+                )}
+                {msg.quotation && (
+                  <button
+                    type="button"
+                    onClick={() => downloadQuotation(msg.quotation as Quotation)}
+                    className="mt-4 flex items-center gap-2 rounded-xl border border-[var(--primary-color)] px-3 py-2 text-xs font-bold text-[var(--deep-blue)] transition-colors hover:bg-[var(--primary-color)]"
+                  >
+                    <Download size={14} />
+                    Download quotation
+                  </button>
+                )}
               </div>
             ))}
 
@@ -194,19 +294,42 @@ const ChatWidget: React.FC = () => {
               e.preventDefault();
               handleSend();
             }}
-            className="p-4 border-t border-slate-100 flex gap-3 bg-white"
+            className="p-4 border-t border-slate-100 bg-white"
           >
+            {file && (
+              <div className="mb-3 flex items-center gap-2 rounded-xl bg-cyan-50 px-3 py-2 text-xs font-bold text-[var(--deep-blue)]">
+                <FileText size={14} />
+                <span className="min-w-0 flex-1 truncate">{file.name}</span>
+                <button type="button" onClick={() => setFile(null)} aria-label="Remove attached document">
+                  <X size={14} />
+                </button>
+              </div>
+            )}
+            <div className="flex gap-3">
+              <label
+                title="Attach a PDF or DOCX"
+                className="flex h-12 w-12 shrink-0 cursor-pointer items-center justify-center rounded-2xl border border-slate-200 text-[var(--deep-blue)] transition-all hover:border-[var(--primary-color)] hover:text-[var(--primary-blue)]"
+              >
+                <Paperclip size={18} />
+                <input
+                  type="file"
+                  accept=".pdf,.docx,application/pdf,application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+                  className="sr-only"
+                  disabled={isLoading}
+                  onChange={(event) => setFile(event.target.files?.[0] || null)}
+                />
+              </label>
             <input
               type="text"
               value={input}
               onChange={(e) => setInput(e.target.value)}
-              placeholder="Type your query..."
+              placeholder="Describe the project..."
               disabled={isLoading}
               className="flex-1 px-5 py-3.5 bg-slate-50 rounded-2xl text-sm font-medium focus:outline-none focus:ring-2 focus:ring-[var(--primary-color)]/20 transition-all disabled:opacity-50"
             />
             <button
               type="submit"
-              disabled={isLoading || !input.trim()}
+              disabled={isLoading || (!input.trim() && !Object.keys(selectedAnswers).length && !file)}
               className="w-12 h-12 bg-[var(--deep-blue)] text-white rounded-2xl flex items-center justify-center hover:bg-[var(--primary-color)] hover:text-[var(--deep-blue)] transition-all shadow-lg disabled:opacity-50"
             >
               {isLoading ? (
@@ -215,6 +338,7 @@ const ChatWidget: React.FC = () => {
                 <Send size={18} />
               )}
             </button>
+            </div>
           </form>
         </div>
       )}
