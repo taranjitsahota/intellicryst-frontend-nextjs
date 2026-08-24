@@ -27,7 +27,12 @@ type Quotation = {
 type AgentResponse =
   | {
       type: "clarification";
-      questions: Array<{ id: string; question: string; options: string[]; suggestion: string }>;
+      questions: Array<{
+        id: string;
+        question: string;
+        options: string[];
+        suggestion: string;
+      }>;
     }
   | {
       type: "quotation";
@@ -50,7 +55,10 @@ const INTERNAL_BUFFER = 1.1;
 async function extractDocument(file: File) {
   const buffer = Buffer.from(await file.arrayBuffer());
 
-  if (file.type === "application/pdf" || file.name.toLowerCase().endsWith(".pdf")) {
+  if (
+    file.type === "application/pdf" ||
+    file.name.toLowerCase().endsWith(".pdf")
+  ) {
     const parser = new PDFParse({ data: buffer });
     try {
       return (await parser.getText()).text;
@@ -95,7 +103,9 @@ function parseAgentResponse(text: string): AgentResponse {
   return response;
 }
 
-function calculateQuotation(response: Extract<AgentResponse, { type: "quotation" }>): Quotation {
+function calculateQuotation(
+  response: Extract<AgentResponse, { type: "quotation" }>,
+): Quotation {
   const items = response.items.map((item) => {
     const rate = quotationRates[item.rateKey];
     const quantity = Number(item.quantity);
@@ -111,11 +121,12 @@ function calculateQuotation(response: Extract<AgentResponse, { type: "quotation"
       throw new Error("The AI returned an invalid quotation item.");
     }
 
-    const baseRate = item.rateLevel === "good"
-      ? rate.minRate
-      : item.rateLevel === "outstanding"
-        ? rate.maxRate
-        : (rate.minRate + rate.maxRate) / 2;
+    const baseRate =
+      item.rateLevel === "good"
+        ? rate.minRate
+        : item.rateLevel === "outstanding"
+          ? rate.maxRate
+          : (rate.minRate + rate.maxRate) / 2;
     const quotedRate = Math.round(baseRate * INTERNAL_BUFFER);
     return {
       module: item.module.trim() || "General",
@@ -143,7 +154,9 @@ Always collect a short discovery questionnaire before quoting. If the conversati
 
 Once the client has answered, return valid JSON only in this exact shape: {"type":"quotation","scope":"short summary","plan":["module and implementation step"],"items":[{"rateKey":"thirdPartyIntegration","module":"Payments - Razorpay","item":"Create Razorpay order API","quantity":1,"unit":"integration","rateLevel":"better"}],"assumptions":["assumption"],"answers":["question: selected answer"]}. Never combine an entire module into one line. For each module, list every concrete deliverable separately: each API endpoint or backend workflow, database/migration task, UI page or screen, frontend API integration, UX/design task, third-party setup, webhook/callback handling, failure/refund/security handling, QA/testing, and deployment task when applicable. For Razorpay or another payment provider, normally consider separate lines for order creation, payment verification/signature validation, webhook handling, refund/status handling, frontend checkout integration, payment UI, database/payment status changes, sandbox/live setup, and payment testing, then omit only what the requirements clearly do not need. Use the precise human-readable module and task names in the output. Set rateLevel to good, better, or outstanding according to the client's UI/quality answers; use better when no quality answer applies. The server calculates all rates and totals, so never return rate, amount, total, taxes, discounts, timelines, or buffer details. Do not mention internal pricing logic or any buffer to the user.`;
 
-async function generateAgentResponse(requirements: string): Promise<AgentResponse> {
+async function generateAgentResponse(
+  requirements: string,
+): Promise<AgentResponse> {
   if (!process.env.GEMINI_API_KEY) {
     throw new Error("No AI provider is configured. Add GEMINI_API_KEY.");
   }
@@ -164,19 +177,29 @@ export async function POST(req: Request) {
     const file = formData.get("file");
 
     if (!message && !(file instanceof File)) {
-      return NextResponse.json({ error: "Add a project description or document." }, { status: 400 });
+      return NextResponse.json(
+        { error: "Add a project description or document." },
+        { status: 400 },
+      );
     }
 
     let requirements = message;
     if (file instanceof File) {
       if (file.size > 10 * 1024 * 1024) {
-        return NextResponse.json({ error: "The document must be smaller than 10 MB." }, { status: 400 });
+        return NextResponse.json(
+          { error: "The document must be smaller than 10 MB." },
+          { status: 400 },
+        );
       }
-      requirements = `${requirements}\n\nDocument requirements:\n${await extractDocument(file)}`.trim();
+      requirements =
+        `${requirements}\n\nDocument requirements:\n${await extractDocument(file)}`.trim();
     }
 
     if (!requirements) {
-      return NextResponse.json({ error: "The uploaded document did not contain readable text." }, { status: 400 });
+      return NextResponse.json(
+        { error: "The uploaded document did not contain readable text." },
+        { status: 400 },
+      );
     }
 
     const agentResponse = await generateAgentResponse(requirements);
@@ -191,13 +214,19 @@ export async function POST(req: Request) {
     const quotation = calculateQuotation(agentResponse);
 
     return NextResponse.json({
-      reply: "Your quotation is ready. Download the attached document for the detailed estimate.",
+      reply:
+        "Your quotation is ready. Download the attached document for the detailed estimate.",
       quotation,
     });
   } catch (error: unknown) {
     console.error("FULL ERROR:", error);
     return NextResponse.json(
-      { error: error instanceof Error ? error.message : "Unable to create a quotation." },
+      {
+        error:
+          error instanceof Error
+            ? error.message
+            : "Unable to create a quotation.",
+      },
       { status: 500 },
     );
   }

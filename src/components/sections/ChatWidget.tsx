@@ -1,5 +1,13 @@
 import React, { useState, useRef, useEffect } from "react";
-import { Download, FileText, MessageCircle, Paperclip, X, Send, Loader2 } from "lucide-react";
+import {
+  Download,
+  FileText,
+  MessageCircle,
+  Paperclip,
+  X,
+  Send,
+  Loader2,
+} from "lucide-react";
 
 type ChatMessage = {
   role: "user" | "model";
@@ -68,8 +76,12 @@ function downloadQuotation(quotation: Quotation) {
   const assumptions = quotation.assumptions
     .map((assumption) => `<li>${escapeHtml(assumption)}</li>`)
     .join("");
-  const plan = quotation.plan.map((step) => `<li>${escapeHtml(step)}</li>`).join("");
-  const answers = quotation.answers.map((answer) => `<li>${escapeHtml(answer)}</li>`).join("");
+  const plan = quotation.plan
+    .map((step) => `<li>${escapeHtml(step)}</li>`)
+    .join("");
+  const answers = quotation.answers
+    .map((answer) => `<li>${escapeHtml(answer)}</li>`)
+    .join("");
   const documentHtml = `
     <html>
       <head><meta charset="utf-8"><title>Intellicryst Quotation</title></head>
@@ -121,7 +133,9 @@ const ChatWidget: React.FC = () => {
   ]);
   const [input, setInput] = useState("");
   const [file, setFile] = useState<File | null>(null);
-  const [selectedAnswers, setSelectedAnswers] = useState<Record<string, string>>({});
+  const [selectedAnswers, setSelectedAnswers] = useState<
+    Record<string, string>
+  >({});
   const [isLoading, setIsLoading] = useState(false);
   const scrollRef = useRef<HTMLDivElement>(null);
 
@@ -135,35 +149,67 @@ const ChatWidget: React.FC = () => {
   const handleSend = async (textOverride?: string) => {
     const textToSend = textOverride || input;
     const selectedAnswerText = Object.values(selectedAnswers).join("\n");
-    if ((!textToSend.trim() && !selectedAnswerText && !file) || isLoading) return;
+    if ((!textToSend.trim() && !selectedAnswerText && !file) || isLoading)
+      return;
 
-    const userMessage = [selectedAnswerText, textToSend.trim()].filter(Boolean).join("\n");
-    setMessages((prev) => [...prev, { role: "user", text: userMessage || file?.name || "Uploaded project brief" }]);
+    const userMessage = [selectedAnswerText, textToSend.trim()]
+      .filter(Boolean)
+      .join("\n");
+    setMessages((prev) => [
+      ...prev,
+      {
+        role: "user",
+        text: userMessage || file?.name || "Uploaded project brief",
+      },
+    ]);
     setInput("");
     setIsLoading(true);
     const formData = new FormData();
     const previousConversation = messages
       .filter((message) => message.role === "user" || message.questions)
-      .map((message) => `${message.role === "user" ? "User" : "Estimator"}: ${message.text}${message.questions ? `\n${message.questions.map((question) => `${question.question}\nOptions: ${question.options.join(", ")}\nSuggestion: ${question.suggestion}`).join("\n")}` : ""}`)
+      .map(
+        (message) =>
+          `${message.role === "user" ? "User" : "Estimator"}: ${message.text}${message.questions ? `\n${message.questions.map((question) => `${question.question}\nOptions: ${question.options.join(", ")}\nSuggestion: ${question.suggestion}`).join("\n")}` : ""}`,
+      )
       .join("\n");
     formData.append(
       "message",
-      previousConversation ? `${previousConversation}\nUser: ${userMessage}` : userMessage,
+      previousConversation
+        ? `${previousConversation}\nUser: ${userMessage}`
+        : userMessage,
     );
     if (file) formData.append("file", file);
     setFile(null);
 
     try {
-      const response = await fetch("/api/chat", { method: "POST", body: formData });
+      const response = await fetch("/api/chat", {
+        method: "POST",
+        body: formData,
+      });
       const data = await response.json();
-      if (!response.ok) throw new Error(data.error || "Unable to create a quotation.");
+      if (!response.ok)
+        throw new Error(data.error || "Unable to create a quotation.");
       setMessages((prev) => [
         ...prev,
-        { role: "model", text: data.reply, quotation: data.quotation, questions: data.questions },
+        {
+          role: "model",
+          text: data.reply,
+          quotation: data.quotation,
+          questions: data.questions,
+        },
       ]);
       setSelectedAnswers({});
     } catch (error) {
-      setMessages((prev) => [...prev, { role: "model", text: error instanceof Error ? error.message : "Unable to create a quotation." }]);
+      setMessages((prev) => [
+        ...prev,
+        {
+          role: "model",
+          text:
+            error instanceof Error
+              ? error.message
+              : "Unable to create a quotation.",
+        },
+      ]);
     } finally {
       setIsLoading(false);
     }
@@ -226,9 +272,15 @@ const ChatWidget: React.FC = () => {
                             <button
                               type="button"
                               key={option}
-                              onClick={() => setSelectedAnswers((previous) => ({ ...previous, [question.id]: `${question.question}: ${option}` }))}
+                              onClick={() =>
+                                setSelectedAnswers((previous) => ({
+                                  ...previous,
+                                  [question.id]: `${question.question}: ${option}`,
+                                }))
+                              }
                               className={`rounded-lg border px-2 py-1 text-left text-xs font-semibold transition-colors ${
-                                selectedAnswers[question.id] === `${question.question}: ${option}`
+                                selectedAnswers[question.id] ===
+                                `${question.question}: ${option}`
                                   ? "border-[var(--primary-color)] bg-[var(--primary-color)]/20"
                                   : "border-slate-200 hover:border-[var(--primary-color)]"
                               }`}
@@ -237,9 +289,13 @@ const ChatWidget: React.FC = () => {
                             </button>
                           ))}
                         </div>
-                        <p className="mt-1 text-xs opacity-70">Suggestion: {question.suggestion}</p>
+                        <p className="mt-1 text-xs opacity-70">
+                          Suggestion: {question.suggestion}
+                        </p>
                         {selectedAnswers[question.id] && (
-                          <p className="mt-1 text-xs font-bold text-[var(--deep-blue)]">Selected</p>
+                          <p className="mt-1 text-xs font-bold text-[var(--deep-blue)]">
+                            Selected
+                          </p>
                         )}
                       </div>
                     ))}
@@ -248,7 +304,9 @@ const ChatWidget: React.FC = () => {
                 {msg.quotation && (
                   <button
                     type="button"
-                    onClick={() => downloadQuotation(msg.quotation as Quotation)}
+                    onClick={() =>
+                      downloadQuotation(msg.quotation as Quotation)
+                    }
                     className="mt-4 flex items-center gap-2 rounded-xl border border-[var(--primary-color)] px-3 py-2 text-xs font-bold text-[var(--deep-blue)] transition-colors hover:bg-[var(--primary-color)]"
                   >
                     <Download size={14} />
@@ -300,7 +358,11 @@ const ChatWidget: React.FC = () => {
               <div className="mb-3 flex items-center gap-2 rounded-xl bg-cyan-50 px-3 py-2 text-xs font-bold text-[var(--deep-blue)]">
                 <FileText size={14} />
                 <span className="min-w-0 flex-1 truncate">{file.name}</span>
-                <button type="button" onClick={() => setFile(null)} aria-label="Remove attached document">
+                <button
+                  type="button"
+                  onClick={() => setFile(null)}
+                  aria-label="Remove attached document"
+                >
                   <X size={14} />
                 </button>
               </div>
@@ -319,25 +381,30 @@ const ChatWidget: React.FC = () => {
                   onChange={(event) => setFile(event.target.files?.[0] || null)}
                 />
               </label>
-            <input
-              type="text"
-              value={input}
-              onChange={(e) => setInput(e.target.value)}
-              placeholder="Describe the project..."
-              disabled={isLoading}
-              className="flex-1 px-5 py-3.5 bg-slate-50 rounded-2xl text-sm font-medium focus:outline-none focus:ring-2 focus:ring-[var(--primary-color)]/20 transition-all disabled:opacity-50"
-            />
-            <button
-              type="submit"
-              disabled={isLoading || (!input.trim() && !Object.keys(selectedAnswers).length && !file)}
-              className="w-12 h-12 bg-[var(--deep-blue)] text-white rounded-2xl flex items-center justify-center hover:bg-[var(--primary-color)] hover:text-[var(--deep-blue)] transition-all shadow-lg disabled:opacity-50"
-            >
-              {isLoading ? (
-                <Loader2 className="animate-spin" size={18} />
-              ) : (
-                <Send size={18} />
-              )}
-            </button>
+              <input
+                type="text"
+                value={input}
+                onChange={(e) => setInput(e.target.value)}
+                placeholder="Describe the project..."
+                disabled={isLoading}
+                className="flex-1 px-5 py-3.5 bg-slate-50 rounded-2xl text-sm font-medium focus:outline-none focus:ring-2 focus:ring-[var(--primary-color)]/20 transition-all disabled:opacity-50"
+              />
+              <button
+                type="submit"
+                disabled={
+                  isLoading ||
+                  (!input.trim() &&
+                    !Object.keys(selectedAnswers).length &&
+                    !file)
+                }
+                className="w-12 h-12 bg-[var(--deep-blue)] text-white rounded-2xl flex items-center justify-center hover:bg-[var(--primary-color)] hover:text-[var(--deep-blue)] transition-all shadow-lg disabled:opacity-50"
+              >
+                {isLoading ? (
+                  <Loader2 className="animate-spin" size={18} />
+                ) : (
+                  <Send size={18} />
+                )}
+              </button>
             </div>
           </form>
         </div>
