@@ -88,6 +88,7 @@ function downloadQuotation(quotation: Quotation) {
       <body style="font-family:Arial,sans-serif;color:#102a43;line-height:1.6;max-width:800px;margin:40px auto">
         <h1 style="color:#012b48;margin-bottom:4px">Intellicryst Project Quotation</h1>
         <p style="color:#627d98">Prepared on ${escapeHtml(quotationDate)}</p>
+        <p style="background:#fff8e1;border-left:4px solid #f0b429;padding:10px 12px;color:#7c4a03"><strong>Tentative quotation:</strong> This estimate is for a rough idea. The final approximate cost will be confirmed after detailed requirement discussions and meetings.</p>
         <h2 style="color:#012b48">Scope</h2>
         <p>${escapeHtml(quotation.scope)}</p>
         <h2 style="color:#012b48">Implementation plan</h2>
@@ -106,6 +107,7 @@ function downloadQuotation(quotation: Quotation) {
             <td style="padding:12px;text-align:right;font-weight:bold;border-top:2px solid #012b48">${formatCurrency(quotation.total)}</td>
           </tr></tfoot>
         </table>
+        <p style="font-size:12px;color:#627d98;margin-top:12px"><strong>Note:</strong> This is a tentative estimate; the final cost will be confirmed after detailed meetings and requirement analysis.</p>
         <h2 style="color:#012b48">Client preferences</h2>
         <ul>${answers}</ul>
         <h2 style="color:#012b48">Assumptions</h2>
