@@ -1,7 +1,6 @@
 import { GoogleGenAI } from "@google/genai";
 import mammoth from "mammoth";
 import { NextResponse } from "next/server";
-import { PDFParse } from "pdf-parse";
 import { quotationCurrency, quotationRates } from "@/data/quotation-rates";
 
 export const runtime = "nodejs";
@@ -59,12 +58,10 @@ async function extractDocument(file: File) {
     file.type === "application/pdf" ||
     file.name.toLowerCase().endsWith(".pdf")
   ) {
-    const parser = new PDFParse({ data: buffer });
-    try {
-      return (await parser.getText()).text;
-    } finally {
-      await parser.destroy();
-    }
+    return {
+      text: "The attached PDF contains the project requirements. Read the PDF document directly.",
+      pdfData: buffer.toString("base64"),
+    };
   }
 
   if (
@@ -72,7 +69,7 @@ async function extractDocument(file: File) {
       "application/vnd.openxmlformats-officedocument.wordprocessingml.document" ||
     file.name.toLowerCase().endsWith(".docx")
   ) {
-    return (await mammoth.extractRawText({ buffer })).value;
+    return { text: (await mammoth.extractRawText({ buffer })).value };
   }
 
   throw new Error("Please upload a PDF or DOCX document.");
@@ -156,6 +153,7 @@ Once the client has answered, return valid JSON only in this exact shape: {"type
 
 async function generateAgentResponse(
   requirements: string,
+  pdfData?: string,
 ): Promise<AgentResponse> {
   if (!process.env.GEMINI_API_KEY) {
     throw new Error("No AI provider is configured. Add GEMINI_API_KEY.");
@@ -166,7 +164,13 @@ async function generateAgentResponse(
     model: "gemini-3.6-flash",
     config: { systemInstruction: estimationPrompt },
   });
-  const result = await chat.sendMessage({ message: requirements });
+  const message = pdfData
+    ? [
+        { text: requirements },
+        { inlineData: { mimeType: "application/pdf", data: pdfData } },
+      ]
+    : requirements;
+  const result = await chat.sendMessage({ message });
   return parseAgentResponse(result.text || "");
 }
 
@@ -184,6 +188,7 @@ export async function POST(req: Request) {
     }
 
     let requirements = message;
+    let pdfData: string | undefined;
     if (file instanceof File) {
       if (file.size > 10 * 1024 * 1024) {
         return NextResponse.json(
@@ -191,8 +196,10 @@ export async function POST(req: Request) {
           { status: 400 },
         );
       }
+      const document = await extractDocument(file);
       requirements =
-        `${requirements}\n\nDocument requirements:\n${await extractDocument(file)}`.trim();
+        `${requirements}\n\nDocument requirements:\n${document.text}`.trim();
+      pdfData = document.pdfData;
     }
 
     if (!requirements) {
@@ -202,7 +209,7 @@ export async function POST(req: Request) {
       );
     }
 
-    const agentResponse = await generateAgentResponse(requirements);
+    const agentResponse = await generateAgentResponse(requirements, pdfData);
 
     if (agentResponse.type === "clarification") {
       return NextResponse.json({
